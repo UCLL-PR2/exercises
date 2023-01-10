@@ -15,8 +15,8 @@ Finally, you will need to define a PetShop class that has the following attribut
 - **name (a string)**: the name of the pet shop.
 - **animals (a list)**: a list of Animal objects that are currently for sale in the pet shop.
 - **\_\_init\_\_() (a method)**: a constructor that takes a name as input and initializes the name attribute of the PetShop instance.
-- add_animal() (a method): a method that takes an Animal object as input and adds it to the animals list.
-- sell_animal() (a method): a method that takes an Animal object as input and removes it from the animals list.
+- **add_animal() (a method)**: a method that takes an Animal object as input and adds it to the animals list.
+- **sell_animal() (a method)**: a method that takes an Animal object as input and removes it from the animals list.
 
 To test your solution, you can run the test file and you should create an new file app.py and paste the below code inside it. Try running it and see if you get the same output:
 ```python 
