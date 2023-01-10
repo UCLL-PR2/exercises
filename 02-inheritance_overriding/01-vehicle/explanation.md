@@ -16,4 +16,4 @@ Then (continue to work in the student.py file), **create two subclasses of Vehic
 
 Both the Car and Truck classes should have their own implementation of the **honk method** that returns a different string. In the Car class this method should return *"Beep beep!"* and in the Truck class *"Honk honk!"*.
 
-Next, **create a class called Garage** that has a single attribute, vehicles, which is a list of Vehicle objects. The Garage class should have a method called **add_vehicle** which takes a Vehicle object as an argument and adds it to the vehicles list. If the argument is not of type Vehicle then raise a **TypeError**.
+Next, **create a class called Garage** that has a single attribute, vehicles, which is a list of Vehicle objects. The Garage class should have a method called **add_vehicle** which takes a Vehicle object as an argument and adds it to the vehicles list. If the argument is not of type Vehicle then raise a **TypeError("The object is not of type 'Vehicle'")**.
