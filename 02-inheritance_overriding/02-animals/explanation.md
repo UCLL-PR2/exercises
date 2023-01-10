@@ -10,7 +10,7 @@ Next, you will need to define several subclasses of Animal that represent specif
 
 - **breed (a string)**: the breed of the animal.
 - **\_\_init\_\_() (a method)**: a constructor that takes a name and a breed as input, and initializes the attributes of the subclass instance using the *super().\_\_init\_\_()* method to set the name and species attributes inherited from the Animal class.
-- *make_sound() (a method)*: a method that returns a string representing the sound that the animal makes. This method should override the make_sound() method inherited from the Animal class.
+- **make_sound() (a method)**: a method that returns a string representing the sound that the animal makes. This method should override the make_sound() method inherited from the Animal class.
 Finally, you will need to define a PetShop class that has the following attributes and methods:
 - **name (a string)**: the name of the pet shop.
 - **animals (a list)**: a list of Animal objects that are currently for sale in the pet shop.
