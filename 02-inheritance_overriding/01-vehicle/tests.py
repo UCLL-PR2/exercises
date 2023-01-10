@@ -16,9 +16,9 @@ class TestVehicleExercise(unittest.TestCase):
 
     def test_vehicle_accelerate(self):
         self.assertEqual(self.vehicle1.speed, 0)
-        vehicle.accelerate()
+        self.vehicle1.accelerate()
         self.assertEqual(self.vehicle1.speed, 10)
-        vehicle.accelerate()
+        self.vehicle1.accelerate()
         self.assertEqual(self.vehicle1.speed, 20)
 
     def test_vehicle_brake(self):
