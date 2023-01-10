@@ -6,7 +6,7 @@ class TestVehicleExercise(unittest.TestCase):
         self.vehicle1 = Vehicle("Toyota", "Corolla", 2020)
         self.car1 = Car("Toyota", "Corolla", 2020, 4)
         self.truck1 = Truck("Toyota", "Tacoma", 2020, "large")
-
+        self.garage = Garage()
 
     def test_create_vehicle(self):
         self.assertEqual(self.vehicle1.make, "Toyota")
@@ -48,6 +48,14 @@ class TestVehicleExercise(unittest.TestCase):
         self.assertEqual(self.truck1.speed, 0)
         self.assertEqual(self.truck1.bed_size, "large")
 
+    def test_add_vehicle(self):
+        self.garage.add_vehicle(self.car1)
+        self.garage.add_vehicle(self.truck1)
+    
+        # Test selling a non-animal object
+        with self.assertRaises(TypeError) as context:
+            self.garage.add_vehicle(5)
+        self.assertEqual(str(context.exception), "The object is not of type 'Vehicle'")
 
 if __name__ == "__main__":
     unittest.main()
