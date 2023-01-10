@@ -1,8 +1,8 @@
-# Scripting Exercise Repository
+# Python Exercise Repository
 
 ## About This Course
 
-This course teaches you how to write small scripts that automate tasks.
+This course teaches you how to write small scripts that automate tasks, object oriented programming, webscraping,....
 For this, we will rely on the Python programming language:
 
 * It is one of the most used programming languages.
