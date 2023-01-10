@@ -14,4 +14,6 @@ The Vehicle class should also have the following methods:
 
 Then (continue to work in the student.py file), create two subclasses of Vehicle called Car and Truck. The Car class should have an additional attribute called **num_doors**, and the Truck class should have an additional attribute called **bed_size**. 
 
-In both classes implemented the **honk** function. In the Car class this function should return *"Beep beep!"* and in the Truck class *"Honk honk!"*.
+Both the Car and Truck classes should have their own implementation of the **honk method** that returns a different string. In the Car class this method should return *"Beep beep!"* and in the Truck class *"Honk honk!"*.
+
+Next, create a class called Garage that has a single attribute, vehicles, which is a list of Vehicle objects. The Garage class should have a method called **add_vehicle** which takes a Vehicle object as an argument and adds it to the vehicles list.

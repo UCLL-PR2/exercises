@@ -35,4 +35,7 @@ class Garage:
         self.vehicles = []
 
     def add_vehicle(self, vehicle):
-        self.vehicles.append(vehicle)
+        if isinstance(vehicle, Vehicle):
+            self.vehicles.append(vehicle)
+        else:
+            raise TypeError("The object is not of type 'Vehicle'")
