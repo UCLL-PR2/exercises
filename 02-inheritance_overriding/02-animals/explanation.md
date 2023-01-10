@@ -20,12 +20,8 @@ Finally, you will need to define a PetShop class that has the following attribut
 
 To test your solution, you can run the test file and you should create an new file app.py and paste the below code inside it. Try running it and see if you get the same output:
 ```python 
-from app import Animal 
-from app import Dog 
-from app import Cat 
-from app import Parrot 
-from app import Fish 
-from app import PetShop
+from app import *
+
 
 petshop = PetShop("Paws and Claws")
 
