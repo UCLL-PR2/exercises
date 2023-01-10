@@ -1,5 +1,5 @@
 import unittest
-from app import *
+from student import *
 
 class TestVehicleExercise(unittest.TestCase):
     def test_create_vehicle(self):

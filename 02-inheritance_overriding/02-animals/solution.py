@@ -44,10 +44,20 @@ class PetShop:
         self.animals = []
     
     def add_animal(self, animal):
-        self.animals.append(animal)
+        if isinstance(animal, Animal):
+            self.animals.append(animal)
+        else:
+            raise TypeError("The object is not of type 'Animal'")
     
     def sell_animal(self, animal):
-        self.animals.remove(animal)
+        if isinstance(animal, Animal):
+            if animal in self.animals:
+                self.animals.remove(animal)
+            else:
+                raise ValueError("This animal is not available!")
+        else:
+            raise TypeError("The object is not of type 'Animal'")
+    
 
 
 
