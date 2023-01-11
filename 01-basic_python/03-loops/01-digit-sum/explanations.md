@@ -4,7 +4,7 @@
 For example, `digit_sum(159)` returns `15` because 1+5+9=15.
 
 ```javascript
-function digitSum(n)
+function digit_sum(n)
 {
     let result = 0;
 
