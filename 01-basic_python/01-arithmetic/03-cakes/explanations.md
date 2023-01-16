@@ -11,7 +11,7 @@ function cakes(eggs, butter, flour)
     // Use integer division as explained below
     const maxByEggs = Math.floor(eggs / 5);
     const maxByButter = Math.floor(butter / 250);
-    const maxByFlour = Math.floor(flour / 5);
+    const maxByFlour = Math.floor(flour / 250);
 
     return Math.min(maxByEggs, maxByButter, maxByFlour);
 }

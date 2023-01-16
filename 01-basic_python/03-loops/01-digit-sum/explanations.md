@@ -1,10 +1,10 @@
 # Assignment
 
-`digitSum` computes the sum of all the decimal digits of a given number `n`.
-For example, `digitSum(159)` returns `15` because 1+5+9=15.
+`digit_sum` computes the sum of all the decimal digits of a given number `n`.
+For example, `digit_sum(159)` returns `15` because 1+5+9=15.
 
 ```javascript
-function digitSum(n)
+function digit_sum(n)
 {
     let result = 0;
 
