@@ -4,10 +4,10 @@ from scripting.quick import reference_based_test
 from scripting.reference import active_reference_implementation_from_id, reference_file
 
 
+celsius_temps = [0, 10, 20, 30, 40]
+
 with reference_file('solution.py'):
-    with reference_based_test('from_lists') as testcase:
-        testcase([], [])
-        testcase(['a'], [1])
-        testcase(['a', 'b'], [1, 2])
-        testcase([1, 2], ['a', 'b'])
-        testcase([False, True], [4, 6])
+    with reference_based_test('list_celsius_to_fahrenheit') as testcase:
+        testcase(celsius_temps)
+        
+       
