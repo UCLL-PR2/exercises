@@ -1,4 +1,4 @@
-# Python Fixed-type arrays
+# Assigment
 
 - Create a function process_data(data: list) -> dict: that processes a list of strings containing student information and return a dictionary with the following structure:
     
