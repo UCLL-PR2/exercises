@@ -17,6 +17,7 @@ def process_data(data: list) -> dict:
     ['John Smith,20,Math,Physics', 'Jane Doe,21,Biology,Chemistry']
     """
     
+    
 
 def avg_age(data: dict) -> float:
     """
