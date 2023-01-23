@@ -1,4 +1,4 @@
-def key_values(dictionary) ->list:
+def key_values(dictionary: dict) ->list:
     lijst = []
     for k in dictionary.keys():
         if k%2 == 0:
@@ -7,13 +7,13 @@ def key_values(dictionary) ->list:
     # return [k for k in dictionary.keys() if k %2==0]
 
 
-def key_check(dictionary,key) -> bool:
+def key_check(dictionary: dict, key:int) -> bool:
     return key in dictionary
 
-def value_check(dictionary,value) -> bool:
+def value_check(dictionary: dict,value) -> bool:
     return value in list(dictionary.values())
 
-def nested_dict(dictionary):
+def nested_dict(dictionary: dict) -> bool:
     lijst = []
     for value in dictionary.values():
         for value2 in value.values():
