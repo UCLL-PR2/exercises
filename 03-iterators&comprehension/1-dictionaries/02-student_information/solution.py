@@ -29,9 +29,17 @@ def avg_age(data: dict) -> float:
     """
     Calculate the average age of the students in the input dictionary.
     """
+    # oplossing zonder enumerate 
+    # total_age = 0
+    # num_students = 0
+    # for student in data.values():
+    #     total_age += student['age']
+    #     num_students += 1
+    # return total_age / num_students
+
+    # oplossing met enumerate 
     total_age = 0
-    num_students = 0
-    for student in data.values():
+    for num_students,student in enumerate(data.values()):
         total_age += student['age']
         num_students += 1
     return total_age / num_students
