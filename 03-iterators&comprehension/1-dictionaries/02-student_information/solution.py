@@ -52,7 +52,7 @@ def courses(data: dict) -> list:
     for student in data.values():
         courses.update(student['courses'])
     return courses
-    
+
 def most_common_course(data: dict) -> str:
     """
     Return the course that is taken by the most number of students. If there is a tie,
@@ -65,3 +65,7 @@ def most_common_course(data: dict) -> str:
                 course_counts[course] = 0
             course_counts[course] += 1
     return max(course_counts, key=course_counts.get)
+
+    # Other solution
+    # courses = [j for i in data.values() for j in i["courses"]]
+    # return max(courses,key=courses.count)
