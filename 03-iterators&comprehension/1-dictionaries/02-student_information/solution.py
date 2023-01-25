@@ -46,11 +46,11 @@ def avg_age(data: dict) -> float:
 
 def courses(data: dict) -> list:
     """
-    Return a list of all the courses taken by the students in the input dictionary.
+    Return a collection of all the courses taken by the students in the input dictionary.
     """
-    courses = []
+    courses = set()
     for student in data.values():
-        courses.extend(student['courses'])
+        courses.update(student['courses'])
     return courses
 
 def most_common_course(data: dict) -> str:

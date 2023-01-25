@@ -22,5 +22,5 @@ The input list is in the following format:
 ```
     
 - Create a function avg_age(data: dict) that calculates the average age of the students in the input dictionary.
-- Create a function courses(data: dict) that returns a list of all the courses taken by the students in the input dictionary.
+- Create a function courses(data: dict) that returns a collection of all the courses taken by the students in the input dictionary.
 - Create a function most_common_course(data: dict) Return the course that is taken by the most number of students. If there is a tie, return the first course that appears in the input dictionary.
