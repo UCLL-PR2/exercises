@@ -5,7 +5,7 @@ def process_data(data: list) -> dict:
     {
         'John Smith': {
             'age': 20,
-            'courses': ['Math', 'Physics']
+            'courses': ['Math', 'Physics', 'Chemistry']
         },
         'Jane Doe': {
             'age': 21,
@@ -26,7 +26,7 @@ def avg_age(data: dict) -> float:
 
 def courses(data: dict) -> list:
     """
-    Return a list of all the courses taken by the students in the input dictionary.
+    Return a collection of all the courses taken by the students in the input dictionary.
     """
     
 

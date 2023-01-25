@@ -50,4 +50,19 @@ with reference_file('solution.py'):
                 'courses': ['Biology', 'Chemistry']
             }
         }
-        testcase(data)         
+        testcase(data)
+        data2 = {
+            'John Smith': {
+                'age': 20,
+                'courses': ['Math', 'Physics','Biology']
+            },
+            'Jane Doe': {
+                'age': 21,
+                'courses': ['Biology', 'Chemistry']
+            },
+            'Bob Smith': {
+                'age': 22,
+                'courses': ['Biology', 'Chemistry']
+            }
+        }
+        testcase(data2)        
