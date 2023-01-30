@@ -1,4 +1,4 @@
-my_list = [0, 1, -10, 2]
+my_list = [0, 3, -10, 2]
 
 def is_it_sorted(my_list):
     for index, current_num in enumerate(my_list):
@@ -9,3 +9,10 @@ def is_it_sorted(my_list):
         prev_num = current_num
         
     return "sorted!"
+
+    #---other solution
+    # for index,_ in enumerate(my_list):
+    #     if index > 0:
+    #         if my_list[index] < my_list[index - 1]:
+    #             return index
+    # return "sorted!"
