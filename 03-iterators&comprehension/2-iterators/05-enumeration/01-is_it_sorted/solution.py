@@ -10,7 +10,7 @@ def is_it_sorted(my_list):
         
     return "sorted!"
 
-    #---other solution
+    ##other solution
     # for index,_ in enumerate(my_list):
     #     if index > 0:
     #         if my_list[index] < my_list[index - 1]:
