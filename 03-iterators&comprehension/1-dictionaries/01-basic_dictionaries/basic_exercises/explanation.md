@@ -18,4 +18,20 @@
 
 - Define a function **create_dict2** that creates another dictionary with the following keys and values: "Name": "Jane", "Age": 25, "City": "San Francisco". The function should return the dictionary.
 
-- Define a function **merge_dicts** that takes two dictionaries as arguments and returns a new dictionary that is the result of merging the two dictionaries.
+- Define a function **merge_dicts** that takes two dictionaries as arguments and returns a new dictionary that is the result of merging the two dictionaries. For example:
+
+```python
+dict1 = {"Name": "John", "Age": 30, "City": "New York"}
+
+dict2 = {"Country": "USA", "Gender": "Male", "City": "San Francisco"}
+
+
+merge_dicts(dict1,dict2)
+#result should be
+
+{"Name":    "John", 
+ "Age":     30, 
+ "City":    "New York",
+ "Country": "USA", 
+ "Gender":  "Male",}
+```
