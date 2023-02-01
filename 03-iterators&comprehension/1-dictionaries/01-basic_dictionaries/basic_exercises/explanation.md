@@ -31,7 +31,7 @@ merge_dicts(dict1,dict2)
 
 {"Name":    "John", 
  "Age":     30, 
- "City":    "New York",
+ "City":    "San Francisco",
  "Country": "USA", 
  "Gender":  "Male",}
 ```
