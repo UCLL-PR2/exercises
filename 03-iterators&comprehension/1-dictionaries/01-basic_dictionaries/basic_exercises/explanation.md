@@ -16,7 +16,7 @@
 
 - Define a function **get_values** that takes a dictionary as an argument and returns a list of its values.
 
-- Define a function **create_dict2** that creates another dictionary with the following keys and values: "Name": "Jane", "Age": 25, "City": "San Francisco". The function should return the dictionary.
+- Define a function **create_dict2** that creates another dictionary with the following keys and values: "Country": "USA", "Gender": "Male", "City": "San Francisco". The function should return the dictionary.
 
 - Define a function **merge_dicts** that takes two dictionaries as arguments and returns a new dictionary that is the result of merging the two dictionaries. For example:
 
