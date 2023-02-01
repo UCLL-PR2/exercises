@@ -13,7 +13,7 @@ def key_check(dictionary: dict, key:int) -> bool:
 def value_check(dictionary: dict,value) -> bool:
     return value in list(dictionary.values())
 
-def nested_dict(dictionary: dict) -> bool:
+def nested_dict(dictionary: dict) -> list:
     lijst = []
     for value in dictionary.values():
         for value2 in value.values():
