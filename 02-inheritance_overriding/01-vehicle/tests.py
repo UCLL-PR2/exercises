@@ -2,6 +2,11 @@ import unittest
 from student import *
 
 class TestVehicleExercise(unittest.TestCase):
+    # TODO Do NOT use the setup method, it makes the tests unreadable and introduces a single point of failure
+    # Either
+    # * recreate the object in every test method
+    # * introduce a factory method that creates whatever objects your test method relies upon
+    # * use fixtures
     def setUp(self):
         self.vehicle1 = Vehicle("Toyota", "Corolla", 2020)
         self.car1 = Car("Toyota", "Corolla", 2020, 4)
@@ -9,10 +14,12 @@ class TestVehicleExercise(unittest.TestCase):
         self.garage = Garage()
 
     def test_create_vehicle(self):
-        self.assertEqual(self.vehicle1.make, "Toyota")
-        self.assertEqual(self.vehicle1.model, "Corolla")
-        self.assertEqual(self.vehicle1.year, 2020)
-        self.assertEqual(self.vehicle1.speed, 0)
+        vehicle = Vehicle("Toyota", "Corolla", 2020)
+
+        self.assertEqual(vehicle.make, "Toyota")
+        self.assertEqual(vehicle.model, "Corolla")
+        self.assertEqual(vehicle.year, 2020)
+        self.assertEqual(vehicle.speed, 0)
 
     def test_vehicle_accelerate(self):
         self.assertEqual(self.vehicle1.speed, 0)
@@ -51,7 +58,7 @@ class TestVehicleExercise(unittest.TestCase):
     def test_add_vehicle(self):
         self.garage.add_vehicle(self.car1)
         self.garage.add_vehicle(self.truck1)
-    
+
         # Test selling a non-animal object
         with self.assertRaises(TypeError) as context:
             self.garage.add_vehicle(5)
@@ -59,4 +66,3 @@ class TestVehicleExercise(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-    
