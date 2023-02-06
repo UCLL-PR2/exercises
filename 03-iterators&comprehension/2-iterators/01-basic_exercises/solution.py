@@ -1,4 +1,4 @@
-def elementwise_sum(list1, list2):
+def elementwise_sum(list1: list, list2: list) -> list:
     result = []
     for x, y in zip(list1, list2):
         result.append(x + y)
@@ -7,7 +7,7 @@ def elementwise_sum(list1, list2):
     # Other solution
     # return [x + y for x, y in zip(list1, list2)]
 
-def even_numbers(numbers):
+def even_numbers(numbers: list) -> list:
     return list(filter(lambda x: x % 2 == 0, numbers))
 
     # Solution without filter function
@@ -17,10 +17,10 @@ def even_numbers(numbers):
     #         result.append(num)
     # return result
 
-def square_numbers(numbers):
+def square_numbers(numbers: list) -> list:
     return list(map(lambda x: x ** 2, numbers))
 
-def multiple_of_five(list_of_dicts):
+def multiple_of_five(list_of_dicts: list)-> list:
     return list(filter(lambda d: any(v % 5 == 0 for v in d.values()), list_of_dicts))
 
     # Solution without filter function
@@ -35,35 +35,41 @@ def multiple_of_five(list_of_dicts):
     #         result.append(d)
     # return result
 
-def map_lists_to_dict(list1, list2):
+def map_lists_to_dict(list1: list, list2: list) -> dict:
     result = {}
     for k, v in zip(list1, list2):
         result[k] = v
     return result
-    
+
     # Other solution
     # return {k: v for k, v in zip(list1, list2)}
 
-def length_of_strings(strings):
+def length_of_strings(strings: list) -> list:
     return list(map(len, strings))
 
-def list_of_pairs(list1, list2):
+def list_of_pairs(list1: list, list2: list) -> list:
     return list(zip(list1, list2))
 
-def positive_numbers(numbers):
+def positive_numbers(numbers: list) -> list:
     return list(filter(lambda x: x > 0, numbers))
 
-def cubes_of_numbers(numbers):
+def cubes_of_numbers(numbers: list) -> list:
     return list(map(lambda x: x**3, numbers))
 
-def string_key_dictionaries(dict_list):
+def string_key_dictionaries(dict_list: list) -> list:
     return list(filter(lambda x: all(map(lambda y: isinstance(y, str), x.keys())), dict_list))
 
-def merge_lists(list1, list2):
-    return [x for pair in zip(list1, list2) for x in pair]
+def merge_lists(list1: list, list2: list) -> list:
+    result = []
+    for pair in zip(list1, list2):
+        result.extend(pair)
+    return result
+
+    # Other solution
+    # return [x for pair in zip(list1, list2) for x in pair]
 
 
-def prime_dicts(dict_list):
+def prime_dicts(dict_list: list) -> list:
     def is_prime(n):
         if n < 2:
             return False
@@ -75,12 +81,12 @@ def prime_dicts(dict_list):
     return [d for d in dict_list if any(is_prime(v) for v in d.values())]
 
 
-def divisible_by_3(numbers):
+def divisible_by_3(numbers: list) -> list:
     return list(filter(lambda x: x % 3 == 0, numbers))
 
 
-def repeat_elements(list1, list2):
+def repeat_elements(list1: list, list2: list) -> list:
     return [x for pair in zip(list1, list1) for x in pair]
 
-def palindrome_strings(strings):
+def palindrome_strings(strings: list) -> list:
     return list(filter(lambda x: x == x[::-1], strings))
