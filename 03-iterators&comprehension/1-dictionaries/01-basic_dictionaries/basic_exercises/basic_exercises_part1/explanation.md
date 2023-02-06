@@ -15,7 +15,7 @@ Input: {1: 'a', 2: 'b', 3: 'c'}
 Output: {1: 'a', 3: 'c'}
 ```
 3. Write a Python function that takes in a dictionary and a value as arguments and returns a list of all keys in the dictionary that have the given value.
-
+  
 ```python
 Example:
 Input: {'a': 1, 'b': 2, 'c': 1}, 1
