@@ -20,21 +20,6 @@ def even_numbers(numbers: list) -> list:
 def square_numbers(numbers: list) -> list:
     return list(map(lambda x: x ** 2, numbers))
 
-def multiple_of_five(list_of_dicts: list)-> list:
-    return list(filter(lambda d: any(v % 5 == 0 for v in d.values()), list_of_dicts))
-
-    # Solution without filter function
-    # result = []
-    # for d in list_of_dicts:
-    #     has_multiple_of_five = False
-    #     for v in d.values():
-    #         if v % 5 == 0:
-    #             has_multiple_of_five = True
-    #             break
-    #     if has_multiple_of_five:
-    #         result.append(d)
-    # return result
-
 def map_lists_to_dict(list1: list, list2: list) -> dict:
     result = {}
     for k, v in zip(list1, list2):
@@ -55,9 +40,6 @@ def positive_numbers(numbers: list) -> list:
 
 def cubes_of_numbers(numbers: list) -> list:
     return list(map(lambda x: x**3, numbers))
-
-def string_key_dictionaries(dict_list: list) -> list:
-    return list(filter(lambda x: all(map(lambda y: isinstance(y, str), x.keys())), dict_list))
 
 def merge_lists(list1: list, list2: list) -> list:
     result = []
