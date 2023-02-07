@@ -73,15 +73,7 @@ Input: ['a', 'b', 'c'], [1, 2, 3]
 Output: ['a', 1, 'b', 2, 'c', 3]
 ```
 
-10. Write a Python function **prime_dicts** that takes a list of dictionaries as an argument and returns a new list of dictionaries that contains only the key-value pairs where the value is a prime number, using the filter and map functions.
-
-```python
-Example:
-Input: [{'a': 1, 'b': 2, 'c': 15}, {'d': 4, 'e': 3, 'f': 5}]
-Output: [{'b': 2, 'e': 3, 'f': 5}]
-```
-
-11. Write a Python function **divisible_by_3** that takes a list of numbers as an argument and returns a new list that contains only the numbers that are divisible by 3, using the filter function.
+10. Write a Python function **divisible_by_3** that takes a list of numbers as an argument and returns a new list that contains only the numbers that are divisible by 3, using the filter function.
 
 ```python
 Example:
@@ -89,7 +81,7 @@ Input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 Output: [3, 6, 9]
 ```
 
-12. Write a Python function **repeat_elements** that takes two lists as arguments and returns a new list that contains the elements of the first list repeated twice, using the map and zip functions.
+11. Write a Python function **repeat_elements** that takes two lists as arguments and returns a new list that contains the elements of the first list repeated twice, using the map and zip functions.
 
 ```python
 Example:
@@ -97,7 +89,7 @@ Input: ['a', 'b', 'c'], [1, 2, 3]
 Output: ['a', 'a', 'b', 'b', 'c', 'c']
 ```
 
-13. Write a Python function **palindrome_strings** that takes a list of strings as an argument and returns a new list of strings that are palindromes, using the filter function.
+12. Write a Python function **palindrome_strings** that takes a list of strings as an argument and returns a new list of strings that are palindromes, using the filter function.
 
 ```python
 Example:
