@@ -28,7 +28,7 @@ Example:
 Input: [1, 2, 3, 4, 11, 12, 13]
 Output: {1, 2, 3, 4}
 ```
-5. Write a Python function squared_numbers that takes in a list of numbers and returns a generator that generates the squares of all the numbers using a generator comprehension.
+5. Write a Python function **squared_numbers** that takes in a list of numbers and returns a generator that generates the squares of all the numbers using a generator comprehension.
 
 ```python
 Example:
@@ -37,7 +37,7 @@ Output: <generator object squared_numbers at 0x...>
 #The generator, when iterated, would return [1, 4, 9, 16, 25]
 ```
 
-6. Write a Python function positive_numbers that takes in a list of numbers and returns a new list of all the positive numbers using a list comprehension.
+6. Write a Python function **positive_numbers** that takes in a list of numbers and returns a new list of all the positive numbers using a list comprehension.
 
 ```python
 Example:
@@ -49,6 +49,30 @@ Output: [1, 2, 3]
 
 ```python
 Example:
+Input: ([1, 2, 3], [4, 5, 6])
+Output: [(1, 4), (2, 5), (3, 6)]
+```
+
+8. Write a Python function **absolute_numbers** that takes in a list of numbers and returns a new list with the absolute values of the numbers using a list comprehension.
+
+```python
+Example:
 Input: [-1, -2, 0, 1, 2, 3]
-Output: [1, 2, 3]
+Output: [1, 2, 0, 1, 2, 3]
+```
+
+9. Write a Python function **vowel_words** that takes in a list of words and returns a new list with only the words that start with a vowel using a list comprehension.
+
+```python
+Example:
+Input: ['apple', 'banana', 'cherry', 'dog']
+Output: ['apple', 'elephant']
+```
+
+10. Write a Python function **square_dict** that takes in a list of numbers and returns a dictionary where the keys are the numbers and the values are the square of the keys using a dictionary comprehension.
+
+```python
+Example:
+Input: [1, 2, 3, 4, 5]
+Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 ```
