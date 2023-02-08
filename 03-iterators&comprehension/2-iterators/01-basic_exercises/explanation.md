@@ -65,7 +65,7 @@ Input: [1, 2, 3, 4, 5]
 Output: [1, 8, 27, 64, 125]
 ```
 
-9. Write a Python function **merge_lists** that takes two lists as arguments and returns a new list that contains the elements of the first list followed by the elements of the second list, using the map and zip functions.
+9. Write a Python function **merge_lists** that takes two lists as arguments and returns a new list that contains the elements of the first list followed by the elements of the second list, using the zip function.
 
 ```python
 Example:

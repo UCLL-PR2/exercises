@@ -47,9 +47,6 @@ def merge_lists(list1: list, list2: list) -> list:
         result.extend(pair)
     return result
 
-    # Other solution
-    # return [x for pair in zip(list1, list2) for x in pair]
-
 def divisible_by_3(numbers: list) -> list:
     return list(filter(lambda x: x % 3 == 0, numbers))
 
