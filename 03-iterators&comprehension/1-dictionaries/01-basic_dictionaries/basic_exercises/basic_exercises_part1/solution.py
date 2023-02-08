@@ -9,7 +9,7 @@ def odd_keys_dict(d: dict) -> dict:
     return odd_keys_dict
 
     # Other solution
-    # return {k: v for k, v in d.items() if k % 2 == 1}
+    # return {k:v for k, v in d.items() if k % 2 == 1}
 
 
 def keys_with_value(d: dict, value) -> list:
