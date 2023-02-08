@@ -81,11 +81,11 @@ Input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 Output: [3, 6, 9]
 ```
 
-11. Write a Python function **repeat_elements** that takes two lists as arguments and returns a new list that contains the elements of the first list repeated twice, using the map and zip functions.
+11. Write a Python function **repeat_elements** that takes a lists as arguments and returns a new list that contains the elements of the list repeated twice, using zip functions.
 
 ```python
 Example:
-Input: ['a', 'b', 'c'], [1, 2, 3]
+Input: ['a', 'b', 'c']
 Output: ['a', 'a', 'b', 'b', 'c', 'c']
 ```
 
