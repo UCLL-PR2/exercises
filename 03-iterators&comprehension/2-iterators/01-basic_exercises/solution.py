@@ -28,6 +28,7 @@ def map_lists_to_dict(list1: list, list2: list) -> dict:
 
     # Other solution
     # return {k: v for k, v in zip(list1, list2)}
+    # return dict(zip(list1, list2))
 
 def length_of_strings(strings: list) -> list:
     return list(map(len, strings))
@@ -51,6 +52,7 @@ def divisible_by_3(numbers: list) -> list:
     return list(filter(lambda x: x % 3 == 0, numbers))
 
 def repeat_elements(list1: list, list2: list) -> list:
+
     return [x for pair in zip(list1, list1) for x in pair]
 
 def palindrome_strings(strings: list) -> list:

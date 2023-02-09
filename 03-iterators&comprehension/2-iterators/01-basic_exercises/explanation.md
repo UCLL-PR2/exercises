@@ -25,7 +25,7 @@ Output: [1, 4, 9, 16, 25]
 ```
 
 
-4. Write a Python function **map_lists_to_dict** that takes two lists as arguments and returns a new dictionary that maps the elements of the first list to the elements of the second list, using the zip function.
+4. Write a Python function **map_lists_to_dict** that takes two lists as arguments and returns a new dictionary that maps the elements of the first list to the elements of the second list, using the **zip** and **dict** function.
 
 ```python
 Example:
