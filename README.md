@@ -20,12 +20,6 @@ So, please do not write your own `sum` function, use the built-in one.
 You will see that Python has *a lot* of built-in functions for you to make use of.
 Therefore, it is very important that you develop the habit of skimming through the documentation and looking up information online.
 
-* [Installation](http://scripting.leone.ucll.be/docs/guides/installation.html)
-* [Remaining Up-To-Date](http://scripting.leone.ucll.be/docs/guides/updating.html)
-* [Usage](http://scripting.leone.ucll.be/docs/guides/usage.html)
-* [Useful Shell Commands](http://scripting.leone.ucll.be/docs/guides/shell.html)
-* [Planning](http://scripting.leone.ucll.be/docs/guides/planning.html)
-
 ## Installation
 
 Install the following software:
