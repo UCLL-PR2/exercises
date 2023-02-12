@@ -43,9 +43,9 @@ It’s important to check that your Python installation works. This can be sligh
 Below are instructions that verify both at the same type. The goal is that you get Python to tell you which version it is, and that this version is 3.6 or higher. If you encounter problems, inform a lecturer.
 
 ### IMPORTANT
-```
+
 A $ in the beginning of a line means that you should input that line in a shell. Do not write the $ itself though, only what follows. For example, $ ls means you should enter ls.
-```
+
 
 <details>
 <summary>Windows Instructions</summary>
