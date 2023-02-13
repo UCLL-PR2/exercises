@@ -7,8 +7,8 @@ def create_word_dict(file_name):
         word_dict = {word: word_list.count(word) for word in word_list}
     return word_dict
 
-word_dict = create_word_dict('example.txt')
-print(word_dict)
+# word_dict = create_word_dict('example.txt')
+# print(word_dict)
 
 def get_top_10_words(word_dict):
     sorted_words = sorted(word_dict.items(), key=lambda x: x[1], reverse=True)
