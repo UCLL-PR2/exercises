@@ -6,6 +6,7 @@ def read_data(filename):
 
 def create_dictionary(data):
     return {name: (int(age), gender) for name, age, gender in data}
+    # return {i[0]:(i[1],i[2]) for i in data}
 
 def older_than_30(data):
     return [(name, gender) for name, (age, gender) in data.items() if age > 30]
