@@ -1,8 +1,8 @@
 # Exercises most common words - difficulty level: ***
 
 
-Create a function **create_word_dict** that reads in a text file and create a dictionary where the keys are the words in the file, and the values are the number of times each word appears in the file.
-- Use **open()** to read in the text file and a dictionary comprehension to create the initial dictionary.
+Create a function **create_word_dict** that takes the path of the file as an argument, reads in the text file and create a dictionary where the keys are the words in the file, and the values are the number of times each word appears in the file.
+- Use *open()* to read in the text file and a dictionary comprehension to create the initial dictionary.
 - Use *split()* to break up the text into words, and strip() to remove leading and trailing punctuation from each word.
 - Use *lower()* to convert each word to lowercase, so that "the" and "The" are treated as the same word.
 - Use *filter()* and a lambda function to remove any words that are empty strings or contain only punctuation.
