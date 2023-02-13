@@ -1,8 +1,8 @@
 def create_word_dict(file_name):
     with open(file_name, 'r') as f:
         word_list = f.read().split()
+        word_list = word_list.lower()
         word_list = [word.strip('.,?!-') for word in word_list]
-        word_list = [word.lower() for word in word_list]
         word_list = list(filter(lambda x: x.isalpha(), word_list))
         word_dict = {word: word_list.count(word) for word in word_list}
     return word_dict
