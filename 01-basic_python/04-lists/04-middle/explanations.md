@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Translate this function that returns the middle element.
 

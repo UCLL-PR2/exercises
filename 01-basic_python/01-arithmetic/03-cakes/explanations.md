@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Translate this JavaScript function `cakes(eggs, butter, flour)` that computes
 the number of cakes you can bake using the given ingredients.

@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: **
 
 Write a function `remove_duplicates(xs)` that returns a new array equal to `xs` but with duplicated
 elements removed. The elements in the result must appear in the same order as in `xs`.

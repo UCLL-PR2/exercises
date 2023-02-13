@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Java calls them `Map`s, JavaScript calls them objects.
 Python has chosen to call them *dictionaries*.

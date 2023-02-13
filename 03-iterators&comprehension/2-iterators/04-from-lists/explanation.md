@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Write a function `from_lists(keys, values)` that constructs
 a dictionary from a list of keys and a list of values.

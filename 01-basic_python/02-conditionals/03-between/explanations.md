@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Translate the function `between` into Python.
 

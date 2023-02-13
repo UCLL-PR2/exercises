@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Write a function `is_prime(n)` that determines if `n` is prime.
 

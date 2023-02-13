@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Write a function `card_value(string)` that determines the value of the card.
 

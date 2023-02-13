@@ -1,4 +1,4 @@
-# Exercise inheritance Animals
+# Exercise inheritance Animals - difficulty level: *
 The goal of this exercise is to get familiar with multiple inheritance:
 
 Consider a scenario where you're creating a class hierarchy for a Zoo. You have base classes **Animal** and **Enclosure**

@@ -1,3 +1,5 @@
+# Exercise classes & dictionaries: - difficulty level: **
+
 Create a class called `Item` that has two attributes: `name` (a string) and `price` (a float).
 
 Create a class called `Order` that has one attribute: `items` (a list of `Item` objects). The `Order` class should have the following methods:

@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Translate the function below that drops the element with index `n`.
 

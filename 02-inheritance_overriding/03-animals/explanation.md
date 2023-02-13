@@ -1,4 +1,4 @@
-# Exercise inheritance Animals
+# Exercise inheritance Animals - difficulty level: **
 The goal of this exercise is to use inheritance to model different types of animals and a pet shop that sells them, the classes should be coded in the student.py file.
 To begin, you will need to define a base Animal class that has the following attributes and methods:
 

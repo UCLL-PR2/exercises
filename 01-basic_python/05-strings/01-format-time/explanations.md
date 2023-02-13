@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Python strings hide few surprises.
 Scripting generally involves some form of string processing,

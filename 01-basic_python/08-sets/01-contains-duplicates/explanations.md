@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 We told you we would be revisiting `contains_duplicates`! This time, you'll implement it using sets.
 

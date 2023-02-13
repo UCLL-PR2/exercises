@@ -1,4 +1,4 @@
-# Basic Questions on Dictionaries in Python
+# Basic Questions on Dictionaries in Python - difficulty level: *
 
 1. Write a Python function **sum_dict_values** that takes in a dictionary and returns the sum of all its values.
 

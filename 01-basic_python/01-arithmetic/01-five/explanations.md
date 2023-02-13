@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Let's start with a simple function that returns `0`.
 

@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Write a function `coins(one, two, five, goal)` that checks
 whether it is possible to form the target amount `goal` given

@@ -1,4 +1,4 @@
-# Basic exercises on zip, map, and filter functions in Python
+# Basic exercises on zip, map, and filter functions in Python - difficulty level: *
 
 1. Write a Python function **elementwise_sum** that takes two lists as arguments and returns a new list that contains the element-wise sum of the two lists, using the zip function.
 

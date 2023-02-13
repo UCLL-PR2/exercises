@@ -1,4 +1,4 @@
-# Basic exercises
+# Basic exercises - difficulty level: *
 
 - Define a function **create_dict** that creates a dictionary with the following keys and values: "Name": "John", "Age": 30, "City": "New York". The function should return the dictionary.
 

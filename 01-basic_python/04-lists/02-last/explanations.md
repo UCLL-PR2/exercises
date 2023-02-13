@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 What would happen if you indexate a list with a negative index?
 Java would raise its hands in exasperation and throw an exception at you.

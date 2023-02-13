@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Often the need arises to keep track of a variable number of values. For this,
 you use a container object. Java offers (among other containers) the `ArrayList`,

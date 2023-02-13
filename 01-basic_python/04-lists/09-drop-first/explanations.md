@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Extracting a part from a list, also called *slicing*, is a rather common operation.
 For this reason, Python has decided to give it its own syntax.

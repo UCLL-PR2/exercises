@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Translate the following function that looks for two numbers in `xs` whose sum equals `target`.
 

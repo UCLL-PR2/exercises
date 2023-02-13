@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: ****
 
 Write a function called **prime_numbers** that generates a list of all prime numbers less than 100 using list comprehension. This could be done in one line of code.
 

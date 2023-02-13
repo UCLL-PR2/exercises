@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Write a function `median(ns)` that returns the median of the list.
 

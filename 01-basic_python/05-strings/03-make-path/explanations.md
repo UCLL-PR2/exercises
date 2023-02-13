@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: **
 
 Write a function `make_path(parts)` that, given an array of strings,
 builds a path out of them by joining them together in one large string,

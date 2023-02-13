@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Translate this function `includes(xs, ys)` that checks if all elements of `ys` also appear in `xs`.
 

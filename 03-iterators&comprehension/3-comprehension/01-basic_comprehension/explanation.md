@@ -1,4 +1,4 @@
-# Basic Questions on Dictionaries in Python
+# Basic Questions on Dictionaries in Python - difficulty level: *
 
 1. Write a Python function **even_numbers** that takes in a list of numbers and returns a new list with only the even numbers using a list comprehension.
 

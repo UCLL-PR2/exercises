@@ -1,4 +1,4 @@
-# Vehicle Exercise
+# Vehicle Exercise - difficulty level: **
 Create a class called Vehicle that has the following attributes and methods:
 
 - **brand**: a string representing the brand of the vehicle

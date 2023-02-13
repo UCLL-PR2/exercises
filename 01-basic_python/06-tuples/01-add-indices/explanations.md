@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Another one of Python's built-in data structure is the *tuple*.
 Admittedly, it is rather boring: it is mostly exactly the same

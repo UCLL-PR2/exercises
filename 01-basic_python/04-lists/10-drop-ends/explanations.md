@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Translate this function that drops both the first and last element of `xs`.
 
