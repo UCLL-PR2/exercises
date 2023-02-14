@@ -1,17 +1,31 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('is_valid_time') as (match, no_match):
-    match('00:00:00')
-    match('00:00:00.000')
-    match('12:34:56.789')
+@pytest.mark.parametrize("string", [
+    '',
+    '00:00:00',
+    '00:00:00.000',
+    '12:34:56.888',
+    '2:34:56.888',
+    '123:34:56.888',
+    '12:4:56.888',
+    '12:345:56.888',
+    '12:34:6.888',
+    '12:34:567.888',
+    '12:34:56.88',
+    '12:34:56.8888',
+    'ab:00:00',
+])
+def test_function(string):
+    function_name = 'is_valid_time'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('')
-    no_match('0:00:00')
-    no_match('00:0:00')
-    no_match('00:00:0')
-    no_match('00:00:00:000')
-    no_match('aa:aa:aa')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
