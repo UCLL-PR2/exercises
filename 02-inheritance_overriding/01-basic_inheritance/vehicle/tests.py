@@ -1,4 +1,5 @@
 import unittest
+from student import *
 
 class TestCarAndElectricCar(unittest.TestCase):
     def setUp(self):

@@ -1,4 +1,5 @@
 import unittest
+from student import *
 
 class TestRectangleAndSquare(unittest.TestCase):
     def setUp(self):
