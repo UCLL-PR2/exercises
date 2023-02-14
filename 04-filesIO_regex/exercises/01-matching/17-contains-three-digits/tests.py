@@ -1,20 +1,28 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('contains_three_digits') as (match, no_match):
-    match('123')
-    match('8132')
-    match('a813')
-    match('813x')
-    match('g813x')
-    match('9x9x9')
-    match('f8a1q3x')
-    match('dddd787ddddd')
+@pytest.mark.parametrize("string", [
+    '',
+    '1',
+    '2',
+    '41',
+    '135',
+    '1451',
+    '645040',
+    '1 2 3',
+    '64x65p1416',
+    'abc',
+])
+def test_function(string):
+    function_name = 'contains_three_digits'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('')
-    no_match('5')
-    no_match('12')
-    no_match('5q9f')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
