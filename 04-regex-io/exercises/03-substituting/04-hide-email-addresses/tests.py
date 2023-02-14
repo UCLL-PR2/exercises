@@ -1,27 +1,27 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import reference_based_test
-from scripting.reference import active_reference_implementation_from_id, reference_file
+import pytest
+import student
+import solution
 
 
-with reference_file('solution.py'):
-    with reference_based_test('hide_email_addresses') as testcase:
-        testcase('''
-        a@c.com
-        ''')
+@pytest.mark.parametrize("string", [
+    'a@c.com',
+    '111@AFF.com',
+    '<a.b@c.d>',
+    '''
+    a@c.com fsjdf jfslk fkls fjl df
+    jalfkj b@d.be fjdlkf jfkljdlkf
+    qpoiopc fdfqpof ifppopo fkpqo
+    qfjlkl [xyz@ppp.fr] jkfljqlkj
+    ''',
+])
+def test_function(string):
+    function_name = 'hide_email_addresses'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-        testcase('''
-        111@AFF.com
-        ''')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
 
-        testcase('''
-        111@AFF.com
-        ''')
+    actual = student_function(string)
+    expected = solution_function(string)
 
-        testcase('''
-        a@c.com fsjdf jfslk fkls fjl df
-        jalfkj b@d.be fjdlkf jfkljdlkf
-        qpoiopc fdfqpof ifppopo fkpqo
-        qfjlkl xyz@ppp.fr jkfljqlkj
-        ''')
-
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
