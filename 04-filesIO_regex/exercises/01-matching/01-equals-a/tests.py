@@ -3,11 +3,11 @@ import student
 import solution
 
 
-@pytest.mark.parametrize("string,expected", [
-    ("", False),
-    ("a", True),
-    ("aa", False),
-    ("b", False),
+@pytest.mark.parametrize("string", [
+    "",
+    "a",
+    "aa",
+    "b",
 ])
 def test_function(string, expected):
     function_name = 'equals_a'
