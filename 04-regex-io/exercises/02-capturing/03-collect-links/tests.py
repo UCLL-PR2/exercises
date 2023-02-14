@@ -1,8 +1,6 @@
-
-        testcase('''
-
-        ''')
-
+import pytest
+import student
+import solution
 
 
 @pytest.mark.parametrize("string", [
