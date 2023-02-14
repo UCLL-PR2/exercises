@@ -1,25 +1,30 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('is_valid_email_address') as (match, no_match):
-    match('a.b@student.ucll.be')
-    match('a.b@ucll.be')
-    match('a@ucll.be')
-    match('a.b.c@ucll.be')
-    match('123@student.ucll.be')
+@pytest.mark.parametrize("string", [
+    '',
+    'a@ucll.be',
+    'a.b@ucll.be',
+    'a@student.ucll.be',
+    '1@student.ucll.be',
+    'a.b@student.ucll.be',
+    'a1.b@student.ucll.be',
+    '1.b@student.ucll.be',
+    '1.5b@student.ucll.be',
+    'abc.def@gmail.com',
+    'abc.def ucll.be',
+    '....@ucll.be',
+])
+def test_function(string):
+    function_name = 'is_valid_email_address'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('')
-    no_match('a')
-    no_match('a-b@ucll.be')
-    no_match('ab@ucl.be')
-    no_match('ab@ucll.com')
-    no_match('@ucll.be')
-    no_match('a.b@')
-    no_match('xucll.be')
-    no_match('a.b@ucllxbe')
-    no_match('a.b@studentxucllxbe')
-    no_match('a.b@student.ucll.bex')
-    no_match('-a.b@student.ucll.be')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
