@@ -1,17 +1,29 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('two_or_more_abc') as (match, no_match):
-    match('abcabc')
-    match('abcabcabc')
-    match('abcabcabcabc')
+@pytest.mark.parametrize("string", [
+    "",
+    "abc",
+    "abcabc",
+    "abcabcabc",
+    "abcabcabcabc",
+    "abcabcabcabcabc",
+    "aabbccc",
+    "abcx",
+    "xabc",
+    "abca",
+    "abcab",
+])
+def test_function(string):
+    function_name = 'two_or_more_abc'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('')
-    no_match('a')
-    no_match('ab')
-    no_match('abc')
-    no_match('abcabcab')
-    no_match('bcabca')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
