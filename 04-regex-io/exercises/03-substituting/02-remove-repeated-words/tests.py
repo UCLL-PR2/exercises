@@ -1,18 +1,27 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import reference_based_test
-from scripting.reference import active_reference_implementation_from_id, reference_file
+import pytest
+import student
+import solution
 
 
-with reference_file('solution.py'):
-    with reference_based_test('remove_repeated_words') as testcase:
-        testcase('')
-        testcase('a')
-        testcase('aa')
-        testcase('aa aa')
-        testcase('aa a')
-        testcase('a a b b')
-        testcase('aaa aaa bb bb c c')
-        testcase('a b a b')
-        testcase('a a a a b')
+@pytest.mark.parametrize("string", [
+    '',
+    'a',
+    'aa',
+    'aa aa',
+    'aa a',
+    'a a b b',
+    'aaa aaa bb bb c c',
+    'a b a b',
+    'a a a a b',
+])
+def test_function(string):
+    function_name = 'remove_repeated_words'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = student_function(string)
+    expected = solution_function(string)
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
