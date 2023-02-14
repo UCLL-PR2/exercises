@@ -1,22 +1,31 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('thrice_repeated') as (match, no_match):
-    match('aaa')
-    match('111')
-    match('...')
-    match('121212')
-    match('xyzxyzxyz')
+@pytest.mark.parametrize("string", [
+    '',
+    'a',
+    'aa',
+    'aaa',
+    'abab',
+    'ababab',
+    '123123',
+    '123123123',
+    '1111',
+    '123123123123',
+    '111111',
+    '  ',
+    '   ',
+])
+def test_function(string):
+    function_name = 'thrice_repeated'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('')
-    no_match('a')
-    no_match('aa')
-    no_match('aab')
-    no_match('aaax')
-    no_match('xaaa')
-    no_match('x123123123')
-    no_match('aaax')
-    no_match('f111')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
