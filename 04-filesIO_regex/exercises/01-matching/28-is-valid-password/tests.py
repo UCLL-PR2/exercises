@@ -1,23 +1,26 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('is_valid_password') as (match, _no_match):
-    def no_match(string, reason):
-        _no_match(string, f"'{string}' should be rejected: {reason}")
+@pytest.mark.parametrize("string", [
+    *[f'{a}{b}{c}{d}'
+      for a in ['A', 'FQPIQFK', 'fjkla']
+      for b in ['g', 'pfoajaz', '9512']
+      for c in ['+', '-', '*', '/', '.', '@', 'F']
+      for d in ['1', '4312948', 'FQZJFP'] ],
+    'ABCabc123@+/',
+    'ABCabcA123A@+A/',
+    'ABCabc11123@+/',
+])
+def test_function(string):
+    function_name = 'is_valid_password'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    match('aA1+oipa')
-    match('7Af9xf*6')
-    match('Fpq75s.4+')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
 
-    no_match('aA1+', 'too short')
-    no_match('aA1+fqx', 'too short')
-    no_match('a19+fqios', 'does not contain an uppercase letter')
-    no_match('-13AG1PA', 'does not contain a lowercase letter')
-    no_match('aOO+fqios', 'does not contain a digit')
-    no_match('aOO9fq5os', 'does not contain special symbol')
-    no_match('aaa12+Fk', 'three consecutive times a')
-    no_match('Lf8xxx12+Fk', 'three consecutive times x')
-    no_match('A.A7AaA', 'four times A')
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"

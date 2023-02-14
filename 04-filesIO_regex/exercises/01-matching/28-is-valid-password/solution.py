@@ -3,7 +3,7 @@ import re
 
 def is_valid_password(string):
     positive_regexes = [
-        r'.{8,}',
+        r'.{12,}',
         r'[0-9]',
         r'[a-z]',
         r'[A-Z]',
