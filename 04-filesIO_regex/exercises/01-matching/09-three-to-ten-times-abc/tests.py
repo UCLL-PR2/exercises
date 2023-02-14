@@ -1,16 +1,27 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('three_to_ten_times_abc') as (match, no_match):
-    for i in range(3, 11):
-        match('abc' * i)
+@pytest.mark.parametrize("string", [
+    "",
+    "abc",
+    "abcabc",
+    "abcabcabc",
+    "aabbccc",
+    "abcx",
+    "xabc",
+    "abca",
+    "abcab",
+])
+def test_function(string):
+    function_name = 'three_to_ten_times_abc'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('')
-    no_match('a')
-    no_match('ab')
-    no_match('abc')
-    no_match('abc' * 2)
-    no_match('abc' * 11)
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
