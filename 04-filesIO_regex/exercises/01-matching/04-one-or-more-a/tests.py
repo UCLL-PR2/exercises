@@ -1,18 +1,14 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('one_or_more_a') as (match, no_match):
-    match('a')
-    match('aa')
-    match('aaa')
-    match('aaaa')
-    match('aaaaa')
-
-    no_match('')
-    no_match('b')
-    no_match('ab')
-    no_match('aab')
-    no_match('ba')
+@pytest.mark.parametrize("string", [
+    "",
+    "a",
+    "aa",
+    "aaaaa",
+    "aaaaab",
+])
+def test_function(string):
+    assert bool(student.one_or_more_a(string)) == bool(solution.one_or_more_a(string))
