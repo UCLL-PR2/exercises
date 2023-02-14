@@ -1,20 +1,29 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('only_vowels') as (match, no_match):
-    match('')
-    match('a')
-    match('e')
-    match('i')
-    match('o')
-    match('u')
-    match('aeiou')
-    match('eioaauie')
+@pytest.mark.parametrize("string", [
+    '',
+    'a',
+    'e',
+    'i',
+    'o',
+    'u',
+    'aaaa',
+    'aeiou',
+    'x',
+    'y',
+    'aebou',
+])
+def test_function(string):
+    function_name = 'only_vowels'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('x')
-    no_match('ab')
-    no_match('aiop')
-    no_match('xooo')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
