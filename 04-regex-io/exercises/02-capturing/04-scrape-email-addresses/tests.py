@@ -1,3 +1,8 @@
+import pytest
+import student
+import solution
+
+
 @pytest.mark.parametrize("string", [
         'a@c.com',
         '111@AFF.com',
