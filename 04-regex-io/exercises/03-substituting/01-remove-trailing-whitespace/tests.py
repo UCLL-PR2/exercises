@@ -1,19 +1,27 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import reference_based_test
-from scripting.reference import active_reference_implementation_from_id, reference_file
+import pytest
+import student
+import solution
 
 
-with reference_file('solution.py'):
-    with reference_based_test('remove_trailing_whitespace') as testcase:
-        testcase('fdjfkld jfjs fjdslfk'.strip())
-        testcase('fdjfkld jfjs fjdslfk ')
-        testcase('fdjfkld jfjs fjdslfk\t')
-        testcase('fdjfkld jfjs fjdslfk       ')
-        testcase('x  \ny   ')
+@pytest.mark.parametrize("string", [
+        'fdjfkld jfjs fjdslfk'.strip(),
+        'fdjfkld jfjs fjdslfk ',
+        'fdjfkld jfjs fjdslfk\t',
+        'fdjfkld jfjs fjdslfk       ',
+        'x  \ny   ',
+        '''
+        fdf qqip saofp k        \t\x20
+        fjdklfj f sfjslkf     \x20
+        fdjfkldjf      \x20'''
+])
+def test_function(string):
+    function_name = 'remove_trailing_whitespace'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-        testcase('''
-        fdf qqip saofp k\x20\t\x20
-        fjdklfj f sfjslkf\x20\x20\x20\x20\x20\x20
-        fdjfkldjf\x20\x20''')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
 
+    actual = student_function(string)
+    expected = solution_function(string)
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
