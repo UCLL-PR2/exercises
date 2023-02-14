@@ -5,7 +5,7 @@ class Animal:
         self.age = age
 
     def make_sound(self):
-        return "Rrrrrrrrrrrr"
+        return "Grrrrrrrrrrrr"
 
 class Enclosure:
     def __init__(self, name, capacity):

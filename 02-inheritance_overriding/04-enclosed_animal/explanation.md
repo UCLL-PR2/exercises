@@ -11,7 +11,7 @@ The **Animal class** has the following attributes:
 
 The **Animal class** has the following methods:
 
-- **make_sound**: returns a string representing the sound the animal makes
+- **make_sound**: returns a string representing the sound the animal makes, for now let the sound be *"Grrrrrrrrrrrr"*
 
 The **Enclosure class** has the following attributes:
 
