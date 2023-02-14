@@ -1,19 +1,36 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('is_valid_student_id') as (match, no_match):
-    match('r1234567')
-    match('R1234567')
-    match('s1234567')
-    match('S1234567')
-    match('r0000000')
+@pytest.mark.parametrize("string", [
+    '',
+    'r1234567',
+    'r123456',
+    'r12345678',
+    's12345678',
+    's1234567',
+    's123456',
+    'q1234567',
+    'R1234567',
+    'R123456',
+    'R12345678',
+    'S12345678',
+    'S1234567',
+    'S123456',
+    'Q1234567',
+    ' r1234567 ',
+    'r4545458',
+    'rabcdefg',
+])
+def test_function(string):
+    function_name = 'is_valid_student_id'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('t1234567')
-    no_match('1234567')
-    no_match('r134567')
-    no_match('r12345678')
-    no_match('xr1234567')
-    no_match('r1234567x')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
