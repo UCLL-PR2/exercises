@@ -1,18 +1,29 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('twice_repeated') as (match, no_match):
-    match('aa')
-    match('xx')
-    match('11')
-    match('..')
+@pytest.mark.parametrize("string", [
+    '',
+    'a',
+    'b',
+    'aa',
+    'ab',
+    'abab',
+    'xyzxyz',
+    'ababa',
+    '123123123',
+    '  ',
+    '   ',
+])
+def test_function(string):
+    function_name = 'twice_repeated'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('')
-    no_match('a')
-    no_match('aaa')
-    no_match('aab')
-    no_match('aaax')
-    no_match('xaaa')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
