@@ -1,23 +1,28 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('ababa') as (match, no_match):
-    match('ababa')
-    match('xyxyx')
-    match('12121')
-    match('aabbaabbaa')
-    match('111222111222111')
-    match('.xxx.xxx.')
-    match('...x...x...')
+@pytest.mark.parametrize("string", [
+    '',
+    'ababa',
+    'xyxyx',
+    'aabbaabbaa',
+    'ababc',
+    'babab',
+    'ababax',
+    'aaaaa',
+    '12121',
+    '23212',
+])
+def test_function(string):
+    function_name = 'ababa'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('')
-    no_match('aaa')
-    no_match('aba')
-    no_match('abab')
-    no_match('baba')
-    no_match('12x12y12')
-    no_match('abaca')
-    no_match('1x2x3')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
