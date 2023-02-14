@@ -1,23 +1,22 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('is_dna') as (match, no_match):
-    match('')
-    match('G')
-    match('A')
-    match('T')
-    match('C')
-    match('CGAT')
-    match('GCCTATAGTAGACG')
-    match('CCCCGGGGAAAATTTT')
+@pytest.mark.parametrize("string", [
+    '',
+    *'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    'GATTACA',
+    'GARTACA',
+])
+def test_function(string):
+    function_name = 'is_dna'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('a')
-    no_match('g')
-    no_match('c')
-    no_match('t')
-    no_match('q')
-    no_match('Q')
-    no_match('PGATCCCC')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
