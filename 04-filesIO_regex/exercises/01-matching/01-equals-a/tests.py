@@ -8,5 +8,5 @@ from student import equals_a
     ("aa", False),
     ("b", False),
 ])
-def test_equals_a(string, expected):
+def test_function(string, expected):
     assert bool(equals_a(string)) == expected
