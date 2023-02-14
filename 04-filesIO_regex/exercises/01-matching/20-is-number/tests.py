@@ -1,28 +1,27 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('is_number') as (match, no_match):
-    match('0')
-    match('1')
-    match('2')
-    match('3')
-    match('4')
-    match('5')
-    match('6')
-    match('7')
-    match('8')
-    match('9')
-    match('0.1')
-    match('3.141592')
-    match('1980')
+@pytest.mark.parametrize("string", [
+    '',
+    *'0123456789',
+    '12.34',
+    '12.',
+    '.23',
+    '8394018',
+    '38209.83491',
+    '1111111,1111',
+    '1111111a.1111',
+])
+def test_function(string):
+    function_name = 'is_number'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('')
-    no_match('.')
-    no_match('.0')
-    no_match('0.')
-    no_match('b')
-    no_match('1.2.3')
-    no_match('1,2')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
