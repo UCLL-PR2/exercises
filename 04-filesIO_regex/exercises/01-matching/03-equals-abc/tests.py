@@ -3,16 +3,16 @@ import student
 import solution
 
 
-@pytest.mark.parametrize("string,expected", [
-    ("", False),
-    ("a", False),
-    ("aa", False),
-    ("b", False),
-    ("bb", False),
-    ("abc", True),
-    ("abcd", False),
+@pytest.mark.parametrize("string", [
+    "",
+    "a",
+    "aa",
+    "b",
+    "bb",
+    "abc",
+    "abcd",
 ])
-def test_function(string, expected):
+def test_function(string):
     function_name = 'equals_abc'
     assert hasattr(student, function_name), f"Missing function {function_name}"
 
