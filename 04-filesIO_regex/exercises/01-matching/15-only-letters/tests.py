@@ -1,15 +1,25 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('only_letters') as (match, no_match):
-    match('')
-    match('a')
-    match('P')
-    match('fPczLO')
+@pytest.mark.parametrize("string", [
+    '',
+    *'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    'abc',
+    'ABC',
+    'ab cd',
+    'aBcD',
+    '163',
+])
+def test_function(string):
+    function_name = 'only_letters'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('7')
-    no_match('d5')
-    no_match('4012f78')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
