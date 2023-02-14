@@ -1,14 +1,25 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import regex_test
-from scripting.assertions import assert_truthy, assert_falsey
+import pytest
+import student
+import solution
 
 
-with regex_test('contains_no_a') as (match, no_match):
-    match('')
-    match('x')
-    match('bqopvpod')
+@pytest.mark.parametrize("string", [
+    '',
+    'a',
+    'x',
+    'aaaa',
+    'bbbbbbbbb',
+    'dkofgpq',
+    'jfopajkl',
+])
+def test_function(string):
+    function_name = 'contains_no_a'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
 
-    no_match('a')
-    no_match('xxxaxxxx')
-    no_match('pppa')
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = bool(student_function(string))
+    expected = bool(solution_function(string))
+
+    assert expected == actual, f"Wrong result for {string}, expected {expected}, received {actual}"
