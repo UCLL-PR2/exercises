@@ -1,6 +1,6 @@
 import pytest
 from pytest import approx
-from solution import *
+from student import *
 
 
 @pytest.mark.parametrize('weight,height,expected_bmi,expected_category', [
