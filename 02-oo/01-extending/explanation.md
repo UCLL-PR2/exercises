@@ -1,5 +1,12 @@
 # Exercise person inheritance - difficulty level: *
 
+## Concepts Used
+
+* Classes
+* Inheritance
+
+# Task
+
 Create a class `Person` with
 
 * An attribute `name` (initialized using a constructor parameter)
