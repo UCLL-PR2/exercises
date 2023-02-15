@@ -1,62 +1,75 @@
-import unittest
+import pytest
 from student import *
 
-class TestVehicleExercise(unittest.TestCase):
-    def setUp(self):
-        self.vehicle1 = Vehicle("Toyota", "Corolla", 2020)
-        self.car1 = Car("Toyota", "Corolla", 2020, 4)
-        self.truck1 = Truck("Toyota", "Tacoma", 2020, "large")
-        self.garage = Garage()
 
-    def test_create_vehicle(self):
-        self.assertEqual(self.vehicle1.make, "Toyota")
-        self.assertEqual(self.vehicle1.model, "Corolla")
-        self.assertEqual(self.vehicle1.year, 2020)
-        self.assertEqual(self.vehicle1.speed, 0)
+@pytest.fixture
+def car():
+    return Car(
+        make="Toyota",
+        model="Corolla",
+        year=2020,
+        num_doors=4,
+    )
 
-    def test_vehicle_accelerate(self):
-        self.assertEqual(self.vehicle1.speed, 0)
-        self.vehicle1.accelerate()
-        self.assertEqual(self.vehicle1.speed, 10)
-        self.vehicle1.accelerate()
-        self.assertEqual(self.vehicle1.speed, 20)
+@pytest.fixture
+def truck():
+    return Truck(
+        make="Toyota",
+        model="Corolla",
+        year=2020,
+        bed_size="large",
+    )
 
-    def test_vehicle_brake(self):
-        self.vehicle1.speed = 20
-        self.vehicle1.brake()
-        self.assertEqual(self.vehicle1.speed, 13)
-        self.vehicle1.brake()
-        self.assertEqual(self.vehicle1.speed, 6)
 
-    def test_vehicle_honk(self):
-        self.assertEqual(self.vehicle1.honk(), "HONK!")
+def test_create_car():
+    car = Car(
+        make="Toyota",
+        model="Corolla",
+        year=2020,
+        num_doors=4
+    )
 
-    def test_create_car(self):
-        self.assertEqual(self.car1.make, "Toyota")
-        self.assertEqual(self.car1.model, "Corolla")
-        self.assertEqual(self.car1.year, 2020)
-        self.assertEqual(self.car1.speed, 0)
-        self.assertEqual(self.car1.num_doors, 4)
+    assert car.make == "Toyota"
+    assert car.model == "Corolla"
+    assert car.year == 2020
+    assert car.speed == 0
+    assert car.num_doors == 4
 
-    def test_car_honk(self):
-        self.assertEqual(self.car1.honk(), "Beep beep!")
 
-    def test_create_truck(self):
-        self.assertEqual(self.truck1.make, "Toyota")
-        self.assertEqual(self.truck1.model, "Tacoma")
-        self.assertEqual(self.truck1.year, 2020)
-        self.assertEqual(self.truck1.speed, 0)
-        self.assertEqual(self.truck1.bed_size, "large")
+def test_create_truck():
+    truck = Truck(
+        make="Toyota",
+        model="Corolla",
+        year=2020,
+        bed_size="large",
+    )
 
-    def test_add_vehicle(self):
-        self.garage.add_vehicle(self.car1)
-        self.garage.add_vehicle(self.truck1)
-    
-        # Test selling a non-animal object
-        with self.assertRaises(TypeError) as context:
-            self.garage.add_vehicle(5)
-        self.assertEqual(str(context.exception), "The object is not of type 'Vehicle'")
+    assert truck.make == "Toyota"
+    assert truck.model == "Corolla"
+    assert truck.year == 2020
+    assert truck.speed == 0
+    assert truck.bed_size == "large"
 
-if __name__ == "__main__":
-    unittest.main()
-    
+
+def test_vehicle_accelerate(car):
+    assert car.speed == 0
+    car.accelerate(amount=10)
+    assert car.speed == 10
+    car.accelerate(amount=15)
+    assert car.speed == 25
+
+
+def test_vehicle_brake(car):
+    assert car.speed == 0
+    car.accelerate(amount=100)
+    assert car.speed == 100
+    car.brake(amount=20)
+    assert car.speed == 80
+
+
+def test_car_honk(car):
+    assert car.honk() == "Beep beep!"
+
+
+def test_truck_honk(truck):
+    assert truck.honk() == "Honk honk!"
