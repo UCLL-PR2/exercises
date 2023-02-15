@@ -1,8 +1,8 @@
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 from math import pi
 
 
-class Shape:
+class Shape(ABC):
     @property
     @abstractmethod
     def area(self):
@@ -29,8 +29,8 @@ class Rectangle(Shape):
 
 
 class Square(Rectangle):
-    def __init__(self, side_length):
-        super.__init__(self, side_length, side_length)
+    def __init__(self, side):
+        super().__init__(side, side)
 
 
 class Circle(Shape):
