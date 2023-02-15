@@ -1,7 +1,7 @@
 import pytest
 from pytest import approx
 from math import pi
-from solution import *
+from student import *
 
 
 @pytest.mark.parametrize('width,length,expected_perimeter,expected_area', [
