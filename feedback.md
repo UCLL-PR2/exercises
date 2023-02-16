@@ -36,3 +36,10 @@ MI is too advanced a concept.
 * Properties (getters, setters)
 * Static methods
 * Abstract methods using abc module
+
+### Validation
+
+Never use `assert` to validate input.
+
+Do not check parameter types.
+Python encourages duck typing, not nominal typing.
