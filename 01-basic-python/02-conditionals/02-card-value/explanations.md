@@ -39,4 +39,4 @@ function cardValue(string)
 }
 ```
 
-Look up how to [convert a string to an integer](https://lmgtfy.app/?q=python+string+to+int).
+You will need to convert a string to an integer. Feel free to [look up how](https://lmgtfy.app/?q=python+string+to+int).
