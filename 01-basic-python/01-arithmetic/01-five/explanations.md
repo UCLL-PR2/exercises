@@ -40,9 +40,7 @@ Hello world
 Now, to test your `five` function, enter the following command in this directory:
 
 ```bash
-$ scripting test
-PASS 1
-FAIL 0
-SKIP 0
-Score: 1.0/1
+$ pytest
+.                                     [100%]
+1 passed in 0.01s
 ```
