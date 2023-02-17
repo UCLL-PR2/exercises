@@ -1,21 +1,16 @@
-# Assignment - difficulty level: *
+# Assignment
 
-Translate this JavaScript function `cakes(eggs, butter, flour)` that computes
+Write a function `cakes(eggs, butter, flour)` that computes
 the number of cakes you can bake using the given ingredients.
 Each cake requires 5 eggs, 250g butter and 250g of flour.
 
-```javascript
-function cakes(eggs, butter, flour)
-{
-    // Do NOT rely on floor in your translation
-    // Use integer division as explained below
-    const maxByEggs = Math.floor(eggs / 5);
-    const maxByButter = Math.floor(butter / 250);
-    const maxByFlour = Math.floor(flour / 250);
+For example, `cakes(18, 600, 1000)` should return `2`:
 
-    return Math.min(maxByEggs, maxByButter, maxByFlour);
-}
-```
+* 18 eggs are enough to make 3 cakes.
+* 600g of butter is enough to make 2 cakes.
+* 1000g of flour is enough to make 4 cakes.
+
+The butter is the limiting factor: only 2 cakes can be made.
 
 ## Two kinds of division
 
@@ -42,5 +37,6 @@ max(3, 5, 2, 6, 1, 4)    # Returns 6
 min([5, 2, 9, 4])        # Returns 2
 
 # Works on all comparable values
-min('t', 'd', 'p')       # Returns 'd'
+min('t', 'd', 'p')                 # Returns 'd'
+max('zebra', 'aardvark', 'mule')   # Returns 'zebra'
 ```
