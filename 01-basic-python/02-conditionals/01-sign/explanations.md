@@ -19,5 +19,3 @@ function sign(n)
     }
 }
 ```
-
-You will need to look up the [syntax](https://lmgtfy.app/?q=python+if+statement) of the `if` statement in Python.
