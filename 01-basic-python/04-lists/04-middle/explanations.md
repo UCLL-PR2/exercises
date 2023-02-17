@@ -1,13 +1,4 @@
 # Assignment - difficulty level: *
 
-Translate this function that returns the middle element.
-
-```javascript
-function middle(xs)
-{
-    // Look up how to find a list's length in Python
-    const index = Math.floor(xs.length / 2);
-
-    return xs[index];
-}
-```
+Write a function `middle(ns)` that returns the middle element.
+You can assume `ns` contains an odd number of elements.
