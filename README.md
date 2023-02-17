@@ -108,27 +108,3 @@ $ pip3 --version
 ```
 
 One of these should work and should output something mentioning Python 3. If pip is not recognized, you will have to look up how to install it.
-
-## Course Related Material
-
-Open a terminal in a directory where you wish to store your course-related files. Let’s first install the testing framework:
-
-```
-$ pip install git+https://github.com/UCLL-PR2/testing-framework.git
-```
-
-Test the installation of the scripting package by executing the following command. It should show the output below (or something similar to it, as long as it’s not an error message.)
-```
-$ scripting
-usage: scripting [-h] {version,test} ...
-
-positional arguments:
-  {version,test}  sub-command help
-    version       returns version
-    test          runs tests in all subdirectories
-
-optional arguments:
-  -h, --help      show this help message and exit
-```
-
-Next, you need to get access to the course material. The simplest way is cloning, but you can also choose to create your own fork. This allows you to save your work on GitHub, so that you’re sure never to lose any of it.
