@@ -19,4 +19,4 @@ def test_function(x, lower, upper):
     actual = student_function(x=x, lower=lower, upper=upper)
     expected = solution_function(x=x, lower=lower, upper=upper)
 
-    assert expected == actual, f"Wrong result for {x}, expected {expected}, received {actual}"
+    assert expected == actual, f"Wrong result for x={x}, lower={lower}, upper={upper}, expected {expected}, received {actual}"
