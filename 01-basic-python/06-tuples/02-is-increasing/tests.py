@@ -1,16 +1,25 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import reference_based_test
-from scripting.reference import active_reference_implementation_from_id, reference_file
+import pytest
+import student
+import solution
 
 
-with reference_file('solution.py'):
-    with reference_based_test('is_increasing') as testcase:
-        testcase([])
-        testcase([1])
-        testcase([1, 2])
-        testcase([1, 1])
-        testcase([1, 2, 3])
-        testcase([1, 4, 5, 7])
-        testcase([4, 1])
-        testcase([4, 5, 8, 2, 4, 6])
+@pytest.mark.parametrize("ns", [
+    [],
+    [1],
+    [1, 2],
+    [1, 2, 2, 4, 6, 6, 10],
+    [2, 1],
+    [1, 2, 3, 4, 5, 4, 6],
+])
+def test_function(ns):
+    function_name = 'is_increasing'
+    if not hasattr(student, function_name):
+        pytest.skip(f"Missing function {function_name}")
+
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = student_function(ns)
+    expected = solution_function(ns)
+
+    assert expected == actual, f"Wrong result for {ns}, expected {expected}, received {actual}"
