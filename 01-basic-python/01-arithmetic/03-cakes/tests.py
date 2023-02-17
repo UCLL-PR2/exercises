@@ -22,4 +22,4 @@ def test_function(eggs, butter, flour):
     actual = student_function(eggs=eggs, butter=butter, flour=flour)
     expected = solution_function(eggs=eggs, butter=butter, flour=flour)
 
-    assert expected == actual, f"Wrong result for {x}, expected {expected}, received {actual}"
+    assert expected == actual, f"Wrong result for eggs={eggs}, butter={butter}, flour={flour}, expected {expected}, received {actual}"
