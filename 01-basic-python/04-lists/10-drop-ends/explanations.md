@@ -1,10 +1,3 @@
-# Assignment - difficulty level: *
+# Assignment
 
-Translate this function that drops both the first and last element of `xs`.
-
-```javascript
-function dropEnds(xs)
-{
-    return xs.slice(1, xs.length - 1);
-}
-```
+Write a function `drop_ends` that returns a new list equal to `xs` from whom the first and last elements have been removed.
