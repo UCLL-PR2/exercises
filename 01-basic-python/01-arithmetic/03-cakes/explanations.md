@@ -19,17 +19,9 @@ function cakes(eggs, butter, flour)
 
 ## Two kinds of division
 
-Open the Python console:
-
-```bash
-$ python
-Python 3.9.2 (tags/v3.9.2:1a79785, Feb 19 2021, 13:44:55) [MSC v.1928 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license" for more information.
-```
-
-Experiment to determine what the difference is between
-Python's two division operators `/` and `//`. For example, you can try inputting the
-following lines (omit the `>>>`, it represents the Python prompt):
+Open the Python console.
+Experiment to determine what the difference is between Python's two division operators `/` and `//`.
+For example, you can try inputting the following lines (omit the `>>>`, it represents the Python prompt):
 
 ```python
 >>> 5 / 2
