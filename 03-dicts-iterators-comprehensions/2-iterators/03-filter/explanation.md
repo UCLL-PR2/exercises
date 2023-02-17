@@ -1,4 +1,4 @@
-# Assignment
+# Assignment - difficulty level: *
 
 Given a list of dictionaries representing a group of students, write a function **filter_students** that filters the students based on their age and returns a new list. The given age represents that the functions should return all students with a higher age.
 
