@@ -1,4 +1,4 @@
-# Assignment - difficulty level: *
+# Assignment
 
 Translate the function `between` into Python.
 
@@ -11,6 +11,5 @@ function between(x, lower, upper)
 
 There are two ways to solve this exercise:
 
-* You translate it word per word.
-  You will need to look up the syntax for the [and operator](https://lmgtfy.app/?q=python+and+operator).
+* You translate it literally.
 * You rely on Python's shorthand syntax.

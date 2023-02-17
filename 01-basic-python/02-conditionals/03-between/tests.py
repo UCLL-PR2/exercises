@@ -1,12 +1,22 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import reference_based_test
-from scripting.reference import active_reference_implementation_from_id, reference_file
+import pytest
+import student
+import solution
 
 
-with reference_file('solution.py'):
-    with reference_based_test('between') as testcase:
-        testcase(5, 0, 10)
-        testcase(1, 1, 2)
-        testcase(5, 1, 2)
-        testcase(2, 3, 8)
+@pytest.mark.parametrize("x, lower, upper", [
+    (x, lower, upper)
+    for x in [-5, 0, 1, 3]
+    for lower in [-6, 4, 1, 3, 8]
+    for upper in [-6, 4, 1, 3, 8]
+])
+def test_function(x, lower, upper):
+    function_name = 'between'
+    assert hasattr(student, function_name), f"Missing function {function_name}"
+
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = student_function(x=x, lower=lower, upper=upper)
+    expected = solution_function(x=x, lower=lower, upper=upper)
+
+    assert expected == actual, f"Wrong result for {x}, expected {expected}, received {actual}"
