@@ -1,9 +1,23 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import reference_based_test
-from scripting.reference import active_reference_implementation_from_id, reference_file
+import pytest
+import student
+import solution
 
 
-with reference_file('solution.py'):
-    with reference_based_test('format_time') as testcase:
-        testcase(1, 1, 1)
+@pytest.mark.parametrize("hours, minutes, seconds", [
+    (h, m, s)
+    for h in [0, 1, 4, 10, 19, 23]
+    for m in [0, 9, 15, 59]
+    for s in [0, 9, 15, 59]
+])
+def test_function(hours, minutes, seconds):
+    function_name = 'format_time'
+    if not hasattr(student, function_name):
+        pytest.skip(f"Missing function {function_name}")
+
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = student_function(hours=hours, minutes=minutes, seconds=seconds)
+    expected = solution_function(hours=hours, minutes=minutes, seconds=seconds)
+
+    assert expected == actual, f"Wrong result for {(hours, minutes, seconds)}, expected {expected}, received {actual}"
