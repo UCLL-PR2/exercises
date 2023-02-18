@@ -33,47 +33,41 @@ class Order:
         return self.__items[index]
 
 class Customer:
-    def __init__(self, name, orders):
-        self.name = name
-        self.orders = orders
+    def __init__(self, name):
+        self.__name = name
+        self.__orders = []
+
+    @property
+    def name(self):
+        return self.__name
 
     def add_order(self, order):
-        self.orders.append(order)
-
-    def remove_order(self, order):
-        self.orders.remove(order)
+        self.__orders.append(order)
 
     @property
     def total_spent(self):
-        return sum([order.total_price for order in self.orders])
+        return sum([order.total_price for order in self.__orders])
 
     @property
     def order_count(self):
-        return len(self.orders)
-
-    @property
-    def average_order_size(self):
-        return self.get_total_spent() / self.get_order_count()
+        return len(self.__orders)
 
 
 class OrderHistory:
-    def __init__(self, customers):
-        self.customers = customers
+    def __init__(self):
+        self.__customers = {}
 
     def add_customer(self, customer):
-        self.customers[customer.name] = customer
-
-    def remove_customer(self, customer):
-        del self.customers[customer.name]
+        self.__customers[customer.name] = customer
 
     @property
     def total_sales(self):
-        return sum([customer.get_total_spent() for customer in self.customers.values()])
+        return sum([customer.total_spent for customer in self.__customers.values()])
 
     @property
     def customer_names(self):
-        return list(self.customers.keys())
+        return list(self.__customers.keys())
 
     @property
     def top_spender(self):
-        return max(self.customers, key=lambda x: self.customers[x].get_total_spent())
+        return max(self.__customers.keys(), key=lambda x: self.__customers[x].total_spent)
