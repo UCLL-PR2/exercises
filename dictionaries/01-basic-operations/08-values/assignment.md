@@ -1,6 +1,6 @@
 # Assignment
 
-Write a Python function `values(dictionary)` that returns all values in a list.
+Write a Python function `values(dictionary)` that returns all values as a list.
 The order is unimportant.
 
 For example,
