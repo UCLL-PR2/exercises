@@ -1,17 +1,17 @@
 # Assignment
 
-Write a Python function `keys(dictionary)` that returns all keys in a list.
+Write a Python function `keys(dictionary)` that returns all keys as a list.
 The order is unimportant.
 
 For example,
 
 ```python
->>> size({})
+>>> keys({})
 []
 
->>> size({'a': 1})
+>>> keys({'a': 1})
 ['a']
 
->>> size({'a': 1, 'b': 2})
+>>> keys({'a': 1, 'b': 2})
 ['a', 'b']
 ```
