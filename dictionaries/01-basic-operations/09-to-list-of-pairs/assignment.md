@@ -1,6 +1,6 @@
 # Assignment
 
-Write a Python function `to_list(dictionary)` that returns all key/value pairs as a list of pairs.
+Write a Python function `to_list_of_pairs(dictionary)` that returns all key/value pairs as a list of pairs.
 The order is unimportant.
 
 For example,
