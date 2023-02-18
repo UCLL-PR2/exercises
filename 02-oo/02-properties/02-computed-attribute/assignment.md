@@ -1,72 +1,19 @@
 # Assignment
 
-Say we have written the following class.
+Let's delve a little further in what we can do with properties.
+Say we have our `Person` class, and we want a person to have an age.
 
 ```python
 class Person:
-    def __init__(self, age):
+    def __init__(age):
         self.age = age
 ```
 
-This class is used throughout our codebase, many times over.
-However, there's a problem with it: `age` can take any value you want.
-Somewhere, we made a mistake and in certain cases the `age` becomes negative.
-This causes a lot of problems.
-
-The problem with public attributes is that they're rather... dumb.
-It's just a simple memory location that can be overwritten at whim.
-We somehow want to make it smarter somehow, so that it can disallow negative values.
-
-Enter properties.
-Properties allow us to make "intelligent attributes".
-In essence, there's two things we can do with attributes: we can read their value, and we can overwrite their value.
-Properties make it possible for us to define what exactly should happen when someone tries to read or write it.
-In the case of our `age`, properties allow us to prevent anyone from writing a negative value to it.
-
-The nice thing about properties is that they obey the "Uniform Access Principle".
-This simply means that the code used to read/write attributes is exactly the same as the code used to read/write properties.
-
-```python
-# In case age is a simple attribute
-print(person.age)
-person.age = 5
-
-# In case age is a smart property
-print(person.age)
-person.age = 5
-```
-
-See! No difference at all.
-This is great news: we can promote our dumb `age` attribute to a smart `age` property without having to change any of the client code!
-This actually is a very important rule in software development: we want to be able to make local changes (upgrading `age`) without having it global ramifications.
-
-## Readonly Properties
-
-Let's start with a very basic application of properties.
-Say we want to have an attribute/property, but we don't want to allow it to be changed:
-
-```python
-print(person.age)   # Should be allowed
-person.age = 10     # Should raise an error
-```
-
-How do we go about it?
-First of all, we still need a place to store the actual age.
-For this, an attribute is inevitable.
-Luckily, as we discussed previously, we can hide this attribute.
+Now, we don't want this age to be directly modifiable, so we hide it and make a readonly property.
 
 ```python
 class Person:
-    def __init__(self, age):
-        self.__age = age
-```
-
-Okay, we store our age in the private `__age` attribute.
-Now we want the user to be able to query a `person`'s `age` using the syntax `person.age`.
-
-```python
-class Person:
-    def __init__(self, age):
+    def __init__(age):
         self.__age = age
 
     @property
@@ -74,83 +21,131 @@ class Person:
         return self.__age
 ```
 
-Here, we have defined the property named `age`.
-It looks like a regular method, except for the fact that it has `@property` added just in front of it.
-This is a *decorator*, and you can do all kinds of fancy stuff with it, but that's not important for now.
-
-So, what does this `@property` decorator do?
-It tells Python that whenever the user tries to read from `age`, that it should call that method.
-Because of this, it is also called a *getter method*.
-In our example, the `age` getter method simply returns the value hidden in the private `__age` attribute.
-
-Right now, we can write
-
-```python
->>> person = Person(18)
-
->>> print(person.age)
-18
-```
-
-The method can actually do whatever it wants.
-Say we change it to
+We need this age to be accurate: once a year it should go up by one.
+We make a method for this.
 
 ```python
 class Person:
-    def __init__(self, age):
+    def __init__(age):
         self.__age = age
 
     @property
     def age(self):
-        print("Reading age!")
         return self.__age
+
+    def increment_age(self):
+        self.__age += 1
 ```
 
-Then reading the `person`'s `age` will also cause a message to be printed:
+Of course, we need to know on what day we need to increment a person's age, meaning we need to store their birthday.
 
-```text
->>> person = Person(18)
+```python
+class Person:
+    def __init__(age, birthday):
+        self.__age = age
+        self.__birthday = birthday
 
->>> print(person.age)
-Reading age!
-18
+    @property
+    def age(self):
+        return self.__age
+
+    @property
+    def birthday(self):
+        return self.__birthday
+
+    def increment_age(self):
+        self.__age += 1
 ```
 
-So, we can now *read* the `age`.
-But can we write to it?
+This is a bit weird.
+Say we have a long list of `Person` objects, then we would need to check if it's their birthday every day:
 
-```text
->>> person = Person(18)
-
->>> person.age
-AttributeError: can't set attribute
+```python
+def process_birthdays(people):
+    today = find_out_todays_date()
+    for person in people:
+        if person.birthday == today:
+            person.increment_age()
 ```
 
-Yay.
-This is exactly what we want.
+We're not particularly fond of this solution.
+One big issue with it is that it suffers from redundancy: the same information is stored twice.
+The age can be derived from a person's birthday, meaning there's no need to store both the age and birthday.
+The birthday only should suffice.
 
-The reason we can't write is that we only defined a *getter* method.
-We didn't define a *setter* method.
-We'll show you how to do that in a later exercise.
-For now, try to contain your excitement.
+We want to get rid of the `__age` attribute.
+However, we still want to be able to use `person.age` to determine the `person`'s age.
+
+```python
+class Person:
+    def __init__(birthday):
+        self.__birthday = birthday
+
+    @property
+    def age(self):
+        ???
+
+    @property
+    def birthday(self):
+        return self.__birthday
+```
+
+`age` can be computed: we know the `person`'s birthday (it's stored in `__birthday`) and we can find out what the current date is.
+
+```python
+class Person:
+    def __init__(birthday):
+        self.__birthday = birthday
+
+    @property
+    def age(self):
+        today = find_out_todays_date()
+        difference = today - self.__birthday
+        return difference.years
+
+    @property
+    def birthday(self):
+        return self.__birthday
+```
+
+Using this code, the `age` will be computed based on the birthday, which is why it's also called a *computed attribute*.
+It looks like an attribute, but it's not really stored anywhere.
+Whenever you read it, its value is computed and returned.
+By implementing `age` this way, there is no redundancy.
+
+Redundancy is always a tricky thing.
+If we were to store both the birthday and the age, we could end up with inconsistent data:
+
+```python
+# Say we are in 2023
+person = Person(age=18, birthday=Date(day=18, month=12, year=1980))
+```
+
+Clearly, this is incorrect: the person should be 42, not 18.
+By removing redundancy, such errors cannot occur: the age will always be consistent with the birthday.
 
 ## Task
 
-Define a class `MusicalNote`.
-It must have two readonly properties: `name` and `pitch`.
+Write a class `BMICalculator` that we can use as follows:
 
 ```text
->>> note = MusicalNote('a4', 440)
+>>> calc = BMICalculator(weight_in_kg=80, height_in_m=1.80)
 
->>> note.name
-a4
+>>> calc.bmi
+24.69
 
->>> note.pitch
-440
-
->>> note.name = 'b4'
-AttributeError: can't set attribute
-
->>> note.pitch = 450
-AttributeError: can't set attribute
+>>> calc.category
+normal
 ```
+
+The bmi is computed as follows:
+
+```python
+bmi = weight_in_kg / height_in_m**2
+```
+
+The category can take one of three values:
+
+* `"underweight"` if `bmi` is less than `18.5`.
+* `"normal"` if `bmi` is between `18.5` and `25`.
+* `"overweight"` if `bmi` is greater than `25`.
