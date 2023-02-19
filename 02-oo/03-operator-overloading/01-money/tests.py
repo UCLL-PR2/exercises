@@ -53,7 +53,7 @@ def test_subtraction_different_currency(amount1, amount2, currency1, currency2):
 @pytest.mark.parametrize("amount", [0, 10, 25])
 @pytest.mark.parametrize("factor", [1, 2, 3 ])
 @pytest.mark.parametrize("currency", ["EUR", "USD"])
-def test_subtraction_same_currency(amount, factor, currency):
+def test_multiplication(amount, factor, currency):
     money = Money(amount, currency)
     money_multiplied = money * factor
     assert money_multiplied.amount == amount * factor

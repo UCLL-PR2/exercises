@@ -15,6 +15,3 @@ class Money:
 
     def __mul__(self, factor):
         return Money(self.amount * factor, self.currency)
-
-    def __div__(self, factor):
-        return Money(self.amount / factor, self.currency)
