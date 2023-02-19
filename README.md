@@ -21,4 +21,4 @@ Therefore, it is very important that you develop the habit of skimming through t
 ## First Steps
 
 * Start off with the instructions laid out in [`00-settings-things-up`](00-setting-things-up/installation.md).
-* [Planning](planning.md)
+* [Weekly planning](docs/planning.md)
