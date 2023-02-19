@@ -4,3 +4,5 @@
 
 layout: home
 ---
+
+[Weekly planning](planning.md)

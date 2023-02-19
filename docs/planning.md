@@ -1,3 +1,6 @@
+---
+layout: page
+---
 # Planning
 
 This planning will be updated as the semester progresses.
