@@ -18,4 +18,5 @@ So, please do not write your own `sum` function, use the built-in one.
 You will see that Python has *a lot* of built-in functions for you to make use of.
 Therefore, it is very important that you develop the habit of skimming through the documentation and looking up information online.
 
+Let the fun begin.
 Start off with the instructions laid out in `00-settings-things-up`.
