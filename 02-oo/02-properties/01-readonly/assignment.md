@@ -40,7 +40,6 @@ See! No difference at all.
 This is great news: we can promote our dumb `age` attribute to a smart `age` property without having to change any of the client code!
 This actually is a very important rule in software development: we want to be able to make local changes (upgrading `age`) without having it global ramifications.
 
-
 ## Readonly Properties
 
 Let's start with a very basic application of properties.
