@@ -1,5 +1,5 @@
 import pytest
-from solution import *
+from student import *
 
 
 @pytest.fixture
