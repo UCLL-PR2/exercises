@@ -100,6 +100,7 @@ Each of them have a [corresponding method](https://docs.python.org/3/reference/d
 | `/` | `__truediv__` |
 | `//` | `__floordiv__` |
 | `%` | `__mod__` |
+| `**` | `__pow__` |
 
 As you might have noticed, these methods share a pattern: they're all enclosed by two underscores (`__`).
 For this reason, they're often called [dunder methods](https://wiki.python.org/moin/DunderAlias).
