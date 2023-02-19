@@ -1,5 +1,5 @@
-def is_increasing(xs):
-    for (x, y) in zip(xs, xs[1:]):
+def is_increasing(ns):
+    for (x, y) in zip(ns, ns[1:]):
         if x > y:
             return False
     return True

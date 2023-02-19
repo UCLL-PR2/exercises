@@ -1,9 +1,9 @@
-def format_time(h, m, s):
+def format_time(hours, minutes, seconds):
     def format(x):
         return str(x).rjust(2, '0')
 
-    h = format(h)
-    m = format(m)
-    s = format(s)
+    hours = format(hours)
+    minutes = format(minutes)
+    seconds = format(seconds)
 
-    return f"{h}:{m}:{s}"
+    return f"{hours}:{minutes}:{seconds}"

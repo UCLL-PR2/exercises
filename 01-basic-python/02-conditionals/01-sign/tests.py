@@ -1,10 +1,19 @@
-from contextlib import contextmanager
-from scripting.testing import test
-from scripting.quick import reference_based_test
-from scripting.reference import active_reference_implementation_from_id, reference_file
+import pytest
+import student
+import solution
 
 
-with reference_file('solution.py'):
-    with reference_based_test('sign') as testcase:
-        for x in [ 0, 1, 2, -5, -8 ]:
-            testcase(x)
+@pytest.mark.parametrize("n", list(range(-100, 100)))
+def test_function(n):
+    function_name = 'sign'
+    if not hasattr(student, function_name):
+        pytest.skip(f"Missing function {function_name}")
+
+
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    actual = student_function(n=n)
+    expected = solution_function(n=n)
+
+    assert expected == actual, f"Wrong result for {n}, expected {expected}, received {actual}"
