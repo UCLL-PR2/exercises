@@ -3,7 +3,7 @@
 Install the following software:
 
 * Git
-* Python 3
+* Python 3.6 or better
   * Avoid using the Windows Store version
   * During the installation, don’t forget to have Python added to environment variables
   * Also make sure that pip is selected as optional feature
