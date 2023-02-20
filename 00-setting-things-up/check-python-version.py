@@ -1,17 +1,16 @@
 from sys import version_info
-from textwrap import dedent
 
 
 print("If you see this message, it means Python is installed on your system")
 
-minimum_version = (3, 6)
+minimum_version = (3, 8)
 major = version_info.major
 minor = version_info.minor
 installed_version = (major, minor)
 
 
 if installed_version >= minimum_version:
-    print(f"You have Python version %d.%d which is good enough for this course" % (major, minor))
+    print("You have Python version %d.%d which is good enough for this course" % (major, minor))
 else:
     text = [
         'Sadly, Python tells me its version is %d.%d' % (major, minor),
