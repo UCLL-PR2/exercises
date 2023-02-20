@@ -16,7 +16,6 @@ For example, you can add things together using the operator `+`:
 5 + 3             # Adding numbers
 "a" + "b"         # Adding strings
 [1, 2] + [3, 4]   # Adding lists
-{1, 2} + {3, 4}   # Adding sets
 ```
 
 However, if we use `+` on one of our objects:
