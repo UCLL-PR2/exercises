@@ -1,3 +1,0 @@
-# Vehicle Exercise - difficulty level: *
-
-Create a class **Car** with attributes *make, model, and year* and a method *description* that returns a description of the car in the format "[make] [model] ([year])". Then, create a class **ElectricCar** that inherits from Car and adds a new attribute *battery_size* and a method *range* that returns the range of the electric car based on its battery size. If the battery size is 60, the range should be 140, if it is 85, the range should be 240. For all other battery sizes, the method should return the string "Range not available for this battery size."
