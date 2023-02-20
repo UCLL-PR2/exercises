@@ -1,6 +1,9 @@
 ---
 layout: page
+show_in_header: true
 ---
+
+# Installation
 
 For this course, you will need the following software:
 
