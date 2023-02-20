@@ -1,5 +1,13 @@
 # Assignment
 
+Translate the function below that drops the element with index `n`.
+
+```javascript
+function dropNth(xs, n)
+{
+    return [...xs.slice(0, n), ...xs.slice(n+1) ];
+}
+```
 Python allows you to use the `+` operator to concatenate lists:
 
 ```python
