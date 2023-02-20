@@ -11,7 +11,7 @@ class Position:
     def y(self):
         return self.__y
 
-    def moved_by(self, dx, dy):
+    def move(self, dx, dy):
         """
         Returns a new Position object that has been moved horizontally by dx
         and vertically by dy.
