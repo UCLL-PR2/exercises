@@ -63,7 +63,7 @@ if python_version_according_to_pip != installed_python_version:
     print("There's a mismatch of versions! %s vs %s" % (installed_python_version, python_version_according_to_pip))
     print("Ask a lecturer for help")
     print("FAILURE")
-    sys.exit(-4)
+    exit(-4)
 
 
 print("Your Python installation has been checked and approved!")
