@@ -13,7 +13,7 @@ layout: page
 In the terminal, write
 
 ```bash
-$ pip install pytest pytest-timeout
+$ pip install pytest pytest-timeout mypy
 ```
 
 ## Checking
