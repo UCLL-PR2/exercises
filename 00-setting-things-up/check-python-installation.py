@@ -60,7 +60,7 @@ python_version_according_to_pip = (major_python_version_according_to_pip, minor_
 print("pip is associated with Python version %d.%d" % (major_python_version_according_to_pip, minor_python_version_according_to_pip))
 
 if python_version_according_to_pip != installed_python_version:
-    print("There's a mismatch of versions! %s vs %s" % (str(installed_python_version, python_version_according_to_pip)))
+    print("There's a mismatch of versions! %s vs %s" % (installed_python_version, python_version_according_to_pip))
     print("Ask a lecturer for help")
     print("FAILURE")
     sys.exit(-4)
