@@ -5,4 +5,5 @@
 layout: home
 ---
 
-[Weekly planning](planning.md)
+* [Installation](installation.md)
+* [Weekly planning](planning.md)
