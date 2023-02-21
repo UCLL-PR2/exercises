@@ -55,17 +55,16 @@ class Pawn:
     def is_valid_position(position):
         return 0 <= position.x < 8 and 0 <= position.y < 8
 
-    def move(self, new_position):
-        if not self.is_legal_move(new_position):
-            raise ValueError("illegal move")
-        self.__position = new_position
-
     def is_legal_move(self, position):
         if not self.is_valid_position(position):
             return False
         direction = 1 if self.color == 'white' else -1
         return self.position.move(0, direction) == position
 
+    def move(self, new_position):
+        if not self.is_legal_move(new_position):
+            raise ValueError("illegal move")
+        self.__position = new_position
 
 class King:
     def __init__(self, position, color):
@@ -92,11 +91,6 @@ class King:
     def is_valid_position(position):
         return 0 <= position.x < 8 and 0 <= position.y < 8
 
-    def move(self, new_position):
-        if not self.is_legal_move(new_position):
-            raise ValueError("illegal move")
-        self.__position = new_position
-
     def is_legal_move(self, position):
         if position == self.position:
             return False
@@ -107,3 +101,8 @@ class King:
         if abs(position.y - self.position.y) > 1:
             return False
         return True
+
+    def move(self, new_position):
+        if not self.is_legal_move(new_position):
+            raise ValueError("illegal move")
+        self.__position = new_position
