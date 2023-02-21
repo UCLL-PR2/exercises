@@ -1,5 +1,5 @@
 import pytest
-from solution import Money
+from student import Money
 
 
 @pytest.mark.parametrize("amount1", [0, 10, 25])
