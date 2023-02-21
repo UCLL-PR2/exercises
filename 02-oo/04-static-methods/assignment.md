@@ -23,11 +23,11 @@ However, it is indeed possible to attach methods to the class itself instead of 
 ```python
 class Plumbus:
     def schleem(self):
-        ...
+        # ...
 
     @staticmethod
     def fleeb():
-        ...
+        # ...
 ```
 
 Here, `fleeb` is a _static method_ (do **not** call it a class method, that's something different).
