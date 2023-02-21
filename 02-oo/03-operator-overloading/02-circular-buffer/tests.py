@@ -1,5 +1,5 @@
 import pytest
-from solution import CircularBuffer
+from student import CircularBuffer
 
 
 def test_len():
