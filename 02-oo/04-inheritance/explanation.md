@@ -49,53 +49,8 @@ def greatest_sum(ns):
 Duplication can also occur on the level of classes.
 To demonstrate this, let's implement a (very small) part of a chess game.
 
-You are given a class `Position` (see the file `position.py`).
-Rely on it to represent, well, positions.
+You are given a file `startercode.py`.
 
-### Pawn
-
-Create a `Pawn` class that has the following members:
-
-* A `Pawn` has a readonly position and readonly color.
-  Both these are set using the constructor.
-* The `position` is valid if its `x` and `y` coordinates range from `0` to and including `7`.
-* The `color` must be either `black` or `white`.
-* If we try to create an `Pawn` with invalid `position` or `color`, a `ValueError` should be thrown.
-
-Also add a `move(self, new_position)` method moves the piece to the given `new_position`.
-However, it must only do so if the move is legal, otherwise it must throw a `ValueError`.
-
-The rules are as follows:
-
-* If the pawn is white, it can only move 'upwards' from `(x, y)` to `(x, y+1)`.
-* If the pawn is black, it can only move 'downwards' from `(x, y)` to `(x, y-1)`.
-* The destination should still be valid.
-  For example, if a white pawn has position `(2, 7)`, there are no legal moves for it since `(2, 8)` falls outside the chess board.
-  Similarly, a black pawn with position `(3, 0)` is also stuck.
-
-Run the tests to make sure your implementation of `Pawn` is correct.
-Some tests will be skipped since you haven't implemented everything yet.
-
-### King
-
-Create a `King` class that has the following members:
-
-* A `King` has a readonly position and readonly color.
-  Both these are set using the constructor.
-* The `position` is valid if its `x` and `y` coordinates range from `0` to and including `7`.
-* The `color` must be either `black` or `white`.
-* If we try to create an `King` with invalid `position` or `color`, a `ValueError` should be thrown.
-
-Also add a `move(self, new_position)` method moves the piece to the given `new_position`.
-However, it must only do so if the move is legal, otherwise it must throw a `ValueError`.
-
-The rules are as follows:
-
-* A king can move one step in all 8 directions.
-* Of course, the king must end up on the chess board, so if the king is located in a corner, it has only 3 valid moves.
-
-Run the tests again to check your implementation.
-All tests should pass.
 
 ## Factoring Out the Common Code
 
@@ -121,8 +76,8 @@ class King(ChessPiece):
 ```
 
 Here, `ChessPiece` is called the _base class_ for `Pawn` and `King`.
-When a class inherits from another class, it "copies" all of its base class members.
-It can add extra members, or even _override_ its base class members by redefining them.
+When one class inherits from another class, it essentially "copies" all of its base class's members.
+It can then add extra members of its own, or even redefine some members in case it's not happy with its base class's implementation of that member.
 
 Run the tests again.
 Everything should still work exactly the same.
