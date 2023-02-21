@@ -194,3 +194,15 @@ def test_king_illegal_move(position, color, move):
     with pytest.raises(ValueError):
         pawn.move(move)
     assert pawn.position == position
+
+
+@if_class_exists('Pawn')
+@if_class_exists('ChessPiece')
+def test_pawn_is_child_class_of_chesspiece():
+    assert ChessPiece in Pawn.__mro__
+
+
+@if_class_exists('King')
+@if_class_exists('ChessPiece')
+def test_king_is_child_class_of_chesspiece():
+    assert ChessPiece in King.__mro__

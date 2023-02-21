@@ -63,19 +63,21 @@ class ChessPiece:
 
 
 class Pawn(ChessPiece):
-    def is_legal_move(self, position):
-        if not self.is_valid_position(position):
+    def is_legal_move(self, new_position):
+        if not self.is_valid_position(new_position):
             return False
         direction = 1 if self.color == 'white' else -1
-        return self.position.move(0, direction) == position
+        return self.position.move(0, direction) == new_position
 
 
 class King(ChessPiece):
-    def is_legal_move(self, position):
-        if position == self.position:
+    def is_legal_move(self, new_position):
+        if new_position == self.position:
             return False
-        if abs(position.x - self.position.x) > 1:
+        if not King.is_valid_position(new_position):
             return False
-        if abs(position.y - self.position.y) > 1:
+        if abs(new_position.x - self.position.x) > 1:
+            return False
+        if abs(new_position.y - self.position.y) > 1:
             return False
         return True
