@@ -1,13 +1,8 @@
 # Assignment
 
-Translate the function below that drops the element with index `n`.
+Write a function `drop_nth(xs, n)` that removes the `n`th element from the list.
+Do not modify the given list but instead construct a new list that equals `xs` with the `n`th element missing.
 
-```javascript
-function dropNth(xs, n)
-{
-    return [...xs.slice(0, n), ...xs.slice(n+1) ];
-}
-```
 Python allows you to use the `+` operator to concatenate lists:
 
 ```python
