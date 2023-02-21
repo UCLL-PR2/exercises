@@ -8,7 +8,7 @@ Say you ask the user for a time of day. You expect it to be in the format
 
 ```python
 if re.fullmatch(r'\d{2}:\d{2}:\d{2}', string):
-    ...
+    # ...
 ```
 
 where `\d` is short for `[0-9]`. Once you've ensured that `string` has
@@ -24,7 +24,7 @@ Simple enough. Now, imagine you also want to introduce milliseconds: `hh:mm:ss.f
 
 ```python
 if re.fullmatch(r'\d{2}:\d{2}:\d{2}(\.\d{3})?', string):
-    ...
+    # ...
 ```
 
 Grabbing the components becomes a bit more complex though. You could do it as follows:
@@ -48,7 +48,7 @@ parentheses:
 
 ```python
 if re.fullmatch(r'(\d{2}):(\d{2}):(\d{2})(\.\d{3})?', string):
-    ...
+    # ...
 ```
 
 This tells the regex engine to store the parts of `string` that match those
