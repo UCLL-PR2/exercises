@@ -1,5 +1,5 @@
 import pytest
-from solution import *
+from student import *
 
 
 @pytest.mark.parametrize('init_amount, init_unit, conversion_amount, conversion_unit', [
