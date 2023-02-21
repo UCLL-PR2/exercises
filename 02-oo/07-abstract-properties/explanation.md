@@ -1,11 +1,17 @@
-# Shape Exercise
+# Abstract Properties
 
-## Concepts Used
+Methods can be declared abstract, and so can properties.
 
-* Classes
-* Inheritance
-* Abstract methods
-* Properties
+```python
+from abc import ABC, abstractmethod
+
+
+class ParentClass(ABC):
+    @property
+    @abstractmethod
+    def foo(self):
+        ...
+```
 
 ## Task
 
