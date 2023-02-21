@@ -23,28 +23,27 @@ class ChessPiece:
     def is_valid_position(position):
         return 0 <= position.x < 8 and 0 <= position.y < 8
 
-    @staticmethod
-    def keep_valid_positions(positions):
-        return {pos for pos in positions if ChessPiece.is_valid_position(pos)}
-
     def move(self, new_position):
-        if new_position not in self.find_legal_moves():
-            raise ValueError("Invalid move")
+        if not self.is_legal_move(new_position):
+            raise ValueError("illegal move")
         self.__position = new_position
 
 
 
 class Pawn(ChessPiece):
-    def find_legal_moves(self):
+    def is_legal_move(self, position):
+        if not self.is_valid_position(position):
+            return False
         direction = 1 if self.color == 'white' else -1
-        return ChessPiece.keep_valid_positions({self.position.move(0, direction)})
+        return self.position.move(0, direction) == position
 
 
 class King(ChessPiece):
-    def find_legal_moves(self):
-        return ChessPiece.keep_valid_positions(
-            self.position.move(dx, dy)
-            for dx in [-1, 0, 1]
-            for dy in [-1, 0, 1]
-            if dx != 0 or dy != 0
-        )
+    def is_legal_move(self, position):
+        if position == self.position:
+            return False
+        if abs(position.x - self.position.x) > 1:
+            return False
+        if abs(position.y - self.position.y) > 1:
+            return False
+        return True

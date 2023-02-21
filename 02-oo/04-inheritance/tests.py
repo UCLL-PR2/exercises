@@ -38,46 +38,76 @@ def test_pawn_creation_invalid_color():
 
 
 @if_class_exists('Pawn')
-@pytest.mark.parametrize('position, color, expected', [
+@pytest.mark.parametrize('position, color, move', [
     *(
         (
             Position(x, y),
             'white',
-            {Position(x, y + 1)}
+            Position(x, y + 1)
         )
         for x in range(0, 8)
         for y in range(0, 7)
     ),
     *(
         (
-            Position(x, 7),
-            'white',
-            set()
-        )
-        for x in range(0, 8)
-    ),
-    *(
-        (
             Position(x, y),
             'black',
-            {Position(x, y - 1)}
+            Position(x, y - 1)
         )
         for x in range(0, 8)
         for y in range(1, 8)
     ),
+])
+def test_pawn_legal_move(position, color, move):
+    pawn = Pawn(position=position, color=color)
+    pawn.move(move)
+    assert pawn.position == move
+
+
+@if_class_exists('Pawn')
+@pytest.mark.parametrize('position, color, move', [
     *(
         (
-            Position(x, 0),
-            'black',
-            set()
+            Position(x1, y1),
+            'white',
+            Position(x2, y2)
         )
-        for x in range(0, 8)
+        for x1 in range(0, 8)
+        for x2 in range(0, 9)
+        for y1 in range(0, 7)
+        for y2 in range(0, 9)
+        if x1 != x2 or y1 + 1 != y2 or y2 > 7
     ),
+
 ])
-def test_pawn_legal_moves(position, color, expected):
+def test_pawn_white_illegal_move(position, color, move):
     pawn = Pawn(position=position, color=color)
-    actual = pawn.find_legal_moves()
-    assert actual == expected
+    with pytest.raises(ValueError):
+        pawn.move(move)
+    assert pawn.position == position
+
+
+@if_class_exists('Pawn')
+@pytest.mark.parametrize('position, color, move', [
+    *(
+        (
+            Position(x1, y1),
+            'black',
+            Position(x2, y2)
+        )
+        for x1 in range(0, 8)
+        for x2 in range(0, 9)
+        for y1 in range(0, 7)
+        for y2 in range(-1, 8)
+        if x1 != x2 or y1 - 1 != y2 or y2 < 0
+    ),
+
+])
+def test_pawn_black_illegal_move(position, color, move):
+    pawn = Pawn(position=position, color=color)
+    with pytest.raises(ValueError):
+        pawn.move(move)
+    assert pawn.position == position
 
 
 @if_class_exists('King')
@@ -111,49 +141,46 @@ def test_king_creation_invalid_color():
 
 
 @if_class_exists('King')
-@pytest.mark.parametrize('position, expected', [
-    (
-        Position(0, 0),
-        {
-            Position(1, 0),
-            Position(1, 1),
-            Position(0, 1),
-        }
-    ),
-    (
-        Position(7, 0),
-        {
-            Position(6, 0),
-            Position(6, 1),
-            Position(7, 1),
-        }
-    ),
-    (
-        Position(3, 0),
-        {
-            Position(2, 0),
-            Position(2, 1),
-            Position(3, 1),
-            Position(4, 1),
-            Position(4, 0),
-        }
-    ),
-    (
-        Position(5, 5),
-        {
-            Position(4, 4),
-            Position(4, 5),
-            Position(4, 6),
-            Position(5, 4),
-            Position(5, 6),
-            Position(6, 4),
-            Position(6, 5),
-            Position(6, 6),
-        }
+@pytest.mark.parametrize('position, color, move', [
+    *(
+        (
+            Position(x, y),
+            color,
+            Position(x + dx, y + dy)
+        )
+        for x in range(0, 8)
+        for y in range(0, 8)
+        for dx in [-1, 0, 1]
+        for dy in [-1, 0, 1]
+        if dx != 0 or dy != 0
+        if 0 <= x + dx < 8 and 0 <= y + dy < 8
+        for color in ['black', 'white']
     ),
 ])
-@pytest.mark.parametrize('color', ['black', 'white'])
-def test_king_legal_moves(position, color, expected):
+def test_king_legal_move(position, color, move):
     pawn = King(position=position, color=color)
-    actual = pawn.find_legal_moves()
-    assert actual == expected
+    pawn.move(move)
+    assert pawn.position == move
+
+
+@if_class_exists('King')
+@pytest.mark.parametrize('position, color, move', [
+    *(
+        (
+            Position(x1, y1),
+            color,
+            Position(x2, y2)
+        )
+        for x1 in range(0, 8)
+        for y1 in range(0, 8)
+        for x2 in range(0, 8)
+        for y2 in range(0, 8)
+        if abs(x1 - x2) > 1 or abs(y1 - y2) > 1 or (x1 == x2 and y1 == y2)
+        for color in ['black', 'white']
+    ),
+])
+def test_king_illegal_move(position, color, move):
+    pawn = King(position=position, color=color)
+    with pytest.raises(ValueError):
+        pawn.move(move)
+    assert pawn.position == position
