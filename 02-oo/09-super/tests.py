@@ -1,4 +1,5 @@
 import pytest
+from inspect import isabstract
 from pytest import approx
 from math import pi
 from solution import *
@@ -9,7 +10,7 @@ def if_class_exists(class_name):
 
 
 @if_class_exists('Rectangle')
-@pytest.mark.parametrize('width,length,expected_perimeter', [
+@pytest.mark.parametrize('width, length, expected_perimeter', [
     (1, 1, 4),
     (1, 2, 6),
     (2, 4, 12),
@@ -20,7 +21,7 @@ def test_rectangle_perimeter(width, length, expected_perimeter):
 
 
 @if_class_exists('Rectangle')
-@pytest.mark.parametrize('width,length,expected_area', [
+@pytest.mark.parametrize('width, length, expected_area', [
     (1, 1, 1),
     (1, 2, 2),
     (2, 4, 8),
@@ -39,6 +40,7 @@ def test_rectangle_area(width, length, expected_area):
 ])
 def test_rectangle_properties_are_readonly(property_name):
     rectangle = Rectangle(width=1, length=2)
+    assert hasattr(rectangle, property_name)
     with pytest.raises(AttributeError):
         setattr(rectangle, property_name, 2)
 
@@ -49,7 +51,7 @@ def test_rectangle_is_shape():
 
 
 @if_class_exists('Square')
-@pytest.mark.parametrize('side,expected_perimeter', [
+@pytest.mark.parametrize('side, expected_perimeter', [
     (1, 4),
     (2, 8),
     (3, 12),
@@ -60,7 +62,7 @@ def test_square_perimeter(side, expected_perimeter):
 
 
 @if_class_exists('Square')
-@pytest.mark.parametrize('side,expected_area', [
+@pytest.mark.parametrize('side, expected_area', [
     (1, 1),
     (2, 4),
     (3, 9),
@@ -74,19 +76,20 @@ def test_square_area(side, expected_area):
 @pytest.mark.parametrize('property_name', [
     'width',
     'length',
+    'side',
     'perimeter',
     'area',
 ])
 def test_square_properties_are_readonly(property_name):
-    rectangle = Square(side=1)
+    square = Square(side=1)
+    assert hasattr(square, property_name)
     with pytest.raises(AttributeError):
-        setattr(rectangle, property_name, 2)
+        setattr(square, property_name, 2)
 
 
 @if_class_exists('Square')
 def test_square_is_rectangle():
     assert Rectangle in Square.__mro__
-
 
 
 @if_class_exists('Ellipse')
@@ -101,14 +104,22 @@ def test_ellipse_area(r1, r2, expected_area):
 
 
 @if_class_exists('Ellipse')
+def test_ellipse_has_no_perimeter():
+    ellipse = Ellipse(major_radius=2, minor_radius=1)
+    with pytest.raises(NotImplementedError):
+        ellipse.perimeter
+
+
+
+@if_class_exists('Ellipse')
 @pytest.mark.parametrize('property_name', [
     'minor_radius',
     'major_radius',
-    'perimeter',
     'area',
 ])
 def test_ellipse_properties_are_readonly(property_name):
     ellipse = Ellipse(major_radius=2, minor_radius=1)
+    assert hasattr(ellipse, property_name)
     with pytest.raises(AttributeError):
         setattr(ellipse, property_name, 2)
 
@@ -117,43 +128,64 @@ def test_ellipse_properties_are_readonly(property_name):
 def test_ellipse_is_shape():
     assert Shape in Ellipse.__mro__
 
-# @pytest.mark.parametrize('side,expected_perimeter,expected_area', [
-#     (1, 4, 1),
-#     (2, 8, 4),
-#     (3, 12, 9),
-# ])
-# def test_square(side, expected_perimeter, expected_area):
-#     square = Square(side=side)
-#     assert expected_perimeter == square.perimeter
-#     assert expected_area == square.area
+
+@if_class_exists('Circle')
+@pytest.mark.parametrize('radius, expected_perimeter', [
+    (1, 2 * pi * 1),
+    (2, 2 * pi * 2),
+    (3, 2 * pi * 3),
+])
+def test_circle_perimeter(radius, expected_perimeter):
+    circle = Circle(radius=radius)
+    assert approx(expected_perimeter) == circle.perimeter
 
 
-# @pytest.mark.parametrize('radius,expected_perimeter,expected_area', [
-#     (1, 2 * pi, pi),
-#     (2, 4 * pi, 4 * pi),
-#     (3, 6 * pi, 9 * pi),
-# ])
-# def test_circle(radius, expected_perimeter, expected_area):
-#     circle = Circle(radius=radius)
-#     assert expected_perimeter == approx(circle.perimeter)
-#     assert expected_area == approx(circle.area)
+@if_class_exists('Circle')
+@pytest.mark.parametrize('radius, expected_area', [
+    (1, pi * 1**2),
+    (2, pi * 2**2),
+    (3, pi * 3**2),
+])
+def test_circle_area(radius, expected_area):
+    circle = Circle(radius=radius)
+    assert approx(expected_area) == circle.area
 
 
-# def test_shape_cannot_be_instantiated():
-#     with pytest.raises(TypeError):
-#         Shape()
+@if_class_exists('Circle')
+@pytest.mark.parametrize('property_name', [
+    'minor_radius',
+    'major_radius',
+    'radius',
+    'perimeter',
+    'area',
+])
+def test_circle_properties_are_readonly(property_name):
+    circle = Circle(radius=1)
+    assert hasattr(circle, property_name)
+    with pytest.raises(AttributeError):
+        setattr(circle, property_name, 2)
 
 
-# def test_rectangle_is_shape():
-#     rectangle = Rectangle(2, 5)
-#     assert isinstance(rectangle, Shape)
+@if_class_exists('Circle')
+def test_circle_is_ellipse():
+    assert Ellipse in Circle.__mro__
 
 
-# def test_square_is_rectangle():
-#     square = Square(2)
-#     assert isinstance(square, Rectangle)
+@if_class_exists('Rectangle')
+def test_rectangle_is_not_abstract():
+    assert not isabstract(Rectangle)
 
 
-# def test_circle_is_shape():
-#     circle = Circle(2)
-#     assert isinstance(circle, Shape)
+@if_class_exists('Square')
+def test_square_is_not_abstract():
+    assert not isabstract(Square)
+
+
+@if_class_exists('Ellipse')
+def test_ellipse_is_not_abstract():
+    assert not isabstract(Ellipse)
+
+
+@if_class_exists('Circle')
+def test_circle_is_not_abstract():
+    assert not isabstract(Circle)

@@ -40,6 +40,10 @@ class Square(Rectangle):
     def __init__(self, side):
         super().__init__(side, side)
 
+    @property
+    def side(self):
+        return self.length
+
 
 class Ellipse(Shape):
     def __init__(self, major_radius, minor_radius):
@@ -63,7 +67,7 @@ class Ellipse(Shape):
         raise NotImplementedError()
 
 
-class Circle(Shape):
+class Circle(Ellipse):
     def __init__(self, radius):
         super().__init__(radius, radius)
 
@@ -74,3 +78,7 @@ class Circle(Shape):
     @property
     def perimeter(self):
         return 2 * pi * self.radius
+
+    @property
+    def radius(self):
+        return self.major_radius
