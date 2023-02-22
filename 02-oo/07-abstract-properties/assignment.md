@@ -38,3 +38,5 @@ In case you forgot the formulae for area and perimeter:
 | Rectangle | 2 &times; (`width` + `height`) | `width` &times; `height` |
 | Square | 4 &times; `side` | `side`<sup>2</sup> |
 | Circle | 2 &times; &pi; &times; `radius` | &pi; &times; `radius`<sup>2</sup> |
+
+
