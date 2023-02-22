@@ -1,5 +1,5 @@
 import pytest
-from solution import *
+from student import *
 
 
 def if_class_exists(class_name):
