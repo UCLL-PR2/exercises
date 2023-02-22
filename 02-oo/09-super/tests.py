@@ -88,6 +88,35 @@ def test_square_is_rectangle():
     assert Rectangle in Square.__mro__
 
 
+
+@if_class_exists('Ellipse')
+@pytest.mark.parametrize('r1, r2, expected_area', [
+    (2, 1, pi * 2 * 1),
+    (3, 2, pi * 3 * 2),
+    (4, 1, pi * 4 * 1),
+])
+def test_ellipse_area(r1, r2, expected_area):
+    ellipse = Ellipse(major_radius=r1, minor_radius=r2)
+    assert expected_area == ellipse.area
+
+
+@if_class_exists('Ellipse')
+@pytest.mark.parametrize('property_name', [
+    'minor_radius',
+    'major_radius',
+    'perimeter',
+    'area',
+])
+def test_ellipse_properties_are_readonly(property_name):
+    ellipse = Ellipse(width=1, length=2)
+    with pytest.raises(AttributeError):
+        setattr(ellipse, property_name, 2)
+
+
+@if_class_exists('Ellipse')
+def test_ellipse_is_shape():
+    assert Shape in Ellipse.__mro__
+
 # @pytest.mark.parametrize('side,expected_perimeter,expected_area', [
 #     (1, 4, 1),
 #     (2, 8, 4),
