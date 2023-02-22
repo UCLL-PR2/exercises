@@ -7,3 +7,5 @@ layout: home
 
 * [Installation](installation/)
 * [Weekly planning](planning.md)
+* [FAQ](faq.md)
+*
