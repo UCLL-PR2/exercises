@@ -1,6 +1,6 @@
 import inspect
 import pytest
-from solution import *
+from student import *
 
 
 def is_class_abstract(c):
