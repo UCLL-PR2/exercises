@@ -105,3 +105,27 @@ So, what happens is simple:
 * `AgeRestrictedItem.__init__` first calls `super().__init__`, which refers to `Item.__init__`.
 * `Item.__init__` initializes the `name` and `price` of the object.
 * After `Item.__init__` has finished, execution returns to `AgeRestrictedItem.__init__` which initializes the third attribute, `minimum_age`.
+
+## Task
+
+Copy the starter code to `student.py`.
+As you can see, it defines an abstract class `Shape` with abstract properties `perimeter` and `circumference`.
+We ask of you to write four classes.
+
+### `Rectangle`
+
+`Rectangle` is a child class of `Shape`.
+It should have two readonly properties `length` and `width`.
+
+
+https://www.youtube.com/watch?v=5nW3nJhBHL0
+
+
+In case you forgot the formulae for area and perimeter:
+
+| Shape | Perimeter | Area |
+|-:|:-:|:-:|
+| Rectangle | 2 &times; (`width` + `height`) | `width` &times; `height` |
+| Square | 4 &times; `side` | `side`<sup>2</sup> |
+| Ellipse | ??? | &pi; &times; `minor_radius * major_radius` |
+| Circle | 2 &times; &pi; &times; `radius` | &pi; &times; `radius`<sup>2</sup> |
