@@ -181,7 +181,164 @@ Thanks to `NotImplemented` however, this is not necessary: `1.__eq__(Fraction(1,
 
 **Should I check parameter types using `isinstance`?**
 
-No.
+Short answer: no.
+
+Now for the long answer...
+Say we want to write our own `sum` function.
+(Yes, we know it already exists, but it makes for a good example.)
+A possible definition would be
+
+```python
+def sum(lst):
+    result = lst[0]
+    for elt in lst:
+        result += elt
+    return elt
+```
+
+Now, of course, it makes no sense to call `sum` on a string, so we can try to impose limitations on `lst`'s type.
+We insist `lst` must a a `list`:
+
+```python
+def sum(lst):
+    if not isinstance(lst, list):
+        raise TypeError('lst must be a list')
+    result = 0
+    for elt in lst:
+        result += elt
+    return elt
+```
+
+Okay, this prevents us from passing `sum` strings, `Person`s or other weird things as argument.
+However, we can still pass a list of, say, `Person`s...
+Those are not particularly summable.
+Maybe we should check the elements' type too.
+
+```python
+def sum(lst):
+    if not isinstance(lst, list):
+        raise TypeError('lst must be a list of ints')
+    if not all(isinstance(elt, int) for elt in lst):
+        raise TypeError('lst must be a list of ints')
+    result = 0
+    for elt in lst:
+        result += elt
+    return elt
+```
+
+There.
+Now `sum` should be fool proof.
+Only `list`s of `int`s.
+
+But what if we have a _tuple_ of `int`s?
+Should we really rewrite a separate `sum` function to deal with tuples?
+It would be exactly the same code!
+
+Okay, let's add some flexibility to our existing `sum`:
+
+```python
+def sum(lst):
+    if not isinstance(lst, list) and not isinstance(lst, tuple):
+        raise TypeError('lst must be a list or tuple of ints')
+    if not all(isinstance(elt, int) for elt in lst):
+        raise TypeError('lst must be a list or tuple of ints')
+    result = 0
+    for elt in lst:
+        result += elt
+    return elt
+```
+
+So, it can be a list or a tuple of `int`s.
+But what about `set`s?
+Okay, here we go again...
+
+```python
+def sum(lst):
+    if not isinstance(lst, list) and not isinstance(lst, tuple) and not isinstance(lst, set):
+        raise TypeError('lst must be a list or tuple or set of ints')
+    if not all(isinstance(elt, int) for elt in lst):
+        raise TypeError('lst must be a list or tuple or set of ints')
+    result = 0
+    for elt in lst:
+        result += elt
+    return elt
+```
+
+Surely we're done now.
+Well, not really.
+What about a list of `float`s?
+
+```python
+def sum(lst):
+    if not isinstance(lst, list) and not isinstance(lst, tuple) and not isinstance(lst, set):
+        raise TypeError('lst must be a list or tuple or set of ints or floats')
+    if not all(isinstance(elt, int) or isinstance(elt, float) for elt in lst):
+        raise TypeError('lst must be a list or tuple or set of ints or floats')
+    result = 0
+    for elt in lst:
+        result += elt
+    return elt
+```
+
+But then there's also `Fraction`s that are addable.
+And `complex`s.
+And vectors.
+And matrices.
+And quaternions!
+
+This is becoming ridiculous.
+We need something... saner.
+
+Right now we are checking that our arguments have specific *types*, but this is actually the wrong approach.
+We want to focus on the _operations_ available on the arguments instead of their types.
+
+For example, we need to be able to _iterate_ over `lst` using a `for` loop.
+We don't care if it's a list, or a set, or a tuple, or anything else: we just want it to be iterable.
+Something can be looped over if it has a `__iter__` method, so that's what we need to look for.
+
+```python
+def sum(lst):
+    if not hasattr(lst, '__iter__'):
+        raise TypeError()
+    if not all(isinstance(elt, int) or isinstance(elt, float) for elt in lst):
+        raise TypeError()
+    result = 0
+    for elt in lst:
+        result += elt
+    return elt
+```
+
+The elements of `lst` should be addable, so they need a `__add__` method.
+
+```python
+def sum(lst):
+    if not hasattr(lst, '__iter__'):
+        raise TypeError()
+    if not all(hasattr(elt, '__add__') for elt in lst):
+        raise TypeError()
+    result = 0
+    for elt in lst:
+        result += elt
+    return elt
+```
+
+But what if `lst` contains a mix of matrices and `int`s?
+Both have an `__add__` method, but it will not be happy with its argument types: matrices only want to be added to matrices, not with `int`s.
+
+As you can see, it becomes quite complex.
+We need many checks, which makes the code both unwieldy and inefficient.
+Added to this, if we didn't check, we'd still be receiving an error message down the road.
+For example, using a `for` loop on `lst` will call `__iter__`, so the check does happen, just a little bit later.
+It's not perfect (e.g., it's not [fail-fast](https://en.wikipedia.org/wiki/Fail-fast)), but it's something.
+
+There are actually programming language that support [static type checking](https://en.wikipedia.org/wiki/Type_system#Type_checking).
+These languages do check all types, and they do so at zero efficiency cost.
+However, Python is a dynamically typed language.
+It's less robust, but more flexible.
+It's a choice.
+
+There is actually a [way](https://peps.python.org/pep-0484/) to add static type checking to Python.
+It's not perfect and sometimes clumsy, but it does help.
 
 **How should I build strings?**
 
