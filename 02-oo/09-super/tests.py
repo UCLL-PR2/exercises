@@ -108,7 +108,7 @@ def test_ellipse_area(r1, r2, expected_area):
     'area',
 ])
 def test_ellipse_properties_are_readonly(property_name):
-    ellipse = Ellipse(width=1, length=2)
+    ellipse = Ellipse(major_radius=2, minor_radius=1)
     with pytest.raises(AttributeError):
         setattr(ellipse, property_name, 2)
 
