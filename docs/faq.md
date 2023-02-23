@@ -380,3 +380,65 @@ class Book:
         # {self.title!r} is shorthand for {repr(self.title)}
         return f"Book(title={self.title!r}, author={self.author!r})"
 ```
+
+# Git
+
+## Why do you inflict Git on us? What did we do to deserve this?
+
+You deserve this because you chose to study in IT...
+
+Admittedly, Git can be difficult to work with at first, but we assure you, once you understand how it works, it holds few surprises and using it will become second nature.
+
+Git is by far [the most used VCS](https://www.openhub.net/repositories/compare) (Version Control System).
+Git was developed by Linus Torvalds. He wanted a decent VCS for the development of Linux but couldn't find one, so he decided to [write his own](https://en.wikipedia.org/wiki/Git#History).
+Since then, Git has made its way in the industry: Google, Microsoft, Amazon, Twitter, Netflix, ... all use it.
+
+## How do I get better at Git?
+
+Chapter 2 of the [freely available book Pro Git](https://git-scm.com/book/en/v2) will help out a lot.
+Chapter 3 is also very useful.
+
+## I have two machines. How do I set them up so that both have access to my repository?
+
+Let's call your two machines A and B and assume you performed the installation instructions on A.
+Now you want your work to also be accessible on B.
+
+First, you need to have the GitHub URL of your repository.
+
+* You can go on Toledo and follow the GitHub Classroom link.
+* You can use `git remote -v` on machine A to see which repository URL is associated with `origin`.
+
+On B, create a new directory and clone your repository there.
+
+```bash
+# Replace URL by your GitHub URL
+$ git clone URL
+```
+
+In order to be able to receive updates on machine B, you might want to also add a link to the lecturer's repo:
+
+```bash
+$ git remote add upstream https://github.com/UCLL-PR2/exercises.git
+```
+
+Say you work on machine A.
+You need to store your changes in the repository.
+This is done as explained on the [workflow](workflow.md) page:
+
+```bash
+# Store changes in local repository on A
+$ git add FILES
+$ git commit -m "MESSAGE"
+
+# Upload changes to GitHub
+$ git push
+```
+
+You can then download your changes on machine B:
+
+```bash
+# Downloads changes from GitHub
+$ git pull
+```
+
+So, in short, you push your changes on one machine and pull them onto the other machine.
