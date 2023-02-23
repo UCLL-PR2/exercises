@@ -3,7 +3,6 @@ layout: page
 title: FAQ
 show_in_header: yes
 ---
-# Table of Contents
 
 * Table of Contents
 {:toc}
@@ -346,8 +345,38 @@ It's not perfect and sometimes clumsy, but it does help.
 
 ## How should I build strings?
 
-Coming soon.
+There are multiple ways to construct a string.
+
+* Using addition: `"Greetings, " + name`. Avoid it: it is the most unreadable and inefficient approach.
+* [Using the `%` operator](https://docs.python.org/3/library/stdtypes.html#str.format): `"Greetings, %s" % name`. Quirky and limited. Best to avoid.
+* [Using `str.format`](https://docs.python.org/3/library/stdtypes.html#str.format): `"Greetings, {}".format(name)`.
+* [String interpolation](https://docs.python.org/3/reference/lexical_analysis.html#f-strings): f"Greetings {name}". This is the preferred solution. See also [PEP 498](https://peps.python.org/pep-0498/).
 
 ## What's the difference between `__str__` and `__repr__`?
 
-Coming soon.
+Both are methods that are meant to convert an object into a string.
+You should never call these methods directly, but instead use `str` and `repr`:
+
+```python
+print(str(some_object))    # Internally class some_object.__str__
+print(repr(some_object))   # Internally class some_object.__repr__
+```
+
+* `__str__` should return a human-friendly, readable representation of the object.
+* `__repr__` should return a string that is actually Python code which allows you to recreate the object.
+
+For example,
+
+```python
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    def __str__(self):
+        return f'{self.title} written by {self.author}'
+
+    def __repr__(self):
+        # {self.title!r} is shorthand for {repr(self.title)}
+        return f"Book(title={self.title!r}, author={self.author!r})"
+```
