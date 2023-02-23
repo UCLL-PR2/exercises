@@ -342,4 +342,8 @@ It's not perfect and sometimes clumsy, but it does help.
 
 **How should I build strings?**
 
+Coming soon.
+
 **What's the difference between `__str__` and `__repr__`?**
+
+Coming soon.

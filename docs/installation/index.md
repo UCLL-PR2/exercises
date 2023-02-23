@@ -11,3 +11,4 @@ For this course, you will need the following software:
 * [Visual Studio Code](vscode.md)
 * [Python 3.8 or better](python.md)
   * Make sure to also install the necessary [extra packages](python-packages.md)
+* [Download the exercises](get-exercises.md)

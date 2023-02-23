@@ -3,9 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+title: Overview
 ---
-
-# Programming 2
 
 This course teaches you how to write small scripts that automate tasks, object oriented programming, web scraping,....
 For this, we will rely on the Python programming language:
@@ -25,6 +24,7 @@ So, please do not write your own `sum` function, use the built-in one.
 You will see that Python has *a lot* of built-in functions for you to make use of.
 Therefore, it is very important that you develop the habit of skimming through the documentation and looking up information online.
 
-* [Installation](installation/)
+* [Installation](installation/): this is probably the first thing you need to do.
+* [Course Organization](organization.md): this explains how to go about solving the exercises, etc.
 * [Weekly planning](planning.md)
 * [FAQ](faq.md)
