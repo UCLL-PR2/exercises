@@ -1,8 +1,10 @@
 ---
 layout: page
-show_in_header: true
+show_in_header: yes
 ---
 # Workflow
+
+{:toc}
 
 ## Structure
 
@@ -28,8 +30,7 @@ If you look at the course material you [previously downloaded](installation/get-
         01-readonly
         02-computed-attribute
         03-setters
-        ...
-    ...
+...
 ```
 
 The "deepest" directories correspond to exercises; each exercise resides in its own directory.
@@ -56,3 +57,5 @@ $ pytest
 
 An exercise is solved correctly if all tests have passed and zero tests have been skipped.
 A skipped test typically means that you have not implemented everything the `assignment.md` asked for.
+
+## dsjkl

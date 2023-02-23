@@ -21,6 +21,11 @@ You will need this URL, so don't lose it.
 > You'll be brought straight to the page showing the URL.
 
 On your machine, create a directory where you would like to store the exercises.
+
+> Do _not_ place this directory under OneDrive/DropBox/Google Drive/...
+> We will be working with GitHub, which is a better alternative for storing code in the cloud.
+> Storing a Git repository on OneDrive/... could corrupt it.
+
 Open a terminal in this directory and enter the following command:
 
 ```bash
