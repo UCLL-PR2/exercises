@@ -1,12 +1,15 @@
 ---
 layout: page
 show_in_header: yes
+title: Workflow
 ---
-# Workflow
 
+# Table of Contents
+
+* Table of Contents
 {:toc}
 
-## Structure
+# Structure
 
 The exercises are organized in a directory structure.
 If you look at the course material you [previously downloaded](installation/get-exercises.md), you'll find the following structure (this may not be an exact match, we might have changed things a tiny bit):
@@ -35,7 +38,7 @@ If you look at the course material you [previously downloaded](installation/get-
 
 The "deepest" directories correspond to exercises; each exercise resides in its own directory.
 
-## Solving an Exercise
+# Solving an Exercise
 
 The first exercise is `01-basic-python/01-arithmetic/01-five`.
 Open it in Visual Studio Code.
@@ -57,5 +60,3 @@ $ pytest
 
 An exercise is solved correctly if all tests have passed and zero tests have been skipped.
 A skipped test typically means that you have not implemented everything the `assignment.md` asked for.
-
-## dsjkl
