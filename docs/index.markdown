@@ -25,6 +25,6 @@ You will see that Python has *a lot* of built-in functions for you to make use o
 Therefore, it is very important that you develop the habit of skimming through the documentation and looking up information online.
 
 * [Installation](installation/): this is probably the first thing you need to do.
-* [Course Organization](organization.md): this explains how to go about solving the exercises, etc.
+* [Workflow](workflow.md): this explains how to go about solving the exercises, etc.
 * [Weekly planning](planning.md)
 * [FAQ](faq.md)
