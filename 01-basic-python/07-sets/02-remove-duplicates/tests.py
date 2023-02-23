@@ -29,7 +29,7 @@ def test_functionality(xs):
 
 
 
-@pytest.mark.timeout(1)
+@pytest.mark.timeout(2)
 def test_speed():
     function_name = 'remove_duplicates'
     if not hasattr(student, function_name):
@@ -37,7 +37,7 @@ def test_speed():
 
     xs = [
         x
-        for x in range(1, 1000)
+        for x in range(1, 10000)
         for _ in range(1000)
     ]
 
