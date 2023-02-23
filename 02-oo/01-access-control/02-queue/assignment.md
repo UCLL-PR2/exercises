@@ -25,6 +25,10 @@ So, in essence:
 
 ## Task
 
+> Quick note: the file `studemt.py` should of course be named `student.py`.
+> We could fix it ourselves, but on your end, Git would notice.
+> It's simpler to simply ask you to rename the file yourself than to explain to you how to make Git happy.
+
 We want to implement queues in Python.
 
 * Create a class `Queue`.
