@@ -1,8 +1,16 @@
-# FAQ
+---
+layout: page
+title: FAQ
+show_in_header: yes
+---
+# Table of Contents
 
-## Assertions
+* Table of Contents
+{:toc}
 
-**Should I use `assert` to validate parameters?**
+# Assertions
+
+## Should I use `assert` to validate parameters?
 
 `assert` is meant for debugging, as explained on the [official site](https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement).
 
@@ -14,9 +22,7 @@ Typically, programs can run in two modes:
 An `assert`ion only runs in debug mode.
 Therefore, your code should never depend on `assert` for important things, such as parameter validation.
 
----
-
-**When should I use `assert`?**
+## When should I use `assert`?
 
 `assert` is often used in tests: these run in debug mode (it wouldn't make any sense to run them in release mode) so we are certain that assertions will be checked.
 
@@ -56,9 +62,9 @@ def contain_same_elements(xs, ys):
 
 ---
 
-## Classes
+# Classes
 
-**How should I implement `__eq__`?**
+## How should I implement `__eq__`?
 
 `__eq__` is the dunder method that corresponds to the `lhs == rhs` operator.
 It is a binary operator, i.e., it takes two operands.
@@ -177,9 +183,7 @@ Having `Fraction(2, 2) == 1` is easy to achieve, as this calls `Fraction.__eq__`
 However, for `1 == Fraction(2, 2)` to be `True`, you'd have to somehow be able to update `int.__eq__`, but that's not possible.
 Thanks to `NotImplemented` however, this is not necessary: `1.__eq__(Fraction(1, 1))` will return `NotImplemented`, causing `Fraction(1, 1).__eq__(1)` to be evaluated next, which can return `True`.
 
----
-
-**Should I check parameter types using `isinstance`?**
+## Should I check parameter types using `isinstance`?
 
 Short answer: no.
 
@@ -340,10 +344,10 @@ It's a choice.
 There is actually a [way](https://peps.python.org/pep-0484/) to add static type checking to Python.
 It's not perfect and sometimes clumsy, but it does help.
 
-**How should I build strings?**
+## How should I build strings?
 
 Coming soon.
 
-**What's the difference between `__str__` and `__repr__`?**
+## What's the difference between `__str__` and `__repr__`?
 
 Coming soon.
