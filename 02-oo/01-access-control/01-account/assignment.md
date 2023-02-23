@@ -53,7 +53,7 @@ So, by simply changing the attributes name, we can keep it from being seen by th
 Create a class `Account`.
 
 * It should have a publically accessible attribute `login`.
-* It should have a private attribute `secret`.
+* It should have a private attribute `password`.
 * Both these attributes must be initialized by constructor parameters.
 * Provide a method `is_correct_password(self, pw)` that checks if `pw` is equal to the password.
 
