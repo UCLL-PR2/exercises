@@ -2,7 +2,7 @@ import pytest
 from inspect import isabstract
 from pytest import approx
 from math import pi
-from solution import *
+from student import *
 
 
 def if_class_exists(class_name):
