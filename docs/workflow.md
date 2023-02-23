@@ -36,7 +36,8 @@ If you look at the course material you [previously downloaded](installation/get-
 ...
 ```
 
-The "deepest" directories correspond to exercises; each exercise resides in its own directory.
+The "deepest" directories correspond to exercises.
+Each exercise resides in its own directory.
 
 # Solving an Exercise
 

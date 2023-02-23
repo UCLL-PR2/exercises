@@ -1,11 +1,17 @@
 ---
 layout: page
+title: GitHub Classroom (After Clone)
 ---
 
-# Setting up Using GitHub Classroom
+# Table of Contents
+
+* Table of Contents
+{:toc}
 
 > This explanation assumes you have already cloned the exercises and want to keep the solutions you already made.
-> If you want to start over fresh, follow the instructions on [this page](github-classroom-fresh.md) instead.
+> If you want to start over fresh, follow the instructions on [this page](github-classroom.md) instead.
+
+# Accepting the Assignment
 
 On Toledo, under "First Steps", you'll find a link to the GitHub Classroom Assignment.
 Click on it.
@@ -20,11 +26,17 @@ You will need this URL, so don't lose it.
 > If you happen to lose the URL, simply visit the GitHub Classroom link on Toledo again.
 > You'll be brought straight to the page showing the URL.
 
+# Setting Up Remote Repositories
+
 As mentioned at the top of this page, we assume that you already have downloaded the exercises on your machine.
 Open a terminal (e.g., Git Bash) in the directory where you stored these exercises.
 Let's first perform a quick sanity check.
 
+> As always, you only need to enter in commands following a `$`.
+> All other lines are either comments or expected responses.
+
 ```bash
+# Ask for a list of remotes
 $ git remote -v
 origin  https://github.com/UCLL-PR2/exercises.git (fetch)
 origin  https://github.com/UCLL-PR2/exercises.git (push)
@@ -37,15 +49,18 @@ If `git remote -v` worked and showed you similar output, we can proceed.
 Enter the following commands (please simply copy paste them, you don't want to make a mistake here):
 
 ```bash
+# Tell Git about the lecturer's repository and name it upstream
 $ git remote add upstream https://github.com/UCLL-PR2/exercises.git
 
-# Replace URL by the URL you were given earlier
+# Redirect origin to your own repository
+# !!! Replace URL by the URL you were given earlier !!!
 $ git remote set-url origin URL
 ```
 
 Let's check if everything worked:
 
 ```bash
+# Again ask for a list of remotes
 $ git remote -v
 origin    https://github.com/UCLL-P2-2223/p2-exercises-youraccountname (fetch)
 origin    https://github.com/UCLL-P2-2223/p2-exercises-youraccountname (push)
@@ -56,12 +71,15 @@ upstream  https://github.com/UCLL-PR2/exercises.git (push)
 Here, `origin` refers to your very own repository, which you have write access to.
 `upstream` refers to our repository, for which you only have readonly access.
 
+# Pushing to Your Remote Repository
+
 Visit your remote repository's webpage.
 You can do this by using a browser and going to your repository URL.
 GitHub should claim it's empty.
 Let's fill it up by sending your locally stored data to GitHub:
 
 ```bash
+# Upload all your files to your own repository
 $ git push
 ```
 

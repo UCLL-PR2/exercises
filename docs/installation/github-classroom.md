@@ -1,11 +1,16 @@
 ---
 layout: page
+title: GitHub Classroom (Fresh)
 ---
+# Table of Contents
 
-# Setting up Using GitHub Classroom
+* Table of Contents
+{:toc}
 
 > This explanation assumes you haven't downloaded the exercises yet and simply want to start fresh.
-> If, however, you have cloned the exercises in the past and solved some exercises, you might want to follow [these instructions](github-classroom.md) instead.
+> If, however, you have cloned the exercises in the past and solved some exercises, you might want to follow [these instructions](github-classroom-after-clone.md) instead.
+
+# Accepting the Assignment
 
 On Toledo, under "First Steps", you'll find a link to the GitHub Classroom Assignment.
 Click on it.
@@ -20,6 +25,8 @@ You will need this URL, so don't lose it.
 > If you happen to lose the URL, simply visit the GitHub Classroom link on Toledo again.
 > You'll be brought straight to the page showing the URL.
 
+# Cloning the Repository
+
 On your machine, create a directory where you would like to store the exercises.
 
 > Do _not_ place this directory under OneDrive/DropBox/Google Drive/...
@@ -28,23 +35,33 @@ On your machine, create a directory where you would like to store the exercises.
 
 Open a terminal in this directory and enter the following command:
 
+> As always, you only need to enter in commands following a `$`.
+> All other lines are either comments or expected responses.
+
 ```bash
-# Replace URL by the URL you were given earlier
+# Download the repository
+# !!! Replace URL by the URL you were given earlier !!!
 $ git clone URL exercises
 ```
 
 This should create a directory named `exercises` and download the course material into that directory.
-Next, enter the following commands:
+
+# Setting Up Remote Repositories
+
+Enter the following commands:
 
 ```bash
+# Go into exercises directory
 $ cd exercises
+
+# Tell Git about the lecturer's repository and call it upstream
 $ git remote add upstream https://github.com/UCLL-PR2/exercises.git
-$ git pull upstream main
 ```
 
 Let's check if everything worked:
 
 ```bash
+# Ask for a list of remote repositories
 $ git remote -v
 origin    https://github.com/UCLL-P2-2223/p2-exercises-youraccountname (fetch)
 origin    https://github.com/UCLL-P2-2223/p2-exercises-youraccountname (push)
@@ -55,13 +72,19 @@ upstream  https://github.com/UCLL-PR2/exercises.git (push)
 Here, `origin` refers to your very own repository, which you have write access to.
 `upstream` refers to our repository, for which you only have readonly access.
 
+# Getting the Course Material
+
 Visit your remote repository's webpage.
 You can do this by using a browser and going to your repository URL.
 GitHub should claim it's empty.
 Let's fill it up by sending your locally stored data to GitHub:
 
 ```bash
-$ git push -u origin master
+# Download from lecturer's repository
+$ git pull upstream main
+
+# Upload to your remote repository
+$ git push -u origin main
 ```
 
 After the push is finished, refresh your repository's webpage in the browser.
