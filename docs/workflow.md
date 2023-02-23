@@ -61,3 +61,67 @@ $ pytest
 
 An exercise is solved correctly if all tests have passed and zero tests have been skipped.
 A skipped test typically means that you have not implemented everything the `assignment.md` asked for.
+
+# Saving Your Exercises in your Repository
+
+Normally, you should only be modifying `student.py` files.
+You _can_ modify other files if you wish, but that might cause problems if we were to update those same files ourselves.
+This explanation assumes you will only store your `student.py` files in the repository.
+
+To store your solutions in your repository and upload them to GitHub, follow these steps:
+
+```bash
+# Go to the exercise's directory
+
+# Tell Git that you want to keep this new version of student.py
+$ git add student.py
+
+# Next, commit your change to the repository. The message is mandatory, but it can be anything you wish
+$ git commit -m 'solved exercise on properties'
+
+# At this point, the update is stored in your local repository (the one on your machine)
+# We now upload (push) it to GitHub
+$ git push
+```
+
+# Getting Updates
+
+When we add or update material, we do this in our own lecturer's repository, the one at `https://github.com/UCLL-PR2/exercises`.
+However, these updates do not come automatically to you.
+
+We assume that you followed our installation instructions correctly.
+
+```bash
+$ git pull upstream main
+```
+
+If this command succeeds, you have the most recent updates.
+There are two main ways things can go wrong.
+
+**Error 1: unknown remote**
+```bash
+$ git pull upstream main
+fatal: 'upstream' does not appear to be a git repository
+fatal: Could not read from remote repository.
+```
+
+If you get the error message above, it means you haven't set up your remotes correctly.
+Enter
+
+```bash
+$ git remote add upstream https://github.com/UCLL-PR2/exercises
+```
+
+then try again.
+
+**Error 2: uncommitted changes**
+
+Git wants to be certain that it doesn't overwrite any of your work: the `pull` command will only work if Git is certain this is indeed the case.
+You will need to `add` and `commit` your changes before `pull`ing.
+This will ensure that your code cannot get lost.
+
+To get an idea of which files are still uncommitted, you can use
+
+```
+$ git status
+```
