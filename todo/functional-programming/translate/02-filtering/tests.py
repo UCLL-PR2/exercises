@@ -7,7 +7,7 @@ import starter
 
 @pytest.mark.parametrize('module', [solution, student])
 def test_titles(module):
-    function_name = 'titles'
+    function_name = 'from_previous_century'
 
     if not hasattr(module, function_name):
         pytest.skip()
