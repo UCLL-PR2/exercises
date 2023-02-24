@@ -25,6 +25,20 @@ def test_adding_same_key_does_not_increment_length():
     assert len(al) == 1
 
 
+def test_membership():
+    al = AssocList()
+    al['a'] = 'alfa'
+    al['b'] = 'beta'
+    al['g'] = 'gamma'
+    al['d'] = 'delta'
+
+    assert 'a' in al
+    assert 'b' in al
+    assert 'g' in al
+    assert 'd' in al
+    assert 'e' not in al
+
+
 def test_looking_up():
     al = AssocList()
     al['a'] = 'alfa'

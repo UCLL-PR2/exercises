@@ -36,7 +36,8 @@ Define a class `AssocList` with the following members:
 * A constructor that creates an empty `AssocList`.
 * `assoclist[key] = value` associates `key` with `value`.
   If `assoclist` already associates `key` with something, it is overwritten by `value`.
-  You might also want to look up [__setitem__](https://docs.python.org/3/reference/datamodel.html#object.__setitem__).
+  You might also want to look up [`__setitem__`](https://docs.python.org/3/reference/datamodel.html#object.__setitem__).
+* `key in assoclist` checks if `key` appears in `assoclist`. Hint: `__contains__`.
 * `assoclist[key]` returns the `value` associates with `key`.
 * `len(assoclist)` returns the number of key/value pairs.
 * `assoclist.keys` returns a list of keys.

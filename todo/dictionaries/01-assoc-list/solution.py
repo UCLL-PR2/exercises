@@ -9,6 +9,9 @@ class AssocList:
         else:
             self.__items[index][1] = value
 
+    def __contains__(self, key):
+        return self.__find_key_index(key) != -1
+
     def __getitem__(self, key):
         index = self.__find_key_index(key)
         if index == -1:
