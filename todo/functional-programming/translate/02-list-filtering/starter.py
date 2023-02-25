@@ -1,6 +1,6 @@
-def from_previous_century(movies):
+def movies_from_year(movies, year):
     result = []
     for movie in movies:
-        if movie.year < 2000:
+        if movie.year == year:
             result.append(movie.title)
     return result

@@ -1,2 +1,2 @@
-def from_previous_century(movies):
-    return [movie.title for movie in movies if movie.year < 2000]
+def movies_from_year(movies, year):
+    return [movie.title for movie in movies if movie.year == year]
