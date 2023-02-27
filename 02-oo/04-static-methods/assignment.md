@@ -26,7 +26,7 @@ class Plumbus:
         # ...
 
     @staticmethod
-    def fleeb():
+    def fleeb():     # No self parameter!
         # ...
 ```
 
