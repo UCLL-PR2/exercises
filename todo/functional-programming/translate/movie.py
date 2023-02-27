@@ -36,7 +36,7 @@ movies = [
         year=2000,
         runtime=102,
         director='Darren Aronofsky',
-        actors=['Jared Leto', 'Marlon Wayans', 'Ellen Burstyn'],
+        actors=['Jared Leto', 'Marlon Wayans', 'Ellen Burstyn', 'Jennifer Connelly'],
     ),
     Movie(
         title='True Romance',
@@ -57,7 +57,7 @@ movies = [
         year=2005,
         runtime=115,
         director='Park Chan-wook',
-        actors=['Jeong-nam Choi', 'Choi Min-sik'],
+        actors=['Nam-mi Kang', 'Jeong-nam Choi', 'Hye-Sook Go', 'Bok-hwa Baek'],
     ),
     Movie(
         title='The Handmaiden',
@@ -78,7 +78,7 @@ movies = [
         year=2017,
         runtime=130,
         director='Paul Thomas Anderson',
-        actors=['Daniel Day-Lewis'],
+        actors=['Vicky Krieps', 'Daniel Day-Lewis', 'Lesley Manville', 'Julie Vollono'],
     ),
     Movie(
         title='There Will Be Blood',
@@ -127,14 +127,14 @@ movies = [
         year=2017,
         runtime=164,
         director='Denis Villeneuve',
-        actors=['Harrison Ford', 'Ryan Gosling', 'Dave Bautista'],
+        actors=['Harrison Ford', 'Ryan Gosling', 'Ana de Armas', 'Dave Bautista'],
     ),
     Movie(
         title="Miller's Crossing",
         year=1990,
         runtime=115,
         director='Coen Brothers',
-        actors=['Gabriel Byrne', 'Albert Finney', 'John Turturro'],
+        actors=['Gabriel Byrne', 'Albert Finney', 'John Turturro', 'Marcia Gay Harden'],
     ),
    Movie(
         title='No Country for Old Men',
