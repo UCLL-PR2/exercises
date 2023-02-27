@@ -17,7 +17,6 @@ def test_titles(module):
     imperative_function = getattr(starter, function_name)
     functional_function = getattr(module, function_name)
 
-
     imperative_result = imperative_function(movies)
     functional_result = functional_function(movies)
 
