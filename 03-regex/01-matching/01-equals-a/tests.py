@@ -9,7 +9,7 @@ import solution
     "aa",
     "b",
 ])
-def test_function(string, expected):
+def test_function(string):
     function_name = 'equals_a'
     if not hasattr(student, function_name):
         pytest.skip(f"Missing function {function_name}")
