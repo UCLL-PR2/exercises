@@ -11,7 +11,7 @@ Objects store their state in attributes, as shown below:
 
 ```python
 class Point:
-    def __init__(x, y):
+    def __init__(self, x, y):
         self.x = x
         self.y = y
 ```
@@ -26,7 +26,7 @@ print(pt.x) # prints 3
 
 # Modifying attribute y
 pt.y *= 2
-print(py.y) # prints 10
+print(pt.y) # prints 10
 ```
 
 Let's consider a different class. We want an `Account` class which stores a password.

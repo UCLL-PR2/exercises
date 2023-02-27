@@ -5,7 +5,7 @@ Say we have our `Person` class, and we want a person to have an age.
 
 ```python
 class Person:
-    def __init__(age):
+    def __init__(self, age):
         self.age = age
 ```
 
@@ -13,7 +13,7 @@ Now, we don't want this age to be directly modifiable, so we hide it and make a 
 
 ```python
 class Person:
-    def __init__(age):
+    def __init__(self, age):
         self.__age = age
 
     @property
@@ -26,7 +26,7 @@ We make a method for this.
 
 ```python
 class Person:
-    def __init__(age):
+    def __init__(self, age):
         self.__age = age
 
     @property
@@ -41,7 +41,7 @@ Of course, we need to know on what day we need to increment a person's age, mean
 
 ```python
 class Person:
-    def __init__(age, birthday):
+    def __init__(self, age, birthday):
         self.__age = age
         self.__birthday = birthday
 
@@ -78,7 +78,7 @@ However, we still want to be able to use `person.age` to determine the `person`'
 
 ```python
 class Person:
-    def __init__(birthday):
+    def __init__(self, birthday):
         self.__birthday = birthday
 
     @property
@@ -94,7 +94,7 @@ class Person:
 
 ```python
 class Person:
-    def __init__(birthday):
+    def __init__(self, birthday):
         self.__birthday = birthday
 
     @property

@@ -52,7 +52,7 @@ We could simply define a method:
 
 ```python
 class CircularBuffer:
-    def size():
+    def size(self):
         # ...
 ```
 
@@ -109,7 +109,7 @@ class CircularBuffer:
         # ...
 ```
 
-# Task
+## Task
 
 Implement the `CircularBuffer` class as described above.
 
