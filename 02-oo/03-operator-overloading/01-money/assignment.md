@@ -151,10 +151,10 @@ RuntimeError("Mismatched currencies!")
 Same for subtraction:
 
 ```python
->>> Money(30, "EUR") + Money(10, "EUR")
+>>> Money(30, "EUR") - Money(10, "EUR")
 Money(20, "EUR")
 
->>> Money(30, "EUR") + Money(10, "USD")
+>>> Money(30, "EUR") - Money(10, "USD")
 RuntimeError("Mismatched currencies!")
 ```
 
