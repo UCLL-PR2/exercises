@@ -109,7 +109,7 @@ class CircularBuffer:
         # ...
 ```
 
-# Task
+## Task
 
 Implement the `CircularBuffer` class as described above.
 
