@@ -34,5 +34,9 @@ Also experiment to see what happens if the lists do not have the same size.
 
 ## Task
 
-Translate the function shown below.
-Given a list, e.g., `['a', 'b', 'c']` and pairs each element with its index: `[[0, 'a'], [1, 'b'], [2, 'c']]`.
+Write a function `add_indices(xs)` that given a list `xs` returns a new list where each element of `xs` has been paired up with its index, as shown below:
+
+```python
+>>> add_indices(['a', 'b', 'c'])
+[(0, 'a'), (1, 'b'), (2, 'c')]
+```
