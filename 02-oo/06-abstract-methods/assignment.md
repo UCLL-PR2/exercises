@@ -1,4 +1,3 @@
-# Inheritance
 # Abstract Methods
 
 Let's revisit the chess example from the previous exercise.
