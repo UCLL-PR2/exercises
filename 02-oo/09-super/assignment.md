@@ -123,18 +123,22 @@ It should have two readonly properties `length` and `width`.
 A `Square` is a special `Rectangle` with `length == width`.
 Its constructor should only accept a single parameter `side`.
 
+Even though `Square` inherits the `length` and `width` properties from `Rectangle` it should nonetheless also add its own readonly property `Side`.
+It should return the same value as `length` and `width`.
+
 ### `Ellipse`
 
 `Ellipse` is another kind of shape.
 It should have two readonly properties `major_radius` and `minor_radius`.
 
 Note that there is [no nice formula](https://www.youtube.com/watch?v=5nW3nJhBHL0) for the perimeter of an ellipse.
-Have the `perimeter` property raise a `NotImplementedException`.
+Have the `perimeter` property raise a `NotImplementedError`.
 
 ### `Circle`
 
 A `Circle` is a special kind of ellipse where `major_radius == minor_radius`.
 The constructor should therefore only accept a single parameter, which we'll name `radius`.
+Also add a readonly property `radius` which returns the same value as `major_radius` and `minor_radius`.
 
 ## Formulae
 
