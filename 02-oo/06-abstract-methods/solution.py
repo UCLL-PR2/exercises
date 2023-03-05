@@ -56,6 +56,7 @@ class F(ABC):
         self.b()
         self.f()
 
+    @abstractmethod
     def b(self):
         ...
 

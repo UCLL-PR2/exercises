@@ -39,9 +39,3 @@ class F:
     def a(self):
         self.b()
         self.f()
-
-    def b(self):
-        ...
-
-    def f(self):
-        ...

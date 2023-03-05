@@ -1,3 +1,4 @@
+# Inheritance
 # Abstract Methods
 
 Let's revisit the chess example from the previous exercise.
@@ -110,4 +111,4 @@ Make the necessary classes and method abstract.
 A summary of the rules to follow:
 
 * If a class invokes methods on itself that it does not have, it must be abstract.
-* If a class invokes a method `x` and the class does not have such a member, add a declaration for `x` to that class.
+* If a class invokes a method `x` and the class does not have such a member, add an abstract method declaration for `x` to that class.
