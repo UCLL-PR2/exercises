@@ -23,6 +23,10 @@ Refresh the page every few seconds until a new page appears telling you you're r
 A URL should be shown: it should look something like https://github.com/UCLL-P2-2223/p2-exercises-youraccountname.
 You will need this URL, so don't lose it.
 
+> **IMPORTANT** If you go to your repository's website, GitHub tries to be helpful by showing you instructions of how to set up things, such as creating a `README.md` file.
+> Do NOT follow these instructions.
+> Simply follow the instructions shown on this page.
+
 > If you happen to lose the URL, simply visit the GitHub Classroom link on Toledo again.
 > You'll be brought straight to the page showing the URL.
 
