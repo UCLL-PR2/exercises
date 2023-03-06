@@ -1,15 +1,4 @@
 # Assignment
 
-Translate the function `between` into Python.
-
-```javascript
-function between(x, lower, upper)
-{
-    return lower <= x && x <= upper
-}
-```
-
-There are two ways to solve this exercise:
-
-* You translate it literally.
-* You rely on Python's shorthand syntax.
+Write a function `between(x, lower, upper)` that checks if `x` is larger than or equal to `lower` and less than or equal to `upper`.
+Using Python, it is possible to write this down as a single expression, but know that Python is actually an exception: typically you not a conjunction (`&&`) of two comparisons.

@@ -1,2 +1,2 @@
 def values(dictionary):
-    return dictionary.values()
+    return list(dictionary.values())

@@ -6,12 +6,12 @@ The order is unimportant.
 For example,
 
 ```python
->>> keys({})
+>>> to_list_of_pairs({})
 []
 
->>> keys({'a': 1})
+>>> to_list_of_pairs({'a': 1})
 [('a', 1)]
 
->>> keys({'a': 1, 'b': 2})
+>>> to_list_of_pairs({'a': 1, 'b': 2})
 [('a', 1), ('b', 2)]
 ```

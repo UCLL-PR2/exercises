@@ -1,2 +1,2 @@
 def keys(dictionary):
-    return dictionary.keys()
+    return list(dictionary.keys())
