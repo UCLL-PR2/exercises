@@ -1,17 +1,17 @@
 # Assignment
 
-Write a Python function `values(dictionary)` that returns all values as a list.
+Write a Python function `values(dictionary)` that returns all values from the `dictionary`.
 The order is unimportant.
 
 For example,
 
 ```python
->>> size({})
+>>> values({})
 []
 
->>> size({'a': 1})
-['a']
+>>> values({'a': 1})
+[1]
 
->>> size({'a': 1, 'b': 2})
-['a', 'b']
+>>> values({'a': 1, 'b': 2})
+[1, 2]
 ```
