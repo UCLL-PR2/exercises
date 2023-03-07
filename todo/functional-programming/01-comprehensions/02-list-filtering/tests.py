@@ -7,7 +7,7 @@ import student
 
 
 @pytest.mark.parametrize('year', range(1950, 2050))
-def test_titles(year):
+def test_movies_from_year(year):
     function_name = 'movies_from_year'
     args = [year]
 
@@ -24,7 +24,7 @@ def test_titles(year):
 
 
 @pytest.mark.parametrize('actor', {actor for movie in movies for actor in movie.actors})
-def test_titles(actor):
+def test_movies_with_actor(actor):
     function_name = 'movies_with_actor'
     args = [actor]
 
