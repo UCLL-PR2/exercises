@@ -12,7 +12,7 @@ import student
     'titles_and_actor_counts',
 ])
 @pytest.mark.parametrize("movie_count", [1, 2, 5, 10, len(movies)])
-def test_titles(function_name, movie_count):
+def test_function(function_name, movie_count):
     if not hasattr(student, function_name):
         pytest.skip(f"Missing function {function_name} in student module")
 

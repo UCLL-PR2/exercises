@@ -53,6 +53,7 @@ Its attributes are
 * director
 * actors
 * year
+* genres
 
 Write the following functions which all operate on a list of `Movie` objects:
 
