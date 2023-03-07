@@ -40,6 +40,3 @@ def test_director_to_titles(movie_count):
     student_result = student_function(movie_selection)
 
     assert student_result == solution_result
-
-
-print(solution.director_to_titles(movies))
