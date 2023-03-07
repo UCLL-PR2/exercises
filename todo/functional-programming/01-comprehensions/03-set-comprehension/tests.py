@@ -7,7 +7,7 @@ import student
 
 
 @pytest.mark.parametrize('movie_count', [0, 1, 5, 10, len(movies)])
-def test_titles(movie_count):
+def test_directors(movie_count):
     function_name = 'directors'
 
     if not hasattr(student, function_name):
