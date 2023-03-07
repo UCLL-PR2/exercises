@@ -176,7 +176,7 @@ movies = [
         runtime=98,
         director='Coen Brothers',
         actors=['Steve Buscemi', 'Peter Stormare', 'William H. Macy', 'Frances McDormand'],
-        genres=['Crime', 'Thriller'],,
+        genres=['Crime', 'Thriller'],
     ),
     Movie(
         title='The Big Lebowski',
