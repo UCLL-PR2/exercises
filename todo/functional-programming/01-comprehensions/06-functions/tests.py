@@ -197,3 +197,25 @@ def test_weighted_sum(ns, weights):
     student_result = student_function(*args)
 
     assert student_result == solution_result
+
+
+@pytest.mark.parametrize("string", [
+    "",
+    "a",
+    "abc",
+    "hello world",
+])
+def test_alternating_caps(string):
+    function_name = 'alternating_caps'
+    args = [string]
+
+    if not hasattr(student, function_name):
+        pytest.skip(f"Missing function {function_name} in student module")
+
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    solution_result = solution_function(*args)
+    student_result = student_function(*args)
+
+    assert student_result == solution_result

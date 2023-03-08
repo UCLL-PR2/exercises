@@ -24,3 +24,8 @@ def count_matching(xs, ys):
 
 def weighted_sum(ns, weights):
     return sum(n * w for n, w in zip(ns, weights))
+
+
+def alternating_caps(string):
+    chars = [char.upper() if index % 2 == 0 else char.lower() for index, char in enumerate(string)]
+    return "".join(chars)
