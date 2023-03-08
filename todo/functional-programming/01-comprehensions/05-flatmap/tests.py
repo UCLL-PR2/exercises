@@ -42,4 +42,23 @@ def test_actors(movie_count):
     assert student_result == solution_result
 
 
-print(solution.director_to_titles(movies))
+@pytest.mark.parametrize('xs', [
+    [],
+    [1, 2, 3],
+    'abcd',
+])
+@pytest.mark.parametrize('n', range(1, 6))
+def test_repeat(xs, n):
+    function_name = 'repeat'
+    args = [xs, n]
+
+    if not hasattr(student, function_name):
+        pytest.skip(f"Missing function {function_name} in student module")
+
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    solution_result = solution_function(*args)
+    student_result = student_function(*args)
+
+    assert student_result == solution_result
