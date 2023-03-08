@@ -84,6 +84,18 @@ $ git commit -m 'solved exercise on properties'
 $ git push
 ```
 
+## Committing Multiple Exercises at Once
+
+If you have a bunch of `student.py` files that you want to commit, you don't need to deal with them one at a time.
+Go to your repository's root directory and enter
+
+```bash
+# Add all student.py files in one go
+$ find . -name "student.py" | xargs git add
+$ git commit -m 'MESSAGE'
+$ git push
+```
+
 # Getting Updates
 
 When we add or update material, we do this in our own lecturer's repository, the one at `https://github.com/UCLL-PR2/exercises`.
