@@ -38,3 +38,20 @@ def test_movies_with_actor(actor):
     student_result = student_function(movies, *args)
 
     assert student_result == solution_result
+
+
+@pytest.mark.parametrize('n', [1, 2, 3, 97, 2400])
+def test_divisors(n):
+    function_name = 'divisors'
+    args = [n]
+
+    if not hasattr(student, function_name):
+        pytest.skip(f"Missing function {function_name} in student module")
+
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    solution_result = solution_function(*args)
+    student_result = student_function(*args)
+
+    assert student_result == solution_result
