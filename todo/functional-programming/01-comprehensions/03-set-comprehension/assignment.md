@@ -20,6 +20,9 @@ Using a set instead of a list will cause duplicates to disappear from the end re
 
 Also note how the order of the items is not preserved.
 
-## Task
+## Tasks
 
-Write a function `directors(movies)` that collects all directors in a set.
+Write the following functions:
+
+* `directors(movies)` collects all directors in a set.
+* `common_elements(xs, ys)` should return the set of values that occur both in `xs` and `ys`.
