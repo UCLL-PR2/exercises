@@ -92,6 +92,8 @@ Make sure you understand this code.
 There's nothing really magical about it: `call(f)` simply calls `f`, so it is a rather indirect way of writing `f()`.
 Luckily, there's more useful things to do, but we'll take it one step at a time.
 
+A function that expects a function as an argument is called a _higher order function_.
+
 ## Task
 
 Write a function `repeat(function, n)` that calls `function` `n` times.
