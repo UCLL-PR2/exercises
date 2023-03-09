@@ -89,9 +89,8 @@ hello
 ```
 
 Make sure you understand this code.
-There's nothing really  magical about it: `call(f)` simply calls `f`, so it is a rather indirect way of writing `f()`.
-Luckily, there's more useful things to do.
-But we'll take it one step at a time.
+There's nothing really magical about it: `call(f)` simply calls `f`, so it is a rather indirect way of writing `f()`.
+Luckily, there's more useful things to do, but we'll take it one step at a time.
 
 ## Task
 
