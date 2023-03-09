@@ -55,4 +55,8 @@ Its attributes are
 * year
 * genres
 
-Complete the functions in `student.py`.
+Write the following functions which all operate on a list of `Movie` objects:
+
+* `titles(movies)` returns the movie titles.
+* `titles_and_years(movies)` returns the movie titles and their year, grouped in pairs: `[(title1, year1), (title2, year2), ...]`.
+* `titles_and_actor_counts(movies)` returns the movie titles paired up with the number of actors.
