@@ -11,3 +11,5 @@ def is_negative(x):
 >>> take_while([-4, -2, 0, -1, 4, 6])
 ([-4, -2], [0, -1, 4, 6])
 ```
+
+The difference with `partition` is that `partition` goes through the entire list whereas `take_while` stops at the first element for which `condition` yields a falsey value.
