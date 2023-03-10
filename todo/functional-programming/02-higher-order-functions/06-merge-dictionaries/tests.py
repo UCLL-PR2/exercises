@@ -1,5 +1,6 @@
 import pytest
 from student import merge_dictionaries
+import operator
 
 
 @pytest.mark.parametrize("dict1, dict2, merge_function, expected", [
@@ -54,7 +55,7 @@ from student import merge_dictionaries
     (
         {1: 'a', 2: 'b', 3: 'c'},
         {1: 'x', 2: 'b', 4: 'z'},
-        lambda x, y: x + y,
+        operator.add,
         {1: 'ax', 2: 'bb', 3: 'c', 4: 'z'},
     ),
 ])
