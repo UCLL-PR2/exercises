@@ -10,14 +10,14 @@ As explained before, `zip` is a built-in function that pairs up corresponding el
 [('a', 1, 'x'), ('b', 2, 'y'), ('c', 3, 'z'), ('d', 4, 'w')]
 ```
 
-Note the surrounding call to `list`: this is necessary because `zip` returns an iterator:
+Note the surrounding call to `list`: this is necessary because `zip` returns an iterator object.
 
 ```python
 >>> zip('abcd', [1, 2, 3, 4])
 <zip object at 0x00000273D6895BC8>
 ```
 
-Adding `list` forces the iteration over all the elements and stores them in a list.
+Adding `list` forces the iteration over all the elements and stores them in a list, allowing us to see the elements printed out.
 
 What happens when we call `zip` to iterables of unequal size?
 
@@ -30,7 +30,7 @@ It seems that `zip` stops as soon as one of its arguments runs out of elements.
 
 ## Task
 
-Write a class `PadZip` (and accompanying class `PadZipIterator`) that continues producing tuples as long as the _longest_ provided iterable is not empty.
+Write a iterator class `PadZip` that continues producing tuples as long as the _longest_ provided iterable is not empty.
 Where values are missing, `None` is added:
 
 ```python
@@ -45,16 +45,15 @@ We want to be able to define our own padding value:
 [(a, 1), (b, 2), (c, 3), (d, 0), (e, 0)]
 ```
 
-`PadZip` needs exactly two collections to iterate over (we don't support three or more like `zip` does.)
-Therefore `PadZip` must assume these collections are iterable, i.e., they must implement `__iter__`.
-In other words, `PadZip` should work on lists, sets, strings, and so on.
+As you can see, the constructor's parameters are
 
-This, however, also means that it must be able to deal with iterators (which also implement `__iter__`).
-The tricky part about this is that iterators are _single use_.
-To ensure consistency, we want `PadZip` to itself also be single use, regardless of the type of its arguments.
+* An iterable object `left`
+* An iterable object `right`
+* An optional `padding` that defaults to `None`
+
+Note that a `PadZip` object will be an _iterator_, not an _iterable_, meaning it's single use (just like `zip` is):
 
 ```python
-# 'abc' and 'xyz' are both iterABLE collections, not single use iteratORS
 >>> xs = PadZip('abc', 'xyz')
 
 # First time works
@@ -66,12 +65,10 @@ To ensure consistency, we want `PadZip` to itself also be single use, regardless
 []
 ```
 
-The simplest way to achieve this is to have `PadZip`'s constructor use `iter` immediately:
+This means `PadZip` needs the following methods:
 
-* An iterable collection (list, set, ...) will return a single use iterator.
-* An iterator will return itself.
-
-In both cases, you end up with an iterator and consistency is guaranteed.
+* `__iter__` simply returns `self`: for this exercise we don't make a separate iterable class, only an iterator class
+* `__next__` returns the next pair
 
 **Hint** You'll need to be able to detect whether an iterator has run out of elements.
 For this, you'll have to catch the `StopIterator` exception:

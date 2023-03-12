@@ -5,16 +5,6 @@ class PadZip:
         self.__padding = padding
 
     def __iter__(self):
-        return PadZipIterator(self.__left, self.__right, self.__padding)
-
-
-class PadZipIterator:
-    def __init__(self, left, right, padding):
-        self.__left = left
-        self.__right = right
-        self.__padding = padding
-
-    def __iter__(self):
         return self
 
     def __next__(self):
