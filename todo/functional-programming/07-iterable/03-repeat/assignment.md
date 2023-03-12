@@ -21,3 +21,6 @@ You should of course be careful with this iterator, lest you end up in an infini
 >>> list(Repeat(5))
 # takes a very long time
 ```
+
+> This functionality [already exists](https://docs.python.org/3/library/itertools.html#itertools.repeat) in Python's standard library.
+  The reason we give it as an exercise is because it's easy to implement.
