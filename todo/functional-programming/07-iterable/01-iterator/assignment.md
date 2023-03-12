@@ -180,7 +180,7 @@ Note that an iterator is a single-use object: once the end of the collection has
 
 ## Summary
 
-There are two classes two consider: the collection class and the corresponding iterator class.
+There are two classes two consider: the collection (or _iterable_) class and the corresponding iterator class.
 
 The collection class implements `__iter__`.
 For example, `list`, `str`, `tuple`, `set` and `dict` all implement this method.
