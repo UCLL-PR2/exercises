@@ -72,3 +72,13 @@ The simplest way to achieve this is to have `PadZip`'s constructor use `iter` im
 * An iterator will return itself.
 
 In both cases, you end up with an iterator and consistency is guaranteed.
+
+**Hint** You'll need to be able to detect whether an iterator has run out of elements.
+For this, you'll have to catch the `StopIterator` exception:
+
+```python
+try:
+    next_element = next(iterator)
+except StopIterator:
+    # no elements remain
+```
