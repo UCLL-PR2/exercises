@@ -53,6 +53,9 @@ Instead, we define it inline where it's needed.
 In essence, it's a throw-away function.
 We don't even bother naming it.
 
+Note that lambdas can only be used for very simple functions: the lambda's body is limited to a single expression.
+This is a Python-specific limitation: for nontrivial logic, the language wants you to define a named function using `def`.
+
 ## Task
 
 Write the following functions, relying on lambdas and on the helper classes/functions provided in `util.py`:
