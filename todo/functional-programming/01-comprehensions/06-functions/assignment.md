@@ -67,3 +67,10 @@ Write the following functions and rely on comprehensions and the functions above
   For example, `weighted_sum([a, b, c], [x, y, z])` should return `a * x + b * y + c * z`.
 * `alternating_caps(string)` should change the case of each character such that they alternate between upper and lower case.
   For example, `alternating_caps("abcdef")` should return `AbCdEf`.
+* `find_repeated_words(sentence)` first collects all words in the given string `sentence`.
+  A word is defined as a series of letters (can be both upper and lowercase).
+  Next, the function has to look for repeated consecutive words and collect them in a set.
+  The case of letters should be ignored: `"dog"` and `"Dog"` are to be considered the same word.
+  For example, `find_repeated_words("This sentence has has repeated words.   Words.")` should return the set `{'has', 'words'}`.
+  The returned set should contain all of its words in lower case.
+  Note also that interpunction, spaces, etc. should also have no impact on deciding whether a word is repeated or not.

@@ -29,3 +29,9 @@ def weighted_sum(ns, weights):
 def alternating_caps(string):
     chars = [char.upper() if index % 2 == 0 else char.lower() for index, char in enumerate(string)]
     return "".join(chars)
+
+
+def find_repeated_words(sentence):
+    import re
+    words = [word.lower() for word in re.findall('[a-zA-Z]+', sentence)]
+    return {word1 for word1, word2 in zip(words, words[1:]) if word1 == word2}

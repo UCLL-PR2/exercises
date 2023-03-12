@@ -219,3 +219,32 @@ def test_alternating_caps(string):
     student_result = student_function(*args)
 
     assert student_result == solution_result
+
+
+@pytest.mark.parametrize("string", [
+    "",
+    "test",
+    "test test",
+    "this is is a test",
+    "this is is a test this is also a test",
+    "this is IS a test this is also a test",
+    "this is  is a test this is also a test",
+    "this is, is a test this is also a test",
+    "abc a bc   a. a =",
+    "abc a bc   a. a = a a a",
+    "A a",
+])
+def test_find_repeated_words(string):
+    function_name = 'find_repeated_words'
+    args = [string]
+
+    if not hasattr(student, function_name):
+        pytest.skip(f"Missing function {function_name} in student module")
+
+    solution_function = getattr(solution, function_name)
+    student_function = getattr(student, function_name)
+
+    solution_result = solution_function(*args)
+    student_result = student_function(*args)
+
+    assert student_result == solution_result
