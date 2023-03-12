@@ -9,7 +9,7 @@ from student import Cycle
     [1, 2, 3],
     [1, 2, 3, False, 4, True, 'xyz'],
 ])
-def test_repeat(values):
+def test_cycle(values):
     expected = itertools.cycle(values)
     actual = Cycle(values)
     assert list(itertools.islice(expected, 1000)) == list(itertools.islice(actual, 1000))
