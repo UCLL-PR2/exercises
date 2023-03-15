@@ -5,7 +5,9 @@ It is very mathematical and can be quite difficult to get right.
 Actually, it is a university course on its own.
 
 Fortunately for you, we won't delve too deeply into it.
-Our goal is only to have you familiarized with the concept so that you know what it means when you encounter it.
+Our goal is only to have you have a basic understanding of the subject so that you have an idea of what it means when you encounter it.
+
+So, not to worry: this series will remain light on math.
 
 ## What is Time Complexity?
 
