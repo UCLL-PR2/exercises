@@ -1,19 +1,9 @@
 import pytest
-
-try:
-    from student import rle_encode
-except:
-    pass
-
-try:
-    from student import rle_decode
-except:
-    pass
-
+import student
 
 
 def if_defined(function_name):
-    return pytest.mark.skipif(function_name not in globals(), reason=f'{function_name} has not been defined')
+    return pytest.mark.skipif(function_name not in dir(student), reason=f'{function_name} has not been defined')
 
 
 @if_defined('rle_encode')
@@ -48,7 +38,7 @@ def if_defined(function_name):
     ),
 ])
 def test_rle_encode(input, expected):
-    assert expected == list(rle_encode(input))
+    assert expected == list(student.rle_encode(input))
 
 
 @if_defined('rle_decode')
@@ -83,7 +73,7 @@ def test_rle_encode(input, expected):
     ),
 ])
 def test_rle_decode(input, expected):
-    assert [*expected] == list(rle_decode(input))
+    assert [*expected] == list(student.rle_decode(input))
 
 
 @if_defined('rle_encode')
@@ -99,8 +89,8 @@ def test_rle_decode(input, expected):
     "0123456789",
 ])
 def test_encoding_and_decoding(data):
-    encoded = rle_encode(data)
-    decoded = rle_decode(encoded)
+    encoded = student.rle_encode(data)
+    decoded = student.rle_decode(encoded)
     assert data == "".join(decoded)
 
 
@@ -117,6 +107,6 @@ def test_encoding_and_decoding(data):
     "0123456789",
 ])
 def test_rle_works_on_iterators(data):
-    encoded = rle_encode(iter(data))
-    decoded = rle_decode(encoded)
+    encoded = student.rle_encode(iter(data))
+    decoded = student.rle_decode(encoded)
     assert data == "".join(decoded)
