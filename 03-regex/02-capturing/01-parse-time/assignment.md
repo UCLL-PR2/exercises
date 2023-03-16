@@ -36,7 +36,7 @@ if re.fullmatch(r'\d{2}:\d{2}:\d{2}(\.\d{3})?', string):
         h, m, s = left.split(':')
     else:
         h, m, s = string.split(':')
-        ms = '000'
+        ms = '.000'
 ```
 
 It works, but it's certainly not as clean. You can imagine this quickly
@@ -54,7 +54,7 @@ if re.fullmatch(r'(\d{2}):(\d{2}):(\d{2})(\.\d{3})?', string):
 This tells the regex engine to store the parts of `string` that match those
 patterns. Now, how do we access this data?
 
-`fullmatch` (as well as `match` and `search`) don't return a boolean value.
+`fullmatch`, as well as `match` and `search`, don't return a boolean value.
 If the string does not match the pattern, they return `None`, which is a falsey value,
 making the `if` condition fail. But if there is a match, a `Match` object is returned, which contains all kinds of interesting information.
 
@@ -78,18 +78,18 @@ if match:
     h = match.group(1)
     m = match.group(2)
     s = match.group(3)
-    ms = match.group(4) or '000'
+    ms = match.group(4) or '.000'
 ```
 
-The `or '000'` is necessary because the fourth group is optional: if `string`
+The `or '.000'` is necessary because the fourth group is optional: if `string`
 were to equal `12:34:56`, then `match.group(4)` would return `None` to indicate
-that that part was omitted in `string`. The `or '000'` is equivalent to
+that that part was omitted in `string`. The `or '.000'` is equivalent to
 
 ```python
 ms = match.group(4)
 
 if ms is None:
-    ms = '000'
+    ms = '.000'
 ```
 
 This trick is not specific to regexes: you can use it anywhere you
@@ -102,7 +102,7 @@ match = re.fullmatch(r'(\d{2}):(\d{2}):(\d{2})(\.\d{3})?', string)
 
 if match:
     h, m, s, ms = match.groups()
-    ms = ms or '000'
+    ms = ms or '.000'
 ```
 
 The `groups` method also allows you to specify defaults for missing values:
@@ -111,7 +111,7 @@ The `groups` method also allows you to specify defaults for missing values:
 match = re.fullmatch(r'(\d{2}):(\d{2}):(\d{2})(\.\d{3})?', string)
 
 if match:
-    h, m, s, ms = match.groups('000')
+    h, m, s, ms = match.groups('.000')
 ```
 
 Now write the function `parse_time(string)` that expects a time with optional milliseconds.
