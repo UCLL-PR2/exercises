@@ -107,6 +107,84 @@ In practice, tests are run quite often:
 Depending on the project, there can also be _many_ tests to run.
 In other words, you want the tests to run fast.
 
+## Pytest
+
+Pytest is the testing framework we rely on in this course.
+We shortly explain what it does, exactly.
+
+As you know, running `pytest` will cause the tests defined in `tests.py` to be run.
+We [configured](https://docs.pytest.org/en/7.1.x/reference/reference.html#confval-python_files) it that way: if you look at `pytest.ini` in your repository's root directory, you'll find the line `python_files = tests.py`, telling Pytest which files to search for tests.
+
+Inside this file, Pytest collects all functions that start with `test`.
+This is the [default setting](https://docs.pytest.org/en/7.1.x/reference/reference.html#confval-python_functions).
+
+Each test function is run.
+A test function that returns normally (i.e., no exception) is considered to have passed.
+Therefore, in order to tell Pytest a test failed, you need to throw an exception.
+
+While you can throw an assertion manually, we strongly suggest to rely on `assert`:
+
+```python
+def test_something():
+    assert condition
+```
+
+If `condition` evaluates to a falsey value, an `AssertionError` will be thrown.
+
+If you rely on `assert`, Pytest will be able to recognize the checks and rewrite your code slightly to allow for better feedback.
+For example, compare these two tests:
+
+```python
+def test_1():
+    actual = [1, 2, 3]
+    expected = [1, 2, 4]
+    assert expected == actual
+
+
+def test_2():
+    actual = [1, 2, 3]
+    expected = [1, 2, 4]
+    if actual != expected:
+        raise AssertionError()
+```
+
+Running the tests produces the following feedback:
+
+```bash
+$ pytest
+FF                                                   [100%]
+===================== FAILURES ============================
+______________________ test_1 _____________________________
+
+    def test_1():
+        actual = [1, 2, 3]
+        expected = [1, 2, 4]
+>       assert expected == actual
+E       assert [1, 2, 4] == [1, 2, 3]
+E         At index 2 diff: 4 != 3
+E         Use -v to get more diff
+
+tests.py:4: AssertionError
+______________________ test_2 _____________________________
+    def test_2():
+        actual = [1, 2, 3]
+        expected = [1, 2, 4]
+        if actual != expected:
+>           raise AssertionError()
+E           AssertionError
+
+tests.py:11: AssertionError
+============== short test summary info =====================
+FAILED tests.py::test_1 - assert [1, 2, 4] == [1, 2, 3]
+FAILED tests.py::test_2 - AssertionError
+2 failed in 0.09s
+```
+
+As you can see, `test_1` provides useful information: it shows you the values of `actual` and `expected`.
+Pytest even points out how exactly they differ: in our case, the elements with index 2 are unequal.
+
+We'll discuss more of its capabilities as we progress.
+
 ## Task
 
 Say we need to write a function `overlapping_intervals(interval1, interval2)` that checks whether the given intervals overlap.
