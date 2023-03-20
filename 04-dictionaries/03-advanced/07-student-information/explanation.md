@@ -2,7 +2,7 @@
 
 ## `process_data`
 
-Create a function `process_data(data)` that transforms a list of strings into a dictionary.
+Create a function `process_data(string_data)` that transforms a list of strings into a dictionary.
 
 The input list has the following format:
 
@@ -28,14 +28,18 @@ It must be transformed into
 
 ## `average_age`
 
-Create a function `average_age(dictionary)` that calculates the average age of the students in the input dictionary.
+Create a function `average_age(data)` that calculates the average age of the students in the input dictionary.
+The parameter `data` is a dictionary with the same structure as what `process_data` returns.
 
 ## `courses`
 
-Create a function `courses(dictionary)` that returns a collection of all the courses taken by the students in the input dictionary.
+Create a function `courses(data)` that returns a collection of all the courses taken by the students in the input dictionary.
 Return them as a set.
+
+The parameter `data` is a dictionary with the same structure as what `process_data` returns.
 
 ## `most_common_course`
 
 Create a function `most_common_course(data)` that returns the set of courses that is taken by the most number of students.
+The parameter `data` is a dictionary with the same structure as what `process_data` returns.
 For example, say `Math` is taken by 5 students, `Spanish` by 3, and `Biology` by 5, the function should return `{'Math', 'Biology'}`.

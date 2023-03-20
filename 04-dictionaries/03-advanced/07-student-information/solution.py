@@ -1,6 +1,6 @@
-def process_data(data):
+def process_data(string_data):
     students = {}
-    for item in data:
+    for item in string_data:
         name, age, *courses = item.split(',')
         students[name] = {
             'age': int(age),
