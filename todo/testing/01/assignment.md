@@ -50,7 +50,15 @@ Don't do it.
 If you're going to write testing code, you might as well not remove it, because that actually requires extra effort.
 Simply group your testing code in a separate file, and keep it there, ready to be run.
 
-Another major weakness of the example above is that it requires manual checking: `some_function`'s return values are printed but need to be checked each time.
+People who remove tests assume that
+
+* their tests are exhaustive and that they've just shown their code is 100% bug free, so no need to ever test it again; and
+* their code will never need to be modified in any way (e.g., an optimization, an extra optional parameter, etc.)
+
+Those assumptions are more often than not wrong.
+So keep your tests.
+
+Another major weakness of the example above is that it requires manual checking: `some_function`'s return values are printed out but need to be checked each time.
 Instead, include the expected value in the tests:
 
 ```python
@@ -59,6 +67,9 @@ assert some_function(77) == 678
 ```
 
 This way, it becomes the machine's job to perform the checking.
+
+In short, you want to be able to simply run the tests and get a 100% pass rate.
+Testing should require no more work from you than that.
 
 ### Fine Grained Tests
 
@@ -79,6 +90,12 @@ A test should ideally only be able to fail for only one reason.
 If a single test can fail for ten different reasons, then there's ten different things to investigate if that test fails.
 Our goal will be to keep the "reasons for failure" of every test as low as possible, so that if a test fails, we know exactly where to look for the responsible code.
 
+### Isolated Tests
+
+Tests should always be run in isolation.
+By this we mean that tests should not be able to affect each other's results.
+The order in which the tests are run should not matter, and tests should be able to be run in parallel without affecting the outcome.
+
 ### Fast Running Tests
 
 In practice, tests are run quite often:
@@ -90,18 +107,17 @@ In practice, tests are run quite often:
 Depending on the project, there can also be _many_ tests to run.
 In other words, you want the tests to run fast.
 
-### Isolated Tests
-
-
-
-## What are Tests?
+## Task
 
 Say we need to write a function `overlapping_intervals(interval1, interval2)` that checks whether the given intervals overlap.
-An interval is represented as a tuple `(left, right)`, where `left` represents the lower bound and `right` the upper bound.
+We represent intervals using pairs.
+The interval represented by the tuple `(left, right)` contains all values `x` for which `left <= x <= right`.
 For example, the intervals `(2, 5)` and `(3, 8)` do overlap: they have `2` and `3` in common.
 Conversely, `(0, 4)` and `(6, 9)` do not overlap.
+Note that `(0, 4)` and `(4, 0)` do not overlap: the second interval is empty since there exist no `x` for which `4 <= x <= 0`.
 
-Let's implement this function:
+Let's implement this function.
+Copy the code below to `student.py`:
 
 ```python
 def overlapping_intervals(interval1, interval2):
@@ -114,16 +130,27 @@ def overlapping_intervals(interval1, interval2):
 ```
 
 This is a nontrivial function, so we better test it.
+Copy this test to `tests.py`:
 
 ```python
+from student import overlapping_intervals
+
+
 def test_overlapping_intervals():
     assert overlapping_intervals((1, 5), (3, 6))
     assert not overlapping_intervals((2, 5), (7, 10))
 ```
 
+Run the tests using `pytest` as usual.
+They should pass.
 
+However, `overlapping_intervals`'s implementation is actually faulty: the tests are incomplete.
+Your task is
 
-
-Finds bugs, cannot prove their absence
-
-## Automation
+* Add more `assert`s to the test.
+  Try to think of as many cases as you can.
+  Make sure to check cases where the expected result is `True` and cases where the expected result is `False`.
+* Try to understand what's wrong with `overlapping_intervals`'s implementation.
+* Fix `overlapping_intervals`.
+* Run our tests by using `pytest -x verify.py`.
+  If these don't all pass, go back to step 1.
