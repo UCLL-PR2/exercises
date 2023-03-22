@@ -230,5 +230,10 @@ Your task is
   Make sure to check cases where the expected result is `True` and cases where the expected result is `False`.
 * Try to understand what's wrong with `overlapping_intervals`'s implementation.
 * Fix `overlapping_intervals`.
+* Run your own tests again and make sure they pass.
+  If not, go back to fixing `overlapping_intervals`.
 * Run our tests by using `pytest -x verify.py`.
   If these don't all pass, go back to step 1.
+
+> You should always commit all files you were tasked to update.
+> In the past, this was limited to `student.py`, but now you should also add `tests.py`.
