@@ -3,9 +3,9 @@ from util import Card
 
 def genres(movies):
     return {
-        genres
+        genre
         for movie in movies
-        for genre in movie.genre
+        for genre in movie.genres
     }
 
 
