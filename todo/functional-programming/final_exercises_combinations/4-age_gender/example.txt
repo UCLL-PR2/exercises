@@ -1,6 +1,0 @@
-Tom,32,Male
-Jane,25,Female
-John,28,Male
-Mary,36,Female
-Bob,44,Male
-Sue,19,Female
