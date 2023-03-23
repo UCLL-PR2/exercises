@@ -91,3 +91,6 @@ for student_path in sorted(student_paths):
         print(f'# {copy_command}')
     else:
         print(copy_command)
+
+
+log('Finished successfully')
