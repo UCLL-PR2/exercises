@@ -43,7 +43,7 @@ If no such `Student` exists, `None` should be returned.
 
 You want the search to be as efficient as possible.
 Below we explain two algorithms: a slow one (but trivial to implement) and a fast one (but trickier to implement.)
-To solve this exercise, you'll need to complete these three steps:
+To solve this exercise, you'll need to complete these steps:
 
 * Implement the slow algorithm (linear search).
 * Implement the fast algorithm (binary search).
@@ -91,12 +91,15 @@ Also put this in the file named `student.py`.
 
 ## Testing
 
-Now write tests in `tests.py`.
+Now write a parametrized test in `tests.py`.
+It should have two parameters: `students` and `target_id`.
+
 Make sure to include as all special cases you can think of:
 
 * No `Student` with `id == target_id` occurs in the list.
 * The `Student` to be found is the first in the list.
 * The `Student` to be found is the last in the list.
 * The `Student` to be found is in the list, but neither the first or last.
-* The `id`s can be consecutive or have gaps in them.
+* The `Student`s' `id`s can be consecutive or have gaps in them.
 * The `Student` list is empty.
+* `target_id` should simply range from a low id (lower than the minimum student id) to a high id (higher than the maximum student id).
