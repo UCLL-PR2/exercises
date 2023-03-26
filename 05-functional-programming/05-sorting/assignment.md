@@ -44,7 +44,7 @@ class Person:
         return self.name < other.name
 ```
 
-Here, we say that a `Person` is "less than" another `Person` is the former's name is "less than" the latter's name.
+Here, we say that a `Person` is "less than" another `Person` if the former's name is "less than" the latter's name.
 `<` on strings corresponds to alphabetical case sensitive order: for example, `A < B` and `Z < a`.
 
 This approach is a rather constraining though: we can only define a single sorting order.
