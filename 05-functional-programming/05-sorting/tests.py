@@ -102,7 +102,7 @@ def test_sort_by_name(people):
     ],
 ])
 def test_sort_by_name_then_age(people):
-    function_name = 'test_sort_by_name_then_age'
+    function_name = 'sort_by_name_then_age'
     expected = getattr(solution, function_name)(people)
     actual = getattr(student, function_name)(people)
     assert expected == actual

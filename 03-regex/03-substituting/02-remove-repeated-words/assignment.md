@@ -21,3 +21,5 @@ If you were to try it out in a Python shell, you'd get:
 >>> re.sub(r'(.)', r'\1\1', 'abc')
 'aabbcc'
 ```
+
+Tip: look in the documentation for a way to define the start and end of a word.
