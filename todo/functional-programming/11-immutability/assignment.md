@@ -240,4 +240,7 @@ Functional programming allows more optimizations to be performed: the compiler c
 ## Tasks
 
 `starter.py` contains a series of functions written in imperative style: they all modify their arguments.
-Rewrite them in functional style in `student.py`: instead of modifying the argument, they must construct a new list.
+Rewrite them in functional style in `student.py`:
+
+* Instead of modifying the argument, they must construct a new value and return it.
+* Instead of using lists, use tuples, as these are basically immutable lists.

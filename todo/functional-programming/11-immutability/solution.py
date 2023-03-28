@@ -3,11 +3,11 @@ def remove_first(xs):
 
 
 def repeat(xs):
-    return [*xs, *xs]
+    return (*xs, *xs)
 
 
 def double(ns):
-    return [2 * n for n in ns]
+    return tuple(2 * n for n in ns)
 
 
 def swap(xs, i, j):
@@ -16,10 +16,10 @@ def swap(xs, i, j):
 
     i, j = min(i, j), max(i, j)
 
-    return [
+    return (
         *xs[:i],
         xs[j],
         *xs[i+1:j],
         xs[i],
         *xs[j+1:]
-    ]
+    )
