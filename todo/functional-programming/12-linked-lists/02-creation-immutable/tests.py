@@ -11,8 +11,13 @@ import solution
     tuple([*'abcde']),
     range(1000),
 ])
-def test_create_list(xs):
-    expected = solution.create_linked_list(iter(xs))
-    actual = student.create_linked_list(iter(xs))
+@pytest.mark.parametrize('converter, converter_name', [
+    (lambda xs: tuple(xs), 'tuple'),
+    (lambda xs: list(xs), 'list'),
+    (lambda xs: iter(xs), 'iterator'),
+])
+def test_create_linked_list(xs, converter, converter_name):
+    expected = solution.create_linked_list(converter(xs))
+    actual = student.create_linked_list(converter(xs))
 
-    assert expected == actual
+    assert expected == actual, f'Failed when {xs} was passed as {converter_name}'
