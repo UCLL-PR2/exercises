@@ -1,3 +1,6 @@
+import itertools
+
+
 class Node:
     def __init__(self, value, next=None):
         self.__value = value
