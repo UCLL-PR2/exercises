@@ -13,6 +13,6 @@ class Node:
 
     def __eq__(self, other):
         if isinstance(other, Node):
-            return (self.value, self.next) == (other.value, other.next)
+            return all(x == y for x, y in itertools.zip_longest(self, other, fillvalue=object()))
         else:
             return NotImplemented
