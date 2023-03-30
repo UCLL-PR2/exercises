@@ -8,7 +8,7 @@ These two lists should be returned in a tuple.
 def is_negative(x):
     return x < 0
 
->>> take_while([-4, -2, 0, -1, 4, 6])
+>>> take_while([-4, -2, 0, -1, 4, 6],is_negative)
 ([-4, -2], [0, -1, 4, 6])
 ```
 
