@@ -29,15 +29,7 @@ Node[1] --> Node[2] --> Node[3] --> Empty
 ```
 
 Technically, we should ask you to rewrite `create_linked_list` one more time, but we'll spare you that.
-A possible implementation would be
-
-```python
-def create_linked_list(xs):
-    result = Empty()
-    for x in reversed(xs):
-        result = Node(x, result)
-    return result
-```
+We added a static method `from_iterable` to `Node` that takes over `create_linked_list`'s job for you.
 
 So now we have two classes to represent linked lists: `Node` and `Empty`.
 

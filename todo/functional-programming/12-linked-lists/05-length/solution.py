@@ -2,6 +2,13 @@ import itertools
 
 
 class Node:
+    @staticmethod
+    def from_iterable(iterable):
+        result = Empty()
+        for x in reversed(iterable):
+            result = Node(x, result)
+        return result
+
     def __init__(self, value, next=None):
         self.__value = value
         self.__next = next
