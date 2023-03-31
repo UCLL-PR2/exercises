@@ -11,7 +11,7 @@ class Node:
 
     def __init__(self, value, next=None):
         self.__value = value
-        self.__next = next
+        self.__next = next or Empty()
 
     @property
     def value(self):
