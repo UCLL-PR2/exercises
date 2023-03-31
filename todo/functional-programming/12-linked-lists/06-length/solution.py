@@ -1,16 +1,29 @@
-# Imperative
-def length(linked_list):
-    result = 0
-    current = linked_list
-    while current is not None:
-        result += 1
-        current = current.next
-    return result
+import itertools
 
 
-# Recursive
-def length(linked_list):
-    if linked_list is not None:
-        return 1 + length(linked_list.next)
-    else:
+class Node:
+    def __init__(self, value, next=None):
+        self.__value = value
+        self.__next = next
+
+    @property
+    def value(self):
+        return self.__value
+
+    @property
+    def next(self):
+        return self.__next
+
+    def __eq__(self, other):
+        if isinstance(other, Node):
+            return all(x == y for x, y in itertools.zip_longest(self, other, fillvalue=object()))
+        else:
+            return NotImplemented
+
+    def __len__(self):
+        return len(self.next) + 1
+
+
+class Empty:
+    def __len__(self):
         return 0

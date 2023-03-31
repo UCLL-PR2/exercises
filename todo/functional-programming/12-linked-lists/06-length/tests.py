@@ -1,11 +1,12 @@
 import pytest
 import student
 import solution
-from linkedlist import Node
 
 
-def create_linked_list(xs):
-    result = None
+def create_linked_list(xs, module):
+    Empty = getattr(solution, 'Empty')
+    Node = getattr(solution, 'Node')
+    result = Empty()
     for x in reversed(xs):
         result = Node(x, result)
     return result
@@ -16,8 +17,9 @@ def create_linked_list(xs):
     ['a', 'b', 'c', 'd'],
 ])
 def test_length(elts):
-    linked_list = create_linked_list(elts)
-    expected = solution.length(linked_list)
-    actual = student.length(linked_list)
+    solution_linked_list = create_linked_list(elts, solution)
+    student_linked_list = create_linked_list(elts, student)
+    expected = len(solution_linked_list)
+    actual = len(student_linked_list)
 
-    assert expected == actual, f'length({elts}) should return {expected}'
+    assert expected == actual, f'len({elts}) should return {expected}'

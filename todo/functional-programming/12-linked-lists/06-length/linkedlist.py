@@ -19,3 +19,7 @@ class Node:
             return all(x == y for x, y in itertools.zip_longest(self, other, fillvalue=object()))
         else:
             return NotImplemented
+
+
+class Empty:
+    pass
