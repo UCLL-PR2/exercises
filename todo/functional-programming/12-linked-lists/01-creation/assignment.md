@@ -118,7 +118,7 @@ class Node:
 If we represent this visually, we have
 
 ```text
-Node(A) --> Node(B) --> Node(C)
+Node(A) --> Node(B) --> Node(C) --> None
 ```
 
 This eerily resembles a list with elements `'A'`, `'B'` and `'C'`.
