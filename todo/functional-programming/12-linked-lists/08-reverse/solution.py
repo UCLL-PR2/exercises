@@ -1,0 +1,63 @@
+import itertools
+
+
+class Node:
+    @staticmethod
+    def from_iterable(iterable):
+        result = Empty()
+        for x in reversed(iterable):
+            result = Node(x, result)
+        return result
+
+    def __init__(self, value, next=None):
+        self.__value = value
+        self.__next = next or Empty()
+
+    @property
+    def value(self):
+        return self.__value
+
+    @property
+    def next(self):
+        return self.__next
+
+    def __eq__(self, other):
+        if isinstance(other, Node):
+            return all(x == y for x, y in itertools.zip_longest(self, other, fillvalue=object()))
+        else:
+            return NotImplemented
+
+    def __len__(self):
+        return len(self.next) + 1
+
+    def __getitem__(self, index):
+        if index == 0:
+            return self.value
+        else:
+            return self.__next[index - 1]
+
+    def __add__(self, other):
+        return Node(self.value, self.next + other)
+
+    def __reversed__(self):
+        return self.next._reverse_helper(Node(self.value))
+
+    def _reverse_helper(self, acc):
+        return self.next._reverse_helper(Node(self.value, acc))
+
+
+class Empty:
+    def __len__(self):
+        return 0
+
+    def __getitem__(self, index):
+        raise IndexError()
+
+    def __add__(self, other):
+        return other
+
+    def __reversed__(self):
+        return self
+
+    def _reverse_helper(self, acc):
+        return acc
