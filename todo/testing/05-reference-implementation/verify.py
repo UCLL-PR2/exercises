@@ -1,11 +1,26 @@
 import pytest
-import solution
-import student
+import search
 
 
 class Student:
     def __init__(self, id):
         self.id = id
+
+
+def binary_search(students, id):
+    left = 0
+    right = len(students)
+
+    while left < right:
+        middle = (left + right) // 2
+        middle_id = students[middle].id
+        if id < middle_id:
+            right = middle
+        elif id > middle_id:
+            left = middle + 1
+        else:
+            return students[middle]
+    return None
 
 
 @pytest.mark.parametrize('students', [
@@ -15,6 +30,6 @@ class Student:
 ])
 @pytest.mark.parametrize('id', range(0, 100))
 def test_search(students, id):
-    expected = solution.binary_search(students, id)
-    actual = student.binary_search(students, id)
+    expected = binary_search(students, id)
+    actual = search.binary_search(students, id)
     assert expected == actual, f"Failed when looking for id={id}"

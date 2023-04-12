@@ -58,7 +58,7 @@ If not, the algorithm moves on to the next in line.
 If the end of the list is reached without finding the student with `id == target_id`, then `None` is returned.
 
 Write a function `linear_search(students, target_id)` that implements this algorithm.
-Put this in the file named `student.py`.
+Put this in the file named `search.py`.
 
 ### Binary Search
 
@@ -87,7 +87,7 @@ Use this same principle to find the correct `Student` object:
 * If `id == target_id` your search is finished, otherwise you'll need to update either `left` or `right` to reflect the fact that the interval has been halved in two.
 
 Implement this as `binary_search(students, target_id)`.
-Also put this in the file named `student.py`.
+Also put this in the file named `search.py`.
 
 ## Testing
 
