@@ -53,8 +53,7 @@ In order to implement the `overdue_tasks` property, you'll need the following `d
 Example usage:
 
 ```python
->>>
-from datetime import date, timedelta
+>>> from datetime import date, timedelta
 >>> tasks = TaskList()
 >>> len(tasks)
 0
