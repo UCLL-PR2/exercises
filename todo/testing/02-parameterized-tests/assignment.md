@@ -205,7 +205,7 @@ def test_nonoverlapping_intervals(interval1, interval2):
 
 ## Task
 
-Copy the contents of `starter.py` to `student.py`.
+Copy the contents of `starter.py` to `parentheses.py`.
 The function `matching_parentheses(string)` receives a string containing only parentheses (`'('` and `')'`).
 It checks that all parentheses are matched, i.e., that every `(` has a matching `)`.
 
@@ -213,7 +213,7 @@ It checks that all parentheses are matched, i.e., that every `(` has a matching 
   Rely on `@parametrize` to specify inputs.
 * Run your tests.
   They should fail as `matching_parentheses` contains bugs.
-* Fix `matching_parentheses` in `student.py`.
+* Fix `matching_parentheses` in `parentheses.py`.
 * Run your tests (`$ pytest`).
 * Run our tests (`$ pytest verify.py`).
   If those fail, go back to step 1.
