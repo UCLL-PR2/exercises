@@ -6,7 +6,7 @@ We do not provide any way to validate your work, as you'll be writing your own t
 
 ## `Task`
 
-Write a class `Task`.
+In a file `tasks.py`, write a class `Task`.
 
 * It has a readonly property `description` that is initialized using a constructor parameter.
 * It has a readonly property `due_date` that is initialized using a constructor parameter.
@@ -94,3 +94,5 @@ Example usage:
 >>> tasks.overdue_tasks
 []
 ```
+
+Implement this class in the same file `tasks.py`.
