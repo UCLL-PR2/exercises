@@ -9,7 +9,7 @@ We expect the following behavior:
 from datetime import date, timedelta
 
 
-def test_task_becomes_overdue_date():
+def test_task_becomes_overdue():
     tomorrow = date.today + timedelta(days=1)
     task = Task('some description', tomorrow)
     tasks = TaskList()
@@ -143,4 +143,5 @@ There are many cases where dependency injection can be useful:
 
 ## Testing
 
-Write the test `test_task_becomes_overdue_date` that performs the same checks as the code shown at the top of this file.
+In a separate file `tests.py`, write the test `test_task_becomes_overdue` that performs the same checks as the code shown at the top of this file.
+Run the test and make sure it passes.
