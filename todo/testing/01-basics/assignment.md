@@ -90,11 +90,13 @@ A test should ideally only be able to fail for only one reason.
 If a single test can fail for ten different reasons, then there's ten different things to investigate if that test fails.
 Our goal will be to keep the "reasons for failure" of every test as low as possible, so that if a test fails, we know exactly where to look for the responsible code.
 
-### Isolated Tests
+### Readable Tests
 
-Tests should always be run in isolation.
-By this we mean that tests should not be able to affect each other's results.
-The order in which the tests are run should not matter, and tests should be able to be run in parallel without affecting the outcome.
+When a test fails, you'll want to be able what exactly was being tested:
+
+* If objects are involved, what state were they in?
+* What action was performed?
+* What was the expected result and what was the actual result?
 
 ### Fast Running Tests
 
@@ -107,15 +109,30 @@ In practice, tests are run quite often:
 Depending on the project, there can also be _many_ tests to run.
 In other words, you want the tests to run fast.
 
+### Isolated Tests
+
+Tests should always be run in isolation.
+By this we mean that tests should not be able to affect each other's results.
+The order in which the tests are run should not matter, and tests should be able to be run in parallel without affecting the outcome.
+
+
 ## Pytest
 
 Pytest is the testing framework we rely on in this course.
-We shortly explain what it does, exactly.
+We briefly explain what it does, exactly.
 
 As you know, running `pytest` will cause the tests defined in `tests.py` to be run.
-We [configured](https://docs.pytest.org/en/7.1.x/reference/reference.html#confval-python_files) it that way: if you look at `pytest.ini` in your repository's root directory, you'll find the line `python_files = tests.py`, telling Pytest which files to search for tests.
+We [configured](https://docs.pytest.org/en/7.1.x/reference/reference.html#confval-python_files) it that way: if you look at `pytest.ini` in your repository's root directory, you'll find
 
-Inside this file, Pytest collects all functions that start with `test`.
+```text
+python_files =
+    tests.py
+    *_tests.py
+```
+
+which tells Pytest which files to search for tests.
+
+Inside these files, Pytest collects all functions that start with `test`.
 This is the [default setting](https://docs.pytest.org/en/7.1.x/reference/reference.html#confval-python_functions).
 
 Each test function is run.
