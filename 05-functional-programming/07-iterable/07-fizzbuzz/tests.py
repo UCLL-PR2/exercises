@@ -6,4 +6,4 @@ import solution
 def test_fizzbuzz():
     expected = islice(solution.fizzbuzz(), 1000)
     actual = islice(student.fizzbuzz(), 1000)
-    assert expected == actual
+    assert list(expected) == list(actual)

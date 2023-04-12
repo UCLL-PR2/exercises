@@ -84,7 +84,7 @@ for student_path in sorted(student_paths):
 
     source_size = file_size(source)
     target_size = file_size(target)
-    copy_command = f'cp {source} {target}'
+    copy_command = f'cp "{source}" "{target}"'
 
     if source_size < target_size:
         print(f'# WARNING: {source} is smaller than {target}')
