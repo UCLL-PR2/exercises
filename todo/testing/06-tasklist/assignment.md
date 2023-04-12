@@ -40,6 +40,8 @@ It offers the following functionality:
 
 * `TaskList()` creates an empty task list.
 * `task_list.add_task(task)` adds a `Task` to the list.
+  The `Task`'s `due_date` must be in the future.
+  In case its `due_date` is in the past, a `RuntimeErrror` should be thrown.
 * `len(task_list)` gives the number of tasks in the list.
 * `task_list.finished_tasks` returns a list of all finished tasks, i.e., those tasks whose `task.finished` is `True`.
 * `task_list.due_tasks` returns a list of all unfinished tasks, i.e., those tasks whose `task.finished` is `False`.
@@ -59,6 +61,14 @@ Example usage:
 0
 
 >>> tomorrow = date.today + timedelta(days=1)
+>>> yesterday = date.today - timedelta(days=1)
+
+# Adding task with due_date in past is forbidden
+>>> task_in_past = Task('some description', yesterday)
+>>> tasks.add_task(task_in_past)
+RuntimeError
+
+# Adding task with due_date in future works
 >>> task = Task('some description', tomorrow)
 >>> tasks.add_task(task)
 >>> len(tasks)
