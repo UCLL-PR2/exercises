@@ -1,6 +1,6 @@
 import pytest
 import itertools
-from student import split_in_two, merge_sorted, merge_sort
+from mergesort import *
 
 
 @pytest.mark.parametrize('ns', [

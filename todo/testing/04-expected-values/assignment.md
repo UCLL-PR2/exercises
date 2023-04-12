@@ -8,7 +8,7 @@ In this case, your tests will not catch this bug.
 
 But maybe there are ways to avoid having to solve the problem yourself.
 
-## Inverse Functions
+## Turning Things Around
 
 Consider a function that computes the square root of a number.
 Of course, you can simply use `x**0.5`, but let's pretend for the moment we're working on a platform that does not have a built-in square root operation.
@@ -104,7 +104,7 @@ First, we'll need a function `split_in_two(ns)` that splits a list `ns` halfway.
 If the input list has an odd number of elements, one of the halves will have to contain one more element than the other half.
 You are free to choose with half.
 
-Implement this function in `student.py`.
+Implement this function in `mergesort.py`.
 In `tests.py`, write a parametrized test function `test_split_in_two`:
 
 * `test_split_in_two` should have one parameter, namely the list to be split.
@@ -189,7 +189,7 @@ Have the test check the result by asserting that `test_merge_sorted(left, right)
 
 ### `merge_sort`
 
-`merge_sort(ns)` receives anlist and returns the same list, but with its elements sorted.
+`merge_sort(ns)` receives a list and returns the same list, but with its elements sorted.
 It does not modify `ns` in any way.
 
 It works as follows:
