@@ -1,8 +1,5 @@
-def average(ns):
-    return sum(ns) / len(ns)
-
-
 import pytest
+from statistics import average
 
 
 @pytest.mark.parametrize('ns, expected', [

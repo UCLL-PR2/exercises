@@ -1,13 +1,13 @@
 # Approx
 
-Write a function `average(ns)` that given a list `ns` of numbers, computes the average.
+In a file `statistics.py`, write a function `average(ns)` that given a list `ns` of numbers, computes the average.
 The average equals the sum of `ns` divided by the length of `ns`.
 
-Write a parametrized test with two parameters: `ns` and `expected`.
+In `tests.py`, write a parametrized test with two parameters: `ns` and `expected`.
 Make sure to include the case `([0.1, 0.1, 0.1], 0.1)`.
 
 Run your tests.
-They might fail unexpectedly.
+They should fail.
 
 ## Floating Points
 
