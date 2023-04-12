@@ -7,7 +7,7 @@ In `tests.py`, write a parametrized test with two parameters: `ns` and `expected
 Make sure to include the case `([0.1, 0.1, 0.1], 0.1)`.
 
 Run your tests.
-They should fail.
+We expect them to fail.
 
 ## Floating Points
 
