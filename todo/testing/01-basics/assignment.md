@@ -212,7 +212,7 @@ Conversely, `(0, 4)` and `(6, 9)` do not overlap.
 Note that `(0, 4)` and `(4, 0)` do not overlap: the second interval is empty since there exist no `x` for which `4 <= x <= 0`.
 
 Let's implement this function.
-Copy the code below to `student.py`:
+Copy the code below to `intervals.py`:
 
 ```python
 def overlapping_intervals(interval1, interval2):
@@ -228,7 +228,7 @@ This is a nontrivial function, so we better test it.
 Copy this test to `tests.py`:
 
 ```python
-from student import overlapping_intervals
+from intervals import overlapping_intervals
 
 
 def test_overlapping_intervals():
@@ -253,4 +253,4 @@ Your task is
   If these don't all pass, go back to step 1.
 
 > You should always commit all files you were tasked to update.
-> In the past, this was limited to `student.py`, but now you should also add `tests.py`.
+> In the past, this was limited to `student.py`, but now you should add `intervals.py` and `tests.py`.
