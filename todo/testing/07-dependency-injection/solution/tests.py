@@ -3,7 +3,7 @@ from calendars import ManualCalendar
 from tasks import Task, TaskList
 
 
-def test_overdue_tasks():
+def test_task_becomes_overdue():
     today = date(2000, 1, 1)
     tomorrow = date(2000, 1, 2)
     next_week = date(2000, 1, 8)
