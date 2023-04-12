@@ -103,8 +103,8 @@ First, we'll need a function `split_in_two(ns)` that splits a list `ns` halfway.
 
 If the input list has an odd number of elements, one of the halves will have to contain one more element than the other half.
 You are free to choose with half.
-
 Implement this function in `mergesort.py`.
+
 In `tests.py`, write a parametrized test function `test_split_in_two`:
 
 * `test_split_in_two` should have one parameter, namely the list to be split.
