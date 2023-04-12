@@ -1,17 +1,3 @@
-from datetime import date, timedelta
-
-
-class Calendar:
-    @property
-    def today(self):
-        return date.today()
-
-
-class ManualCalendar:
-    def __init__(self, today):
-        self.today = today
-
-
 class Task:
     def __init__(self, description, due_date):
         self.__description = description
@@ -52,16 +38,3 @@ class TaskList:
     def overdue_tasks(self):
         return [task for task in self.__tasks if not task.finished and task.due_date < self.__calendar.today]
 
-
-def test_overdue_tasks():
-    today = date(2000, 1, 1)
-    tomorrow = date(2000, 1, 2)
-    next_week = date(2000, 1, 8)
-    calendar = ManualCalendar(today)
-    task = Task('description', tomorrow)
-    task_list = TaskList(calendar)
-
-    task_list.add_task(task)
-    calendar.today = next_week
-
-    assert [task] == task_list.overdue_tasks

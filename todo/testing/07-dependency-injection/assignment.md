@@ -68,7 +68,7 @@ We can, however, introduce an _indirection_: what if we develop our _own_ `today
 
 ## `Calendar`
 
-Write a new class `Calendar`.
+In `calendars.py`, write a new class `Calendar`.
 It has a single property: `today`.
 It returns today's date, i.e., `date.today()`.
 
@@ -87,7 +87,7 @@ After these changes, everything should still work exactly as before.
 
 ## `ManualCalendar`
 
-Now write another class `ManualCalendar`.
+Also in `calendars.py`, now write another class `ManualCalendar`.
 
 * To the outside world, it should work the same as `Calendar`, i.e., it should have a member named `today`.
 * It gives the user complete control over the date returned by `today`.
