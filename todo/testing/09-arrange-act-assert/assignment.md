@@ -73,6 +73,10 @@ Remember that updating your code can make the tests unexpectedly fail.
 You will need to inspect the failing tests to understand what exactly goes wrong, after which you can pinpoint the location in the code that contains a bug and fix it.
 Adopting a consistent structure make tests easier to understand.
 
+> In case you are wondering why we set `today` to `date(2000, 1, 1)` instead of `date.today()`: tests must be 100% deterministic and always check the same things every time they're run.
+> Using `date.today()` would have the tests run on different values each day.
+> If you want the tests to run for different values of `today`, you should use parametrized tests.
+
 ## Tasks
 
 Add the following tests:
