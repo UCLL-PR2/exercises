@@ -1,6 +1,6 @@
 import pytest
 from datetime import date, timedelta
-from calendars import ManualCalendar
+from calendars import CalendarStub
 from tasks import Task, TaskList
 
 
@@ -18,7 +18,7 @@ def yesterday():
 
 
 def create_calendar():
-    return ManualCalendar(today())
+    return CalendarStub(today())
 
 
 def create_empty_task_list(calendar=None):
