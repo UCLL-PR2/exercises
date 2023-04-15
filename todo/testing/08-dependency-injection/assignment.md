@@ -85,9 +85,9 @@ Example usage:
 
 After these changes, everything should still work exactly as before.
 
-## `ManualCalendar`
+## `CalendarStub`
 
-Also in `calendars.py`, now write another class `ManualCalendar`.
+Also in `calendars.py`, now write another class `CalendarStub`.
 
 * To the outside world, it should work the same as `Calendar`, i.e., it should have a member named `today`.
 * It gives the user complete control over the date returned by `today`.
@@ -96,7 +96,7 @@ Example usage:
 
 ```python
 # The constructor allows picking our own date
->>> calendar = ManualCalendar(date(2000, 1, 1))
+>>> calendar = CalendarStub(date(2000, 1, 1))
 >>> calendar.today
 datetime.date(2000, 1, 1)
 
@@ -127,7 +127,7 @@ It makes code more modular, which increases reusability and testability.
 We now have two calendars:
 
 * `Calendar` will be used in production, that is, the code that ends up running on the end user's machine.
-* `ManualCalendar` will come in handy during testing as it allows us to easily set the date.
+* `CalendarStub` will come in handy during testing as it allows us to easily set the date.
 
 ## Other Examples
 

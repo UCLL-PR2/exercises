@@ -1,5 +1,5 @@
 from datetime import date
-from calendars import ManualCalendar
+from calendars import CalendarStub
 from tasks import Task, TaskList
 
 
@@ -7,7 +7,7 @@ def test_task_becomes_overdue():
     today = date(2000, 1, 1)
     tomorrow = date(2000, 1, 2)
     next_week = date(2000, 1, 8)
-    calendar = ManualCalendar(today)
+    calendar = CalendarStub(today)
     task = Task('description', tomorrow)
     task_list = TaskList(calendar)
 
