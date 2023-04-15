@@ -1,6 +1,6 @@
 import pytest
 from datetime import date, timedelta
-from calendars import ManualCalendar
+from calendars import CalendarStub
 from tasks import Task, TaskList
 
 
@@ -9,7 +9,7 @@ def setup_function():
     today = date(2000, 1, 1)
     yesterday = today - timedelta(days=1)
     tomorrow = today + timedelta(days=1)
-    calendar = ManualCalendar(today)
+    calendar = CalendarStub(today)
     sut = TaskList(calendar)
 
 

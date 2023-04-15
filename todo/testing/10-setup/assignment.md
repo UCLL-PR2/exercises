@@ -4,7 +4,7 @@ Take a look at the `tests.py` in the solutions folder of the *previous* exercise
 The Arrange sections have much in common:
 
 * A `today` date is created.
-* A new `ManualCalendar` initialized on `today`.
+* A new `CalendarStub` initialized on `today`.
 * A `TaskList` is made in most.
 
 We would like to factor out this common code.
@@ -68,7 +68,7 @@ def setup_function():
 
 
 def test_whatever():
-    calendar = ManualCalendar(today)
+    calendar = CalendarStub(today)
     # ...
 ```
 
