@@ -1,4 +1,4 @@
-# Factory Functions
+# Fixtures
 
 We used `setup_function` to factor out common code.
 However, it has some serious shortcomings.
