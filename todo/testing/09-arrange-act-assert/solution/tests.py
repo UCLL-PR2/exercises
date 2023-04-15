@@ -1,13 +1,13 @@
 import pytest
 from datetime import date, timedelta
-from calendars import ManualCalendar
+from calendars import CalendarStub
 from tasks import Task, TaskList
 
 
 def test_creation():
     # Arrange
     today = date(2000, 1, 1)
-    calendar = ManualCalendar(today)
+    calendar = CalendarStub(today)
 
     # Act
     sut = TaskList(calendar)
@@ -23,7 +23,7 @@ def test_adding_task_with_due_day_in_future():
     # Arrange
     today = date(2000, 1, 1)
     tomorrow = today + timedelta(days=1)
-    calendar = ManualCalendar(today)
+    calendar = CalendarStub(today)
     task = Task('description', tomorrow)
     sut = TaskList(calendar)
 
@@ -39,7 +39,7 @@ def test_adding_task_with_due_day_in_past():
     # Arrange
     today = date(2000, 1, 1)
     yesterday = today - timedelta(days=1)
-    calendar = ManualCalendar(today)
+    calendar = CalendarStub(today)
     task = Task('description', yesterday)
     sut = TaskList(calendar)
 
@@ -54,7 +54,7 @@ def test_task_becomes_overdue():
     today = date(2000, 1, 1)
     tomorrow = today + timedelta(days=1)
     next_week = today + timedelta(weeks=1)
-    calendar = ManualCalendar(today)
+    calendar = CalendarStub(today)
     task = Task('description', tomorrow)
     sut = TaskList(calendar)
     sut.add_task(task)
@@ -70,7 +70,7 @@ def test_task_becomes_finished():
     # Arrange
     today = date(2000, 1, 1)
     tomorrow = today + timedelta(days=1)
-    calendar = ManualCalendar(today)
+    calendar = CalendarStub(today)
     task = Task('description', tomorrow)
     sut = TaskList(calendar)
     sut.add_task(task)
