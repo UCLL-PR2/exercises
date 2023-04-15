@@ -1,6 +1,6 @@
 import pytest
 from datetime import date, timedelta
-from calendars import ManualCalendar
+from calendars import CalendarStub
 from tasks import Task, TaskList
 
 
@@ -21,7 +21,7 @@ def yesterday(today):
 
 @pytest.fixture
 def calendar(today):
-    return ManualCalendar(today)
+    return CalendarStub(today)
 
 
 @pytest.fixture

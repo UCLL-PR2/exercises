@@ -34,7 +34,7 @@ def tomorrow(today):
 
 @pytest.fixture
 def calendar(today):
-    return ManualCalendar(today)
+    return CalendarStub(today)
 
 
 def test_calendar_stuff(calendar):
@@ -54,8 +54,8 @@ Here's how it works:
 * It finds it, sees there are no parameters (hence no dependencies) and simply calls the function.
   This returns a `date` object.
 * This `date` object is then passed as argument to the function `calendar`.
-  This function uses it to create a new `ManualCalendar`.
-* Thhis `ManualCalendar` is then passed to `test_calendar_stuff`, which can use it to perform some checks.
+  This function uses it to create a new `CalendarStub`.
+* Thhis `CalendarStub` is then passed to `test_calendar_stuff`, which can use it to perform some checks.
 
 In short, tests (and fixtures) can declare their dependencies using parameters.
 Pytest will then automatically call the corresponding `@fixture` and pass its return value as arguments.

@@ -7,6 +7,6 @@ class Calendar:
         return date.today()
 
 
-class ManualCalendar:
+class CalendarStub:
     def __init__(self, today):
         self.today = today
