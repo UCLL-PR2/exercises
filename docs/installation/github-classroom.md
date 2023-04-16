@@ -45,8 +45,8 @@ Open a terminal in this directory and enter the following command:
 
 ```bash
 # Download the repository
-# !!! Replace URL by the URL you were given earlier !!!
-$ git clone URL exercises
+# !!! Replace YOUR-FORK-URL by the URL you were given earlier by GitHub Classroom !!!
+$ git clone YOUR-FORK-URL exercises
 ```
 
 This should create a directory named `exercises` and download the course material into that directory.
