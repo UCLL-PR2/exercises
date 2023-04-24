@@ -212,7 +212,7 @@ Conversely, `(0, 4)` and `(6, 9)` do not overlap.
 Note that `(0, 4)` and `(4, 0)` do not overlap: the second interval is empty since there exist no `x` for which `4 <= x <= 0`.
 
 Let's implement this function.
-Copy the code below to `intervals.py`:
+Create a file `ìntervals.py` and copy the code below into that file:
 
 ```python
 def overlapping_intervals(interval1, interval2):
@@ -225,7 +225,7 @@ def overlapping_intervals(interval1, interval2):
 ```
 
 This is a nontrivial function, so we better test it.
-Copy this test to `tests.py`:
+Create a file `tests.py` and copy this test into that file:
 
 ```python
 from intervals import overlapping_intervals
