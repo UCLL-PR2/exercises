@@ -16,8 +16,8 @@ This planning will be updated as the semester progresses.
 | 5 | 05-functional-programming |
 | Easter | |
 | Easter | |
-| 6 | |
-| 7 | |
-| 8 | |
-| 9 | |
-| 10 | |
+| 6 | 06-testing |
+| 7 | 07-data-processing |
+| 8 | Continuing finishing exercises |
+| 9 | Continuing finishing exercises |
+| 10 | Exam preperation |
