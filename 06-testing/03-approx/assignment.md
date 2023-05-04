@@ -1,6 +1,6 @@
 # Approx
 
-In a file `statistics.py`, write a function `average(ns)` that given a list `ns` of numbers, computes the average.
+In a file `mystatistics.py`, write a function `average(ns)` that given a list `ns` of numbers, computes the average.
 The average equals the sum of `ns` divided by the length of `ns`.
 
 In `tests.py`, write a parametrized test with two parameters: `ns` and `expected`.

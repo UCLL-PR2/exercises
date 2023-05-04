@@ -1,5 +1,5 @@
 import pytest
-from statistics import average
+from mystatistics import average
 
 
 @pytest.mark.parametrize('ns, expected', [
