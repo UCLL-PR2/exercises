@@ -6,7 +6,7 @@ There was a practice exam on Thursday 20 April. For students who submitted a sol
 
 * 00_MBI04H_Programming2_PRACTICE_EXAM_coversheet.pdf
   * This is the coversheet which was available printed before the practice exam began. 
-  * At the real exam in June (and 2nd exam chance in August/September), you will find a coversheet similar to this printed on the desk when you enter. You can read this before the exam begins.
+  * At the real exam in June (and 2nd exam chance in August/September), you will find a coversheet similar to this printed on the desk when you enter. You should read this before the exam begins.
 * assignment.md
   * This file includes the description of the exercises you will need to solve for the (practice) exam.
 * filesystem.py
@@ -16,7 +16,9 @@ There was a practice exam on Thursday 20 April. For students who submitted a sol
 * test_filesystem.py
   * __Important__: this is a set of superficial tests which *only* check that you have most of the necessary classes and members that we have asked for in the assignment. These tests *do not* check if your program's functionality is correct or complete.
   * On the real exam, you can write your own more complete tests to check your own work if this is helpful for you. You should practice solving exercises without relying on the output of comprehensive testing so you are well prepared for the exam.
-* functional-tests.py
+  * To run these tests, open a terminal and run the following command: pytest test-filesystem.py
+* tests-not-given-on-the-exam.py (found in practice-exam-tests folder)
   * These are the more comprehensive tests that will check the functionalities of your solution.
   * __Important__: tests such as these will __NOT__ be provided at the real exam in June or August/September. These are only intended for you to evaluate your practice solution.
-  * Best practice: Attempt to solve the practice exam in its entirety, relying only on the assignment.md and test_filesystem.py, as well as your own insights into the problem. Only use the functional-tests.py at the end to review your solution and evaluate your work.
+  * Best practice: Attempt to solve the practice exam in its entirety, relying only on the assignment.md and test_filesystem.py, as well as your own insights into the problem. Only use the tests-not-given-on-the-exam.py at the end to review your solution and evaluate your work.
+  * To use these more complete tests to check your practice exam, copy the tests-not-given-on-the-exam.py file to the folder where your filesystem.py file is. Then open a terminal and run the following command: pytest tests-not-given-on-the-exam.py
