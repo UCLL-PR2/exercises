@@ -19,5 +19,5 @@ This planning will be updated as the semester progresses.
 | 6 | 06-testing |
 | 7 | 07-data-processing |
 | 8 | Continuing finishing exercises |
-| 9 | Exam preperation  |
+| 9 | Exam preparation  |
 | 10 | Q&A |
