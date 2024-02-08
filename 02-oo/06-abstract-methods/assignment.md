@@ -63,7 +63,7 @@ class ChessPiece(ABC):
     # some code
 ```
 
-Here, `ABC` stands for [_Abstract Base Class_](https://docs.python.org/3/library/abc.html).
+Here, `ABC` stands for [_Abstract Base Class_](https://docs.python.org/3/library/abc.html). `from abc import ABC` is the actual import, not just some letters from the alphabet!
 Base class is a synonym for parent class.
 
 Does this solve our problem?

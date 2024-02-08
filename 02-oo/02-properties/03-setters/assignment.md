@@ -116,7 +116,7 @@ It's like a hole in `Person` that we need to fix.
 class Person:
     def __init__(self, age):
         if age < 0:
-            raise ValueError('age must be positive)
+            raise ValueError('age must be positive')
         self.__age = age
 
     @property
@@ -161,9 +161,10 @@ Write a class `Time` that represents such a time of day.
 
 * It must keep track of hours, minutes and seconds.
 * The value of `hours` must be between 0 and 23.
-* The value of `minutes` and seconds must be between 0 and 59.
+* The value of `minutes` and `seconds` must be between 0 and 59.
 * The constructor takes three parameters `hours`, `minutes` and `seconds` and uses them to initialize the object's attributes.
-* The values of `hours`, `minutes` and `seconds` must be settable.
+* The values of `hours`, `minutes` and `seconds` must be settable and gettable.
+* A getter should always be before its brother setter, think about it why.
 * Rely on properties to guard `hours`, `minutes` and `seconds` against invalid values.
 
 A short example:

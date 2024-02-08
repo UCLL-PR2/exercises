@@ -12,7 +12,7 @@ at the end of lines in your code? Do you maniacally
 remove it whenever you notice it? Did you perhaps
 even look for an option in your editor to automatically
 remove that trailing whitespace (because there is one in Visual Studio Code, you know.)
-Good news, everyone! This exercise will let you write a function `remove_trailing_whitespace` that hunts down those horrible
+Good news, everyone! This exercise will let you write a function `remove_trailing_whitespace(string)` that hunts down those horrible
 utterly useless spaces and shreds them to nothingness.
 
 `sub` takes three parameters:

@@ -13,6 +13,7 @@ import solution
     "xabc",
     "abca",
     "abcab",
+    "abcabcabcabcabcabcabcabcabcabc",
 ])
 def test_function(string):
     function_name = 'ten_times_abc'

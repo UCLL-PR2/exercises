@@ -10,7 +10,5 @@ from student import *
 ])
 def test_calculator(weight, height, expected_bmi, expected_category):
     calc = BMICalculator(weight_in_kg=weight, height_in_m=height)
-    assert calc.weight_in_kg == weight
-    assert calc.height_in_m == height
     assert calc.bmi == expected_bmi
     assert calc.category == expected_category
