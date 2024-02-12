@@ -398,16 +398,6 @@ Since then, Git has made its way in the industry: Google, Microsoft, Amazon, Twi
 Chapter 2 of the [freely available book Pro Git](https://git-scm.com/book/en/v2) will help out a lot.
 Chapter 3 is also very useful.
 
-## I have two machines. How do I set them up so that both have access to my repository?
-
-Let's call your two machines A and B and assume you performed the installation instructions on A.
-Now you want your work to also be accessible on B.
-
-First, you need to have the GitHub URL of your repository.
-
-* You can go on Toledo and follow the GitHub Classroom link.
-* You can use `git remote -v` on machine A to see which repository URL is associated with `origin`.
-
 On B, create a new directory and clone your repository there.
 
 ```bash
