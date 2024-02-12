@@ -15,7 +15,7 @@ So, instead of using `[]` as delimiters, you simply uses `()`. That's really it.
 ## Zipping
 
 The built-in `zip` function takes a number of lists and
-groups their first elements together in a tuple, their second elements, etc.
+groups their first elements together in a tuple, the second elements of all the lists together, etc.
 For example, try the following in a Python shell:
 
 ```python
