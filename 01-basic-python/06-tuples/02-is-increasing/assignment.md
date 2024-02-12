@@ -9,7 +9,7 @@ Normally we don't push for a specific implementation, but for this exercise we'l
 * You start off with `ns`.
   Let's take `ns = [1, 2, 3]` as a working example.
 * Construct a new list, say `ms`, equal to `ns`, except that the first element has been dropped.
-  In the case of our working example, `ms` should be equal to `[2, 3]`].
+  In the case of our working example, `ms` should be equal to `[2, 3]`.
 * Pair up the elements of `ns` and `ms`.
   This gives us `[(1, 2), (2, 3)]`.
   As you can see, every element is teamed up with its successor.
