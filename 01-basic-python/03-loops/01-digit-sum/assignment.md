@@ -11,4 +11,4 @@ Next, write a function `remove_last_digit` that cuts off a number's last digit.
 `remove_last_digit(1481)` should return `148`.
 Hint: integer division.
 
-Finally, use these two functions to implement `digits_sum`.
+Finally, use these two functions to implement `digit_sum`.
