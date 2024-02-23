@@ -1,3 +1,3 @@
 # Assignment - difficulty level: *
 
-Write a function `first(xs)` that returns the first element of a list.
+Write a function `` that returns the first element of a list.
