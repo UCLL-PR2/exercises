@@ -13,7 +13,7 @@ This planning will be updated as the semester progresses.
 | 2 | 02-oo |-|
 | | 02-oo |-|
 | 4 | 03-regex |Webscraping & Register system|
-| 5 | 05-functional-programming |-|
+| 5 | 05-functional-programming | Tic-Tac-Toe |
 |  | 05-functional-programming |-|
 | Easter | |-|
 | Easter | |-|
