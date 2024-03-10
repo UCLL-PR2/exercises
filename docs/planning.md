@@ -14,5 +14,6 @@ This planning will be updated as the semester progresses.
 | | 02-oo |-|
 | 4 | 03-regex |Webscraping & Register system|
 | 5 | 05-functional-programming |-|
+| _ | 05-functional-programming |-|
 | Easter | |-|
 | Easter | |-|
