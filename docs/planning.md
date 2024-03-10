@@ -17,3 +17,5 @@ This planning will be updated as the semester progresses.
 |  | 05-functional-programming |-|
 | Easter | |-|
 | Easter | |-|
+
+The "Small Projects In Class" will be fun small projects that we will do in class only. These projects will not be available online, so come to class if you want to learn more!
