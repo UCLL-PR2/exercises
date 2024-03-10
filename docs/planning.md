@@ -10,8 +10,8 @@ This planning will be updated as the semester progresses.
 |-|-| -|
 | 1 | P1 Exams |-|
 | | 01-basic_python |-|
-| 2 | 02-oo |-|
-| | 02-oo |-|
+| 2 | 02-oo | Hangman |
+| | 02-oo | Tic-Tac-Toe |
 | 4 | 03-regex |Webscraping & Register system|
 | 5 | 05-functional-programming | Tic-Tac-Toe |
 |  | 05-functional-programming |-|
