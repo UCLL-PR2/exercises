@@ -6,30 +6,6 @@ This means that the function will continue to call itself and repeat its behavio
 
 To demonstrate this structure, let’s write a recursive function for calculating n!:
 
-1. Decompose the original problem into simpler instances of the same problem. This is the recursive case:
-
-```
-n! = n x (n−1) x (n−2) x (n−3) ⋅⋅⋅⋅ x 3 x 2 x 1
-n! = n x (n−1)!
-```
-
-2. As the large problem is broken down into successively less complex ones, those subproblems must eventually become so simple that they can be solved without further subdivision. This is the base case:
-
-```
-n! = n x (n−1)!
-n! = n x (n−1) x (n−2)!
-n! = n x (n−1) x (n−2) x (n−3)!
-⋅
-⋅
-n! = n x (n−1) x (n−2) x (n−3) ⋅⋅⋅⋅ x 3!
-n! = n x (n−1) x (n−2) x (n−3) ⋅⋅⋅⋅ x 3 x 2!
-n! = n x (n−1) x (n−2) x (n−3) ⋅⋅⋅⋅ x 3 x 2 x 1!
-```
-
-Here, 1! is our base case, and it equals 1.
-
-Recursive function for calculating n! implemented in Python:
-
 ```python
 def factorial_recursive(n):
     # Base case: 1! = 1
