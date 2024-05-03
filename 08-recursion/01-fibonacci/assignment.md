@@ -22,6 +22,9 @@ def factorial_recursive(n):
 120
 ```
 
+Behind the scenes, each recursive call adds a stack frame (containing its execution context) to the call stack until we reach the base case.
+
+
 # Task
 
 Implement a recursive method `fibonacci(number)` that returns the number-th fibonacci number
