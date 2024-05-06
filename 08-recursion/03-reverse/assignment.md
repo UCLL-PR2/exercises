@@ -1,8 +1,8 @@
 # Sum Numbers
 
-Write a recursive method reverse(text). Output is a string where all characters of str appear in reverse order.
+Write two recursive functions reverse_from_left(text) and reverse_from_right(text). Output is a string where all characters of ´text´ appear in reverse order.
+
+reverse_from_left(text) --> recursively takes the first letter  
+reverse_from_right(text) --> recursively takes the last letter  
 
 - Example: abcd => dcba
-
-Extension: Find two versions of the algorithm. In the first version it is reversed
-string constructed from left to right; in the second version from right to left.
